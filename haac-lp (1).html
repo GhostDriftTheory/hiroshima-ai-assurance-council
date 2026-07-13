@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hiroshima AI Assurance Council</title>
+<meta name="description" content="The Hiroshima AI Assurance Council develops the Hiroshima AI Assurance Protocol — a common framework for verifying AI-assisted decisions before adoption and preserving the evidence chain after.">
+<meta property="og:title" content="Hiroshima AI Assurance Council">
+<meta property="og:description" content="Developing the Hiroshima AI Assurance Protocol — the common framework for verifiable AI adoption, from Hiroshima.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:ital,wght@0,300;0,400;0,500;1,300;1,400&family=IBM+Plex+Sans:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg:#F5F7FA; --bg-alt:#ECEEF5; --bg-dk:#0F1924;
+  --ink:#0F1924; --ink-mid:#4A5568;
+  --ink-sub:#6B7A96; /* improved from #8896B0 for WCAG contrast */
+  --brand:#1B3D6E; --accent:#2B7A78; --acc-pale:rgba(43,122,120,0.09);
+  --rule:#D6DBE8; --white:#FFFFFF;
+  --serif:'IBM Plex Serif',Georgia,serif;
+  --sans:'IBM Plex Sans',system-ui,sans-serif;
+  --mono:'IBM Plex Mono',monospace;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);background:var(--bg);color:var(--ink);line-height:1.65;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+
+/* skip nav */
+.skip{position:absolute;top:-100%;left:0;background:var(--accent);color:var(--white);padding:0.5rem 1rem;font-size:0.9rem;z-index:999}
+.skip:focus{top:0}
+
+/* NAV */
+.nav{position:fixed;top:0;left:0;right:0;z-index:300;height:58px;display:flex;align-items:center;justify-content:space-between;padding:0 2.5rem;background:rgba(245,247,250,0.95);backdrop-filter:blur(14px);border-bottom:1px solid var(--rule)}
+.nav-logo{font-family:var(--mono);font-size:0.7rem;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:var(--brand)}
+.nav-cta{display:inline-flex;align-items:center;padding:0.46rem 1.15rem;border:1px solid var(--ink);font-size:0.78rem;letter-spacing:0.03em;color:var(--ink);transition:all 0.18s}
+.nav-cta:hover,.nav-cta:focus{background:var(--brand);border-color:var(--brand);color:var(--white);outline:none}
+
+/* HERO */
+#hero{position:relative;min-height:100svh;display:flex;align-items:center;justify-content:center;background-color:var(--bg);background-image:radial-gradient(circle,rgba(27,61,110,0.052) 1px,transparent 1px);background-size:28px 28px;scroll-margin-top:58px}
+#hero::before{content:'';position:absolute;left:0;top:0;bottom:0;width:2px;background:var(--accent)}
+#hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:90px;background:linear-gradient(transparent,var(--bg));pointer-events:none}
+.h-nav{position:absolute;left:2.5rem;top:50%;transform:translateY(-50%);list-style:none;display:flex;flex-direction:column;gap:1rem;z-index:2}
+.h-nav a{font-family:var(--mono);font-size:0.59rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--ink-sub);transition:color 0.18s}
+.h-nav a:hover,.h-nav a:focus{color:var(--accent);outline:none}
+.h-c{text-align:center;z-index:2;max-width:840px;padding:0 1.5rem}
+.h-kicker{font-family:var(--mono);font-size:0.63rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--accent);margin-bottom:2rem;display:flex;align-items:center;justify-content:center;gap:1rem}
+.h-kicker::before,.h-kicker::after{content:'';width:24px;height:1px;background:var(--accent)}
+.h-h1{font-family:var(--serif);font-size:clamp(2.5rem,5.8vw,4.6rem);font-weight:400;line-height:1.08;color:var(--ink);margin-bottom:0.5rem}
+.h-h1 em{font-style:italic;color:var(--brand)}
+.h-ja{font-size:0.95rem;font-weight:300;color:var(--ink-mid);margin-bottom:1.4rem}
+.h-desc{font-size:0.91rem;color:var(--ink-mid);max-width:540px;margin:0 auto 0.3rem;line-height:1.72}
+.h-dja{font-size:0.76rem;color:var(--ink-sub);max-width:540px;margin:0 auto 1.9rem;line-height:1.65}
+.h-note{display:inline-block;font-size:0.73rem;color:var(--ink-sub);line-height:1.6;max-width:490px;margin-bottom:2.4rem;padding:0.5rem 0.9rem;border-left:2px solid var(--accent);background:var(--acc-pale);text-align:left}
+.h-note .nj{display:block;margin-top:0.2rem;font-size:0.79em}
+.h-btns{display:flex;justify-content:center;gap:0.9rem;flex-wrap:wrap}
+.btn-f{display:inline-flex;align-items:center;gap:0.3rem;padding:0.68rem 1.5rem;background:var(--brand);color:var(--white);font-size:0.82rem;font-weight:500;letter-spacing:0.02em;transition:background 0.18s}
+.btn-f:hover,.btn-f:focus{background:var(--accent);outline:none}
+.btn-l{display:inline-flex;align-items:center;gap:0.3rem;padding:0.68rem 1.5rem;border:1px solid var(--brand);color:var(--brand);font-size:0.82rem;font-weight:500;letter-spacing:0.02em;transition:all 0.18s}
+.btn-l:hover,.btn-l:focus{background:var(--brand);color:var(--white);outline:none}
+.h-scroll{position:absolute;right:2.5rem;bottom:2.5rem;display:flex;flex-direction:column;align-items:center;gap:0.85rem;z-index:2}
+.h-scroll-txt{font-family:var(--mono);font-size:0.55rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--ink-sub);writing-mode:vertical-rl}
+.h-scroll-bar{width:1px;height:34px;background:var(--ink-sub)}
+
+/* SHARED */
+.sec{padding:5.5rem 0;scroll-margin-top:58px}
+.alt{background:var(--bg-alt)}
+.dk{background:var(--bg-dk);color:var(--white)}
+.wrap{max-width:1100px;margin:0 auto;padding:0 2.5rem}
+.lbl{font-family:var(--mono);font-size:0.66rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--ink-sub);margin-bottom:0.55rem}
+.lbl::before{content:'[ '}.lbl::after{content:' ]'}
+.lbl-lt{color:rgba(255,255,255,0.55)}
+.sh{font-family:var(--serif);font-size:clamp(1.8rem,3.4vw,2.8rem);font-weight:400;line-height:1.1;color:var(--ink);margin-bottom:1.4rem}
+.sh em{font-style:italic;color:var(--brand)}
+.sh-lt{color:var(--white)}.sh-lt em{color:var(--accent)}
+.lead{font-size:0.95rem;color:var(--ink-mid);max-width:660px;line-height:1.78;margin-bottom:2.5rem}
+
+/* ABOUT */
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start;margin-bottom:3rem}
+.prose p{color:var(--ink-mid);font-size:0.95rem;line-height:1.78;margin-bottom:1rem}
+.prose p:last-child{margin-bottom:0}
+.actions{margin-top:0.9rem}
+.a-row{display:flex;gap:0.85rem;padding:0.68rem 0;border-top:1px solid var(--rule);font-size:0.88rem;color:var(--ink-mid);line-height:1.6}
+.a-row:last-of-type{border-bottom:1px solid var(--rule)}
+.a-n{font-family:var(--mono);font-size:0.63rem;color:var(--accent);flex-shrink:0;padding-top:0.16rem}
+.aa{margin-top:2rem}
+.aa-hd{font-family:var(--mono);font-size:0.62rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--ink-sub);margin-bottom:0.7rem}
+.aa-row{display:flex;justify-content:space-between;align-items:center;padding:0.5rem 0;border-top:1px solid var(--rule)}
+.aa-row:last-child{border-bottom:1px solid var(--rule)}
+.aa-fw{font-size:0.85rem;color:var(--ink-mid)}
+.aa-rel{font-family:var(--mono);font-size:0.61rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--ink-sub)}
+.leaders{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;padding-top:2.5rem;border-top:1px solid var(--rule)}
+.lc-role{font-family:var(--mono);font-size:0.6rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--accent);margin-bottom:0.3rem}
+.lc-name{font-size:0.9rem;color:var(--ink);font-weight:500;margin-bottom:0.2rem;line-height:1.3}
+.lc-desc{font-size:0.82rem;color:var(--ink-mid);line-height:1.6}
+.lc-ja{font-size:0.74rem;color:var(--ink-sub);margin-top:0.12rem;font-weight:300;display:block}
+.lc-sym{font-family:var(--mono);font-size:0.66rem;color:var(--accent);margin-bottom:0.35rem}
+
+/* PROTOCOL BRIEF */
+.spec-list{display:flex;flex-direction:column;margin-bottom:2rem}
+.spec-row{display:grid;grid-template-columns:48px 200px 1fr;gap:2rem;align-items:start;padding:1.25rem 0 1.25rem 1rem;border-top:1px solid var(--rule);position:relative;transition:background 0.14s}
+.spec-row:last-child{border-bottom:1px solid var(--rule)}
+.spec-row:hover{background:rgba(27,61,110,0.026)}
+.spec-row::before{content:'';position:absolute;left:0;top:0;bottom:0;width:2px;background:var(--accent)}
+.spec-n{font-family:var(--mono);font-size:0.63rem;color:var(--accent);padding-top:0.15rem}
+.spec-nm{font-family:var(--serif);font-size:1rem;font-weight:400;color:var(--ink);line-height:1.25}
+.spec-ds{font-size:0.84rem;color:var(--ink-mid);line-height:1.65}
+.spec-footer{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;margin-top:2rem}
+.spec-draft{font-family:var(--mono);font-size:0.7rem;color:var(--ink-sub);border:1px solid var(--rule);padding:0.5rem 0.9rem;line-height:1.5}
+.spec-draft span{display:block;font-size:0.85em;margin-top:0.12rem}
+
+/* VERIFIABLE */
+.verif-list{display:flex;flex-direction:column;margin-bottom:2rem}
+.vrow{display:grid;grid-template-columns:180px 110px 1fr;gap:1.75rem;align-items:start;padding:1.1rem 0 1.1rem 1rem;border-top:1px solid var(--rule);position:relative;transition:background 0.14s}
+.vrow:last-child{border-bottom:1px solid var(--rule)}
+.vrow:hover{background:rgba(27,61,110,0.026)}
+.vrow::before{content:'';position:absolute;left:0;top:0;bottom:0;width:2px}
+.vt1::before{background:var(--ink-sub)}.vt2::before{background:var(--accent)}
+.v-en{font-family:var(--mono);font-size:0.81rem;font-weight:500;color:var(--ink);line-height:1.3}
+.v-ja{font-size:0.81rem;color:var(--ink-sub);font-weight:300}
+.v-ds{font-size:0.84rem;color:var(--ink-mid);line-height:1.65}
+.vsum{border-left:2px solid var(--accent);padding:0.9rem 1.2rem;background:var(--acc-pale);font-size:0.87rem;color:var(--ink-mid);line-height:1.72;margin-bottom:1.5rem}
+.v-gloss{font-size:0.78rem;color:var(--ink-sub);line-height:1.6}
+.v-gloss a{color:var(--accent);text-decoration:underline}
+
+/* IMPLEMENTATION POC */
+.poc-grid{display:grid;grid-template-columns:1fr 1fr;gap:3rem;margin:2rem 0}
+.poc-col-lbl{font-family:var(--mono);font-size:0.64rem;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:0.9rem;padding-bottom:0.5rem;border-bottom:1px solid rgba(255,255,255,0.12)}
+.poc-col-lbl.validated{color:var(--accent)}
+.poc-col-lbl.pending{color:rgba(255,255,255,0.45)}
+.poc-item{display:flex;align-items:flex-start;gap:0.65rem;padding:0.5rem 0;font-size:0.86rem;line-height:1.6;border-bottom:1px solid rgba(255,255,255,0.07)}
+.poc-item:last-child{border-bottom:none}
+.poc-dot{width:6px;height:6px;border-radius:50%;flex-shrink:0;margin-top:0.45rem}
+.poc-dot.yes{background:var(--accent)}
+.poc-dot.no{background:rgba(255,255,255,0.25)}
+.poc-item.yes{color:rgba(255,255,255,0.72)}
+.poc-item.no{color:rgba(255,255,255,0.42)}
+.poc-note{font-size:0.78rem;color:rgba(255,255,255,0.38);border-left:2px solid rgba(255,255,255,0.12);padding:0.65rem 1rem;margin-top:2rem;line-height:1.65}
+.poc-link{display:inline-flex;align-items:center;gap:1rem;padding:0.85rem 1.4rem;border:1px solid rgba(255,255,255,0.25);color:var(--white);font-size:0.82rem;margin-top:2rem;transition:all 0.18s}
+.poc-link:hover,.poc-link:focus{border-color:var(--accent);background:rgba(43,122,120,0.18);outline:none}
+
+/* REFERENCE */
+.ref-intro{font-size:0.88rem;color:var(--ink-mid);line-height:1.72;max-width:640px;margin-bottom:0.4rem}
+.ref-by{font-family:var(--mono);font-size:0.65rem;color:var(--ink-sub);margin-bottom:2rem}
+.ref-list{display:flex;flex-direction:column}
+.ref-row{display:grid;grid-template-columns:220px 1fr auto;gap:2rem;align-items:start;padding:1.25rem 0;border-top:1px solid var(--rule);transition:background 0.14s}
+.ref-row:last-child{border-bottom:1px solid var(--rule)}
+.ref-row:hover{background:var(--bg)}
+.r-nm{font-family:var(--mono);font-size:0.78rem;font-weight:500;color:var(--brand)}
+.r-ds{font-size:0.84rem;color:var(--ink-mid);line-height:1.62}
+.r-lk{font-family:var(--mono);font-size:0.65rem;color:var(--accent);white-space:nowrap}
+.r-lk:hover,.r-lk:focus{text-decoration:underline;outline:none}
+.r-tag{display:inline-block;font-family:var(--mono);font-size:0.58rem;letter-spacing:0.08em;text-transform:uppercase;padding:0.12rem 0.45rem;background:var(--acc-pale);color:var(--accent);border:1px solid rgba(43,122,120,0.2);margin-bottom:0.4rem}
+
+/* JOIN */
+.join-panels{display:grid;grid-template-columns:1fr 1fr;background:var(--bg-dk)}
+.jp{padding:4rem 3rem;display:flex;flex-direction:column;justify-content:space-between;min-height:360px}
+.jp:first-child{border-right:1px solid rgba(255,255,255,0.07)}
+.jp-lbl{font-family:var(--mono);font-size:0.6rem;letter-spacing:0.12em;text-transform:uppercase;color:rgba(255,255,255,0.5);margin-bottom:0.65rem}
+.jp-title{font-family:var(--serif);font-size:2rem;font-weight:400;color:var(--white);line-height:1.1;margin-bottom:1rem}
+.jp-body{font-size:0.86rem;color:rgba(255,255,255,0.58);line-height:1.72;flex-grow:1}
+.jp-scope{margin-top:1.5rem;padding-top:1.2rem;border-top:1px solid rgba(255,255,255,0.1);font-size:0.77rem;color:rgba(255,255,255,0.38);line-height:1.65}
+.jp-ml{font-family:var(--mono);font-size:0.6rem;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.35);margin-bottom:0.22rem;margin-top:1.1rem}
+.jp-ml:first-of-type{margin-top:0}
+.jp-mv{font-size:0.86rem;color:rgba(255,255,255,0.65);line-height:1.5}
+.jp-ms{font-size:0.78em;color:rgba(255,255,255,0.38);display:block;margin-top:0.12rem}
+.jp-cta{display:flex;align-items:center;justify-content:space-between;padding:0.9rem 1.15rem;border:1px solid rgba(255,255,255,0.2);color:var(--white);font-size:0.8rem;margin-top:2rem;transition:all 0.18s}
+.jp-cta:hover,.jp-cta:focus{border-color:var(--accent);background:rgba(43,122,120,0.18);outline:none}
+
+/* FOOTER */
+footer{background:var(--bg-dk);border-top:1px solid rgba(255,255,255,0.07);padding:2.75rem 0}
+.ft{display:flex;justify-content:space-between;align-items:flex-start;gap:2rem}
+.ft-brand{font-family:var(--mono);font-size:0.68rem;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.6);margin-bottom:0.55rem}
+.ft-sub{font-size:0.76rem;color:rgba(255,255,255,0.38);max-width:340px;line-height:1.65}
+.ft-nav{display:flex;gap:1.25rem;flex-wrap:wrap;justify-content:flex-end}
+.ft-nav a{font-size:0.76rem;color:rgba(255,255,255,0.48);transition:color 0.18s}
+.ft-nav a:hover,.ft-nav a:focus{color:var(--accent);outline:none}
+.ft-copy{margin-top:1.6rem;padding-top:1.2rem;border-top:1px solid rgba(255,255,255,0.08);font-size:0.68rem;color:rgba(255,255,255,0.25)}
+
+/* RESPONSIVE */
+@media(max-width:860px){
+  .h-nav,.h-scroll{display:none}
+  .about-grid{grid-template-columns:1fr;gap:2.5rem;margin-bottom:2rem}
+  .leaders{grid-template-columns:1fr;gap:1.25rem}
+  .spec-row,.vrow{grid-template-columns:1fr;gap:0.35rem;padding-left:1rem}
+  .poc-grid{grid-template-columns:1fr;gap:2rem}
+  .ref-row{grid-template-columns:1fr;gap:0.4rem}
+  .ref-row:hover{background:transparent}
+  .join-panels{grid-template-columns:1fr}
+  .jp:first-child{border-right:none;border-bottom:1px solid rgba(255,255,255,0.07)}
+  .ft{flex-direction:column}
+  .ft-nav{justify-content:flex-start}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<a href="#main" class="skip">Skip to main content</a>
+
+<nav aria-label="Primary navigation">
+  <div class="nav">
+    <span class="nav-logo">Hiroshima AI Assurance Council</span>
+    <a href="#join" class="nav-cta">Contact / Join</a>
+  </div>
+</nav>
+
+<main id="main">
+
+<!-- HERO -->
+<section id="hero" aria-label="Hero">
+  <ul class="h-nav" aria-label="Page sections">
+    <li><a href="#about">ABOUT</a></li>
+    <li><a href="#protocol">PROTOCOL</a></li>
+    <li><a href="#verifiable">VERIFIABLE</a></li>
+    <li><a href="#poc">POC</a></li>
+    <li><a href="#reference">REFERENCE</a></li>
+    <li><a href="#join">JOIN</a></li>
+  </ul>
+  <div class="h-c">
+    <div class="h-kicker">Hiroshima · Japan · Independent</div>
+    <h1 class="h-h1">From Hiroshima,<br>making AI decisions<br><em>verifiable.</em></h1>
+    <p class="h-ja" lang="ja">広島から、AI判断の検証可能な採用へ。</p>
+    <p class="h-desc">The Hiroshima AI Assurance Council develops the Hiroshima AI Assurance Protocol — a common framework for verifying AI decisions before they change real-world state, and preserving the evidence chain after.</p>
+    <p class="h-dja" lang="ja">AI判断を採用前に検証し、採用後に証拠連鎖を保存する共通プロトコルを策定する民間主導の協議会です。</p>
+    <div class="h-note">
+      Inspired by the Hiroshima AI Process (G7, 2023). Independently operated; not affiliated with or representative of any government body.
+      <span class="nj" lang="ja">広島AIプロセスの問題意識に触発された民間主導の取り組みです。同プロセスおよび政府機関を代表するものではありません。</span>
+    </div>
+    <div class="h-btns">
+      <a href="haac-protocol.html" class="btn-f">View the Protocol →</a>
+      <a href="#join" class="btn-l">Join the Council</a>
+    </div>
+  </div>
+  <div class="h-scroll" aria-hidden="true">
+    <span class="h-scroll-txt">SCROLL DOWN</span>
+    <span class="h-scroll-bar"></span>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="sec alt">
+  <div class="wrap">
+    <div class="about-grid">
+      <div>
+        <div class="lbl">About</div>
+        <h2 class="sh">From international agenda<br><em>to local implementation.</em></h2>
+        <div class="prose">
+          <p>The Hiroshima AI Process (G7, 2023) established an international agenda for trustworthy AI. The Hiroshima AI Assurance Council is an independent, industry-led initiative that addresses the implementation gap — developing the protocol layer that makes verifiable AI adoption possible.</p>
+          <p>In logistics, pharmaceuticals, manufacturing, and public services, AI-assisted decisions are being adopted without the conditions, evidence, and accountability chain needed to verify them before or after the fact. The Council builds the common protocol to close that gap, from Hiroshima.</p>
+        </div>
+      </div>
+      <div>
+        <div class="lbl">What the Council Does</div>
+        <div class="actions">
+          <div class="a-row"><span class="a-n">01</span><span>Develop the Hiroshima AI Assurance Protocol — the common framework for verified AI decision adoption.</span></div>
+          <div class="a-row"><span class="a-n">02</span><span>Maintain shared vocabulary based on the Responsibility OS glossary.</span></div>
+          <div class="a-row"><span class="a-n">03</span><span>Conduct implementation PoC projects in high-accountability domains.</span></div>
+          <div class="a-row"><span class="a-n">04</span><span>Connect Hiroshima-based operations to global AI governance frameworks.</span></div>
+        </div>
+        <div class="aa">
+          <div class="aa-hd">Global Frameworks — Designed with reference to</div>
+          <div class="aa-row"><span class="aa-fw">Hiroshima AI Process (G7, 2023)</span><span class="aa-rel">Inspired by</span></div>
+          <div class="aa-row"><span class="aa-fw">NIST AI Risk Management Framework</span><span class="aa-rel">Referenced</span></div>
+          <div class="aa-row"><span class="aa-fw">ISO/IEC 42001</span><span class="aa-rel">Referenced</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="leaders">
+      <div>
+        <div class="lc-role">Principal organizer · Joint patent applicant</div>
+        <div class="lc-name">株式会社オンザリンクス</div>
+        <div class="lc-desc">Hiroshima-based logistics DX company. Co-developing the Logistics Profile as first domain implementation.<span class="lc-ja" lang="ja">広島市中区大手町 · 主幹企業・共同特許出願人</span></div>
+      </div>
+      <div>
+        <div class="lc-role">Founding technical partner</div>
+        <div class="lc-name">GhostDrift Mathematical Institute</div>
+        <div class="lc-desc">Provides Responsibility OS and ADIC as reference implementation of the Protocol's formal foundations.<span class="lc-ja" lang="ja">株式会社GhostDrift数理研究所 — 発起人・技術基盤担当</span></div>
+      </div>
+      <div>
+        <div class="lc-sym">+</div>
+        <div class="lc-name">Open to partners</div>
+        <div class="lc-desc">Companies, universities, public organizations, and engineers in Japan and internationally.<span class="lc-ja" lang="ja">国内外の企業・大学・自治体・個人技術者への参加を歓迎します。</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROTOCOL BRIEF -->
+<section id="protocol" class="sec">
+  <div class="wrap">
+    <div class="lbl">Hiroshima AI Assurance Protocol</div>
+    <h2 class="sh">Verified before action.<br><em>Preserved after.</em></h2>
+    <p class="lead">Before an AI-assisted decision can change real-world state, required conditions, evidence, and authorizations must be verified against external sources. If verification is not satisfied, the state transition does not occur. Each AI-assisted decision is treated as an <strong>accountability-relevant information packet</strong> — holding the decision together with its inspection claims, evidence references, and adoption state.</p>
+    <div class="spec-list">
+      <div class="spec-row">
+        <div class="spec-n">01</div>
+        <div class="spec-nm">Gate Before<br>State Change</div>
+        <div class="spec-ds">Required conditions, evidence, and authorizations are verified before any state transition occurs. If verification is not satisfied, the transition does not occur.</div>
+      </div>
+      <div class="spec-row">
+        <div class="spec-n">02</div>
+        <div class="spec-nm">Separate Claims<br>from Verification</div>
+        <div class="spec-ds">Inspection claims travel inside the packet. Verification results come from external evidence — never from the packet itself. Adoption state is determined by verification results, not self-declaration.</div>
+      </div>
+      <div class="spec-row">
+        <div class="spec-n">03</div>
+        <div class="spec-nm">Verify Against<br>External Evidence</div>
+        <div class="spec-ds">Claims are re-calculated against independent evidence from separate sources — sensors, certifiers, systems. The packet cannot assert its own validity.</div>
+      </div>
+      <div class="spec-row">
+        <div class="spec-n">04</div>
+        <div class="spec-nm">Record the Full<br>Accountability Chain</div>
+        <div class="spec-ds">When a decision is adopted, the packet, evidence references, verification outcome, and adoption state are recorded together — preserving what was known, verified, and who was responsible.</div>
+      </div>
+      <div class="spec-row">
+        <div class="spec-n">05</div>
+        <div class="spec-nm">Preserve as<br>Append-only Records</div>
+        <div class="spec-ds">All records are stored as append-only entries with hash values, sequence numbers, and signatures. Nothing is overwritten; changes create new entries referencing prior ones.</div>
+      </div>
+    </div>
+    <div class="spec-footer">
+      <div class="spec-draft">
+        Hiroshima AI Assurance Protocol · Technical Overview · Draft v0.1
+        <span lang="ja">広島AIアシュアランス・プロトコル · 技術概要 · 草案 v0.1</span>
+      </div>
+      <a href="haac-protocol.html" class="btn-f">Full Protocol Details →</a>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT MUST REMAIN VERIFIABLE -->
+<section id="verifiable" class="sec alt">
+  <div class="wrap">
+    <div class="lbl">What Must Remain Verifiable</div>
+    <h2 class="sh" style="max-width:560px;" lang="ja">後から確認できる状態に残すもの。</h2>
+    <p class="lead">The Protocol defines which information must be preserved so responsible parties can review, audit, or verify an AI-assisted decision after adoption. The following elements — drawn from the Responsibility OS glossary — constitute accountability-relevant information when necessary for that review.</p>
+    <div class="verif-list">
+      <div class="vrow vt1">
+        <div class="v-en">Metadata</div><div class="v-ja" lang="ja">メタデータ</div>
+        <div class="v-ds">When, where, and under what conditions the AI decision was made — version, configuration, and operational context.</div>
+      </div>
+      <div class="vrow vt1">
+        <div class="v-en">Provenance</div><div class="v-ja" lang="ja">来歴</div>
+        <div class="v-ds">The origin and history of data, models, and processes that contributed to the decision — who produced what, under whose responsibility.</div>
+      </div>
+      <div class="vrow vt1">
+        <div class="v-en">Audit Trail</div><div class="v-ja" lang="ja">監査証跡</div>
+        <div class="v-ds">A time-ordered record of who did what, when, in connection with the decision — including human review steps and intervention points.</div>
+      </div>
+      <div class="vrow vt1">
+        <div class="v-en">Traceability</div><div class="v-ja" lang="ja">追跡可能性</div>
+        <div class="v-ds">The ability to trace a decision back to the agents, conditions, and data that produced it — linking result to origin independently.</div>
+      </div>
+      <div class="vrow vt2">
+        <div class="v-en">Unverified Conditions</div><div class="v-ja" lang="ja">未確認条件</div>
+        <div class="v-ds">Assumptions or prerequisites not confirmed at decision time — what was not checked, and therefore cannot be guaranteed.</div>
+      </div>
+      <div class="vrow vt2">
+        <div class="v-en">Accountability State</div><div class="v-ja" lang="ja">責任状態</div>
+        <div class="v-ds">The totality of who holds what responsibility at a given moment — who confirmed what, who was informed, and what remained unassigned.</div>
+      </div>
+    </div>
+    <div class="vsum">When these elements are necessary to review, audit, or verify an AI-assisted decision after adoption, they constitute <strong>accountability-relevant information</strong> — the information that must not be lost.</div>
+    <p class="v-gloss">Full vocabulary (provenance, traceability, audit trail, accountability state, noncommutativity, information loss, and more): see the <a href="https://github.com/GhostDriftTheory/responsibility-os-kernel" target="_blank" rel="noopener noreferrer">Responsibility OS Glossary →</a></p>
+  </div>
+</section>
+
+<!-- IMPLEMENTATION POC -->
+<section id="poc" class="sec dk">
+  <div class="wrap">
+    <div class="lbl lbl-lt">Implementation PoC</div>
+    <h2 class="sh sh-lt" style="margin-bottom:0.75rem;">Logistics Profile<br><em>Phase 1 complete.</em></h2>
+    <p style="font-size:0.9rem;color:rgba(255,255,255,0.62);max-width:600px;line-height:1.78;margin-bottom:0.5rem;">The first domain implementation of the Protocol is the Logistics Profile — developed with 株式会社オンザリンクス (joint patent applicant) using pharmaceutical cold-chain logistics as the reference domain.</p>
+    <p style="font-size:0.8rem;color:rgba(255,255,255,0.4);font-family:var(--mono);margin-bottom:2rem;" lang="ja">製薬物流コールドチェーンを対象とした公開実装PoC · Logistics Profile</p>
+    <div class="poc-grid">
+      <div>
+        <div class="poc-col-lbl validated">Validated in Phase 1</div>
+        <div class="poc-item yes"><span class="poc-dot yes"></span>Business rule and ruleset binding — profile and criteria fixed at evaluation time</div>
+        <div class="poc-item yes"><span class="poc-dot yes"></span>Evidence field inspection — gap detection, consistency checks</div>
+        <div class="poc-item yes"><span class="poc-dot yes"></span>Independent metric recalculation — threshold comparison against temperature records</div>
+        <div class="poc-item yes"><span class="poc-dot yes"></span>Verdict generation — RELEASE / HOLD / QA_REVIEW / REJECT</div>
+        <div class="poc-item yes"><span class="poc-dot yes"></span>Downstream chain-stop control — halt on upstream failure, last_good / first_fail anchors</div>
+        <div class="poc-item yes"><span class="poc-dot yes"></span>Digest and replay verification — same implementation, same input, same output</div>
+      </div>
+      <div>
+        <div class="poc-col-lbl pending">Not yet validated</div>
+        <div class="poc-item no"><span class="poc-dot no"></span>Evidence-source authenticity (sensor and logger integrity)</div>
+        <div class="poc-item no"><span class="poc-dot no"></span>Production system integration</div>
+        <div class="poc-item no"><span class="poc-dot no"></span>Cross-company API exchange</div>
+        <div class="poc-item no"><span class="poc-dot no"></span>Multi-implementation interoperability</div>
+        <div class="poc-item no"><span class="poc-dot no"></span>Multi-candidate selection and selection proof</div>
+        <div class="poc-item no"><span class="poc-dot no"></span>Authorization message format (wire format / JSON Schema)</div>
+      </div>
+    </div>
+    <p class="poc-note">Phase 1 validated core functions corresponding to proposed message categories — not the wire-format message specifications themselves. Regulatory compliance, SLA, and sensor authenticity were outside scope.</p>
+    <a href="haac-protocol.html#poc" class="poc-link">View Full PoC Report <span>→</span></a>
+  </div>
+</section>
+
+<!-- REFERENCE -->
+<section id="reference" class="sec alt">
+  <div class="wrap">
+    <div class="lbl">Technical Foundations</div>
+    <h2 class="sh" style="margin-bottom:1rem;">Open implementations<br><em>and formal proofs.</em></h2>
+    <p class="ref-intro">PoC implementation and formal verification tools provided by GhostDrift Mathematical Institute. Participation does not require exclusive adoption of any of these technologies.</p>
+    <div class="ref-by">GhostDrift Mathematical Institute · 株式会社GhostDrift数理研究所 · ghostdriftresearch.com</div>
+    <div class="ref-list">
+      <div class="ref-row">
+        <div>
+          <div class="r-tag">PoC Implementation</div>
+          <div class="r-nm">Cold-chain Phase 1 PoC</div>
+        </div>
+        <div class="r-ds">Streamlit implementation of the Logistics Profile Phase 1 core engine. Includes ADIC Phase 1 certificate, replay verification, and test suite.</div>
+        <a class="r-lk" href="https://github.com/GhostDriftTheory/coldchain-handoff-assurance-streamlit" target="_blank" rel="noopener noreferrer">→ GitHub</a>
+      </div>
+      <div class="ref-row">
+        <div>
+          <div class="r-tag">Technical Foundation</div>
+          <div class="r-nm">ADIC · AI Assurance</div>
+        </div>
+        <div class="r-ds">Advanced Data Integrity by Ledger of Computation — records AI decisions as a replayable, verifiable ledger. Reference implementation for append-only records and verification mechanisms.</div>
+        <a class="r-lk" href="https://github.com/GhostDriftTheory/adic-ai-assurance-lean" target="_blank" rel="noopener noreferrer">→ GitHub</a>
+      </div>
+      <div class="ref-row">
+        <div>
+          <div class="r-tag">Formal Verification</div>
+          <div class="r-nm">Responsibility OS Kernel</div>
+        </div>
+        <div class="r-ds">Category-theoretic kernel ensuring AI operations, audit traces, responsibility records, and judgment grounds travel together. Machine-verified in Lean 4.</div>
+        <a class="r-lk" href="https://github.com/GhostDriftTheory/responsibility-os-kernel" target="_blank" rel="noopener noreferrer">→ GitHub</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- JOIN -->
+<div class="join-panels" id="join">
+  <div class="jp">
+    <div>
+      <div class="jp-lbl">[ Join ]</div>
+      <div class="jp-title">Join the<br>Council.</div>
+      <div class="jp-body">
+        Open to companies, universities, public organizations, and engineers in Japan and internationally. Any domain where AI decisions carry accountability requirements.
+        <br><br><span style="font-size:0.82em;color:rgba(255,255,255,0.38);" lang="ja">国内外の企業・大学・自治体・個人技術者の参加を歓迎します。</span>
+        <div class="jp-scope">The Council provides a protocol specification, shared vocabulary, and implementation PoC. It does not provide legal certification, government endorsement, or blanket safety guarantees. It does not represent the Hiroshima AI Process or any government body.</div>
+      </div>
+    </div>
+    <a href="https://www.ghostdriftresearch.com/contact" class="jp-cta"><span>Contact / <span lang="ja">お問い合わせ</span></span><span>→</span></a>
+  </div>
+  <div class="jp">
+    <div>
+      <div class="jp-lbl">[ Council ]</div>
+      <div class="jp-title">Council<br>details.</div>
+      <div class="jp-body">
+        <div class="jp-ml">Principal organizer</div>
+        <div class="jp-mv"><span lang="ja">株式会社オンザリンクス</span><span class="jp-ms" lang="ja">Hiroshima-based logistics DX company · 広島市中区大手町</span></div>
+        <div class="jp-ml">Technical partner</div>
+        <div class="jp-mv">GhostDrift Mathematical Institute<span class="jp-ms">ghostdriftresearch.com</span></div>
+      </div>
+    </div>
+    <a href="haac-protocol.html" class="jp-cta"><span>View the Protocol</span><span>→</span></a>
+  </div>
+</div>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="ft">
+      <div>
+        <div class="ft-brand">Hiroshima AI Assurance Council</div>
+        <div class="ft-sub">Developing the Hiroshima AI Assurance Protocol. Hiroshima, Japan. Inspired by the Hiroshima AI Process (G7, 2023). Not affiliated with any government body.</div>
+      </div>
+      <nav class="ft-nav" aria-label="Footer navigation">
+        <a href="#about">About</a>
+        <a href="#protocol">Protocol</a>
+        <a href="#verifiable">Verifiable</a>
+        <a href="#poc">PoC</a>
+        <a href="#reference">Reference</a>
+        <a href="#join">Join</a>
+      </nav>
+    </div>
+    <div class="ft-copy">© 2026 Hiroshima AI Assurance Council · Hiroshima, Japan</div>
+  </div>
+</footer>
+
+</body>
+</html>
