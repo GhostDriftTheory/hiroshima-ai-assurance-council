@@ -3,375 +3,108 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>About — Hiroshima AI Assurance Council</title>
-<meta name="description" content="The Hiroshima AI Assurance Council is an independent, industry-led initiative represented by ON THE LINKS, Inc., a Hiroshima-based company. Initiated by GhostDrift Mathematical Institute.">
-<meta property="og:title" content="About — Hiroshima AI Assurance Council">
+<title>About - Hiroshima AI Assurance Council</title>
+<meta name="description" content="Leadership, scope, and independence of the Hiroshima AI Assurance Council.">
+<meta property="og:title" content="About - Hiroshima AI Assurance Council">
 <meta property="og:type" content="website">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:ital,wght@0,300;0,400;0,500;1,300;1,400&family=IBM+Plex+Sans:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
-<style>
-:root {
-  --bg:#F5F7FA; --bg-alt:#ECEEF5; --bg-dk:#0F1924;
-  --ink:#0F1924; --ink-mid:#4A5568; --ink-sub:#6B7A96;
-  --brand:#1B3D6E; --accent:#2B7A78; --acc-pale:rgba(43,122,120,0.09);
-  --rule:#D6DBE8; --white:#FFFFFF;
-  --serif:'IBM Plex Serif',Georgia,serif;
-  --sans:'IBM Plex Sans',system-ui,sans-serif;
-  --mono:'IBM Plex Mono',monospace;
-}
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{font-family:var(--sans);background:var(--bg);color:var(--ink);line-height:1.65;-webkit-font-smoothing:antialiased}
-a{color:inherit;text-decoration:none}
-
-.skip{position:absolute;top:-100%;left:0;background:var(--accent);color:var(--white);padding:0.5rem 1rem;font-size:0.9rem;z-index:999}
-.skip:focus{top:0}
-
-/* NAV */
-.pnav{position:fixed;top:0;left:0;right:0;z-index:300;height:58px;display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:0 2.5rem;background:rgba(15,25,36,0.96);backdrop-filter:blur(14px);border-bottom:1px solid rgba(255,255,255,0.08)}
-.pnav-back{font-family:var(--mono);font-size:0.68rem;letter-spacing:0.06em;color:rgba(255,255,255,0.5);transition:color 0.18s;flex-shrink:0}
-.pnav-back:hover{color:var(--accent)}
-.pnav-links{display:flex;gap:1.5rem;list-style:none}
-.pnav-links a{font-family:var(--mono);font-size:0.58rem;letter-spacing:0.16em;text-transform:uppercase;color:rgba(255,255,255,0.4);transition:color 0.18s}
-.pnav-links a:hover{color:var(--accent)}
-.pnav-right{display:flex;align-items:center;gap:1rem}
-.pnav-join{font-family:var(--mono);font-size:0.74rem;color:var(--white);border:1px solid rgba(255,255,255,0.25);padding:0.42rem 1.1rem;transition:all 0.18s;flex-shrink:0}
-.pnav-join:hover{border-color:var(--accent);color:var(--accent)}
-.ham-btn{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:0.4rem}
-.ham-btn span{display:block;width:22px;height:1.5px;background:rgba(255,255,255,0.7);transition:all 0.2s}
-.ham-btn[aria-expanded=true] span:nth-child(1){transform:translateY(6.5px) rotate(45deg)}
-.ham-btn[aria-expanded=true] span:nth-child(2){opacity:0}
-.ham-btn[aria-expanded=true] span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg)}
-.mobile-menu{display:none;position:fixed;top:58px;left:0;right:0;background:rgba(15,25,36,0.98);z-index:200;padding:1.25rem 2.5rem;flex-direction:column;border-bottom:1px solid rgba(255,255,255,0.08)}
-.mobile-menu.open{display:flex}
-.mobile-menu a{font-family:var(--mono);font-size:0.8rem;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.65);padding:0.75rem 0;border-bottom:1px solid rgba(255,255,255,0.07)}
-.mobile-menu a:last-child{border-bottom:none}
-.mobile-menu a:hover{color:var(--accent)}
-
-/* SHARED */
-.sec{padding:5.5rem 0;scroll-margin-top:58px}
-.alt{background:var(--bg-alt)}
-.dk{background:var(--bg-dk);color:var(--white)}
-.wrap{max-width:1100px;margin:0 auto;padding:0 2.5rem}
-.lbl{font-family:var(--mono);font-size:0.66rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--ink-sub);margin-bottom:0.55rem}
-.lbl::before{content:'[ '}.lbl::after{content:' ]'}
-.lbl-lt{color:rgba(255,255,255,0.5)}
-.sh{font-family:var(--serif);font-size:clamp(1.8rem,3.4vw,2.8rem);font-weight:400;line-height:1.1;color:var(--ink);margin-bottom:1.25rem}
-.sh em{font-style:italic;color:var(--brand)}
-.sh-lt{color:var(--white)}.sh-lt em{color:var(--accent)}
-.sec-n{font-family:var(--mono);font-size:0.64rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent);margin-bottom:0.4rem}
-.two{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start}
-.row-r{display:flex;gap:0.85rem;padding:0.68rem 0;border-top:1px solid var(--rule);font-size:0.88rem;color:var(--ink-mid);align-items:flex-start}
-.row-r:last-of-type{border-bottom:1px solid var(--rule)}
-.rsym{font-family:var(--mono);font-size:0.68rem;flex-shrink:0;padding-top:0.12rem}
-.ra{color:var(--accent)}.rs{color:var(--ink-sub)}
-
-/* HERO */
-#hero{position:relative;min-height:100svh;display:flex;align-items:center;background-color:var(--bg);background-image:radial-gradient(circle,rgba(27,61,110,0.052) 1px,transparent 1px);background-size:28px 28px;padding-top:58px}
-#hero::before{content:'';position:absolute;left:0;top:0;bottom:0;width:2px;background:var(--accent)}
-#hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:80px;background:linear-gradient(transparent,var(--bg));pointer-events:none}
-.hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center;z-index:2;width:100%;max-width:1100px;margin:0 auto;padding:4rem 2.5rem}
-.hero-tag{font-family:var(--mono);font-size:0.66rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--accent);margin-bottom:1.75rem;display:flex;align-items:center;gap:0.9rem}
-.hero-tag::before{content:'';width:24px;height:1px;background:var(--accent)}
-.hero-h1{font-family:var(--serif);font-size:clamp(2.8rem,5.5vw,4.4rem);font-weight:400;line-height:1.06;color:var(--ink);margin-bottom:0.5rem}
-.hero-h1 em{font-style:italic;color:var(--brand)}
-.hero-sub{font-size:0.95rem;color:var(--ink-mid);max-width:440px;line-height:1.72;margin-bottom:0.3rem}
-.hero-sub-ja{font-size:0.78rem;color:var(--ink-sub);max-width:440px;margin-bottom:2.25rem}
-.hero-p{font-size:0.9rem;color:var(--ink-mid);max-width:440px;line-height:1.75;margin-bottom:2.5rem}
-.btn-f{display:inline-flex;align-items:center;gap:0.4rem;padding:0.72rem 1.6rem;background:var(--brand);color:var(--white);font-size:0.84rem;font-weight:500;transition:background 0.18s}
-.btn-f:hover{background:var(--accent)}
-.btn-l{display:inline-flex;align-items:center;gap:0.4rem;padding:0.72rem 1.6rem;border:1px solid var(--brand);color:var(--brand);font-size:0.84rem;font-weight:500;transition:all 0.18s}
-.btn-l:hover{background:var(--brand);color:var(--white)}
-
-/* at-a-glance */
-.aag{background:var(--white);border:1px solid var(--rule);padding:2rem}
-.aag-title{font-family:var(--mono);font-size:0.62rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--ink-sub);margin-bottom:1.4rem}
-.aag-row{padding:0.8rem 0;border-top:1px solid var(--rule)}
-.aag-row:last-child{border-bottom:1px solid var(--rule)}
-.aag-lbl{font-family:var(--mono);font-size:0.61rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink-sub);margin-bottom:0.28rem}
-.aag-val{font-size:0.9rem;color:var(--ink);font-weight:500;line-height:1.3}
-.aag-sub{font-size:0.76rem;color:var(--ink-sub);margin-top:0.12rem;font-weight:300;display:block}
-
-/* LEADERSHIP */
-.lp{background:var(--white);border:1px solid var(--rule);border-left:4px solid var(--brand);padding:2.25rem 2.5rem;margin-bottom:1.5rem}
-.lp-role{font-family:var(--mono);font-size:0.62rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--brand);margin-bottom:0.5rem}
-.lp-name{font-family:var(--serif);font-size:1.5rem;font-weight:400;color:var(--ink);margin-bottom:0.2rem;line-height:1.2}
-.lp-sub{font-size:0.78rem;color:var(--ink-sub);font-weight:300;display:block;margin-bottom:0.9rem}
-.lp-desc{font-size:0.9rem;color:var(--ink-mid);line-height:1.7;max-width:680px}
-.ls{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem}
-.lc{background:var(--white);border:1px solid var(--rule);border-top:3px solid var(--rule);padding:1.75rem}
-.lc-acc{border-top-color:var(--accent)}
-.lc-role{font-family:var(--mono);font-size:0.61rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink-sub);margin-bottom:0.45rem}
-.lc-name{font-family:var(--serif);font-size:1.1rem;font-weight:400;color:var(--ink);margin-bottom:0.18rem;line-height:1.2}
-.lc-sub{font-size:0.74rem;color:var(--ink-sub);font-weight:300;display:block;margin-bottom:0.7rem}
-.lc-desc{font-size:0.84rem;color:var(--ink-mid);line-height:1.65}
-
-/* HOW WE OPERATE */
-.op-list{display:flex;flex-direction:column}
-.op-item{display:flex;gap:1.25rem;padding:1rem 0;border-top:1px solid var(--rule);align-items:flex-start}
-.op-item:last-child{border-bottom:1px solid var(--rule)}
-.op-n{font-family:var(--mono);font-size:0.62rem;color:var(--accent);flex-shrink:0;padding-top:0.15rem;min-width:1.4rem}
-.op-text{font-size:0.88rem;color:var(--ink-mid);line-height:1.65}
-.note-box{border-left:2px solid var(--rule);padding:0.85rem 1.1rem;font-size:0.84rem;color:var(--ink-sub);line-height:1.68}
-
-/* WHY HIROSHIMA */
-.why-prose p{font-size:0.93rem;color:var(--ink-mid);line-height:1.78;margin-bottom:1rem}
-.why-prose p:last-child{margin-bottom:0}
-
-/* CTA */
-.cta-sec{padding:5.5rem 0;background:var(--bg-dk)}
-.cta-grid{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start}
-.cta-h{font-family:var(--serif);font-size:clamp(1.6rem,3vw,2.4rem);font-weight:400;color:var(--white);line-height:1.15;margin-bottom:0.4rem}
-.cta-ja{font-size:0.82rem;color:rgba(255,255,255,0.38);margin-bottom:1.5rem}
-.cta-desc{font-size:0.88rem;color:rgba(255,255,255,0.52);line-height:1.72;margin-bottom:2rem;max-width:400px}
-.cta-btns{display:flex;flex-direction:column;gap:0.85rem}
-.btn-dk-f{display:inline-flex;align-items:center;gap:0.4rem;padding:0.8rem 1.75rem;background:var(--accent);color:var(--white);font-size:0.86rem;font-weight:500;transition:background 0.18s}
-.btn-dk-f:hover{background:rgba(43,122,120,0.75)}
-.btn-dk-l{display:inline-flex;align-items:center;gap:0.4rem;padding:0.8rem 1.75rem;border:1px solid rgba(255,255,255,0.22);color:var(--white);font-size:0.86rem;transition:all 0.18s}
-.btn-dk-l:hover{border-color:var(--accent);color:var(--accent)}
-.contact-box{padding:2rem;border:1px solid rgba(255,255,255,0.1);background:rgba(255,255,255,0.03)}
-.cb-title{font-family:var(--serif);font-size:1.15rem;font-weight:400;color:var(--white);margin-bottom:1.5rem}
-.cb-item{margin-bottom:1.2rem}
-.cb-lbl{font-family:var(--mono);font-size:0.6rem;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.32);margin-bottom:0.28rem}
-.cb-val{font-size:0.88rem;color:rgba(255,255,255,0.62);line-height:1.5}
-.cb-sub{display:block;font-size:0.78em;color:rgba(255,255,255,0.3);margin-top:0.1rem}
-.cb-link{color:var(--accent)}
-.cb-link:hover{opacity:0.8}
-
-footer{background:var(--bg-dk);border-top:1px solid rgba(255,255,255,0.07);padding:2.25rem 0}
-.ft{display:flex;justify-content:space-between;align-items:center;gap:2rem;flex-wrap:wrap}
-.ft-l{font-family:var(--mono);font-size:0.68rem;color:rgba(255,255,255,0.35)}
-.ft-r{display:flex;gap:1.5rem;flex-wrap:wrap}
-.ft-r a{font-size:0.76rem;color:rgba(255,255,255,0.38);transition:color 0.18s}
-.ft-r a:hover{color:var(--accent)}
-
-@media(max-width:860px){
-  .pnav-links{display:none}.ham-btn{display:flex}
-  .hero-grid,.two,.cta-grid{grid-template-columns:1fr;gap:2.5rem}
-  .hero-grid{padding:3rem 1.5rem}
-  .ls{grid-template-columns:1fr;gap:1.25rem}
-  .ft{flex-direction:column;align-items:flex-start;gap:1rem}
-}
-@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none !important}}
-</style>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:ital,wght@0,400;0,500;1,400&family=IBM+Plex+Sans:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
 </head>
 <body>
-
 <a href="#main" class="skip">Skip to main content</a>
-
-<nav aria-label="Page navigation">
-  <div class="pnav">
-    <a href="haac-lp.html" class="pnav-back">← Hiroshima AI Assurance Council</a>
-    <ul class="pnav-links">
-      <li><a href="#leadership">LEADERSHIP</a></li>
-      <li><a href="#operations">HOW WE OPERATE</a></li>
-      <li><a href="#why">WHY HIROSHIMA</a></li>
-    </ul>
-    <div class="pnav-right">
-      <button class="ham-btn" aria-expanded="false" aria-controls="mobile-menu" aria-label="Open menu" onclick="toggleMenu(this)">
-        <span></span><span></span><span></span>
-      </button>
-      <a href="join-the-council.html" class="pnav-join">Join →</a>
-    </div>
+<nav class="site-nav" aria-label="Primary navigation">
+  <a class="site-brand" href="index.html">Hiroshima AI Assurance Council</a>
+  <div class="nav-links">
+    <a class="active" href="about.html">About</a>
+    <a href="protocol.html">Protocol</a>
+    <a href="beacon-cycle.html">Beacon Cycle</a>
+    <a href="index.html#projects">Projects</a>
+    <a class="nav-join" href="contact.html">Join</a>
   </div>
 </nav>
-
-<div class="mobile-menu" id="mobile-menu" role="dialog">
-  <a href="#leadership" onclick="closeMenu()">Leadership</a>
-  <a href="#operations" onclick="closeMenu()">How we operate</a>
-  <a href="#why" onclick="closeMenu()">Why Hiroshima</a>
-  <a href="join-the-council.html" onclick="closeMenu()">Join the Council →</a>
-  <a href="haac-lp.html">← Council Home</a>
-</div>
-
 <main id="main">
-
-<!-- HERO -->
-<section id="hero" aria-label="About">
-  <div class="hero-grid">
-    <div>
-      <div class="hero-tag">Hiroshima AI Assurance Council</div>
-      <h1 class="hero-h1">About the<br><em>Council.</em></h1>
-      <p class="hero-sub">An independent, industry-led initiative from Hiroshima.</p>
-      <p class="hero-sub-ja" lang="ja">広島の企業が代表を務める、民間主導・独立運営の協議会。</p>
-      <p class="hero-p">The Council is represented by ON THE LINKS, Inc., a Hiroshima-based logistics DX company. GhostDrift Mathematical Institute initiated the project and contributes technical foundations including Responsibility OS and ADIC.</p>
-      <div style="display:flex;gap:1rem;flex-wrap:wrap">
-        <a href="#leadership" class="btn-f">Our structure →</a>
-        <a href="join-the-council.html" class="btn-l">Join</a>
-      </div>
-    </div>
-    <div>
-      <div class="aag">
-        <div class="aag-title">At a glance</div>
-        <div class="aag-row">
-          <div class="aag-lbl">Represented by</div>
-          <div class="aag-val">株式会社オンザリンクス<span class="aag-sub">ON THE LINKS, Inc. · Hiroshima · Council Representative</span></div>
-        </div>
-        <div class="aag-row">
-          <div class="aag-lbl">Initiated by</div>
-          <div class="aag-val">GhostDrift Mathematical Institute<span class="aag-sub" lang="ja">株式会社GhostDrift数理研究所 · 発起人</span></div>
-        </div>
-        <div class="aag-row">
-          <div class="aag-lbl">Status</div>
-          <div class="aag-val">Early formation<span class="aag-sub">Protocol Draft v0.1 · Logistics Profile Phase 1 complete</span></div>
-        </div>
-        <div class="aag-row">
-          <div class="aag-lbl">Independence</div>
-          <div class="aag-val">Privately led<span class="aag-sub">Not affiliated with the Hiroshima AI Process or any government body</span></div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- LEADERSHIP -->
-<section id="leadership" class="sec alt">
-  <div class="wrap">
-    <div class="sec-n">01</div>
-    <div class="lbl">Leadership and roles</div>
-    <h2 class="sh">運営体制と役割。</h2>
-
-    <div class="lp">
-      <div class="lp-role">Council Representative · Principal Organizer · 協議会代表・主幹企業</div>
-      <div class="lp-name">株式会社オンザリンクス</div>
-      <span class="lp-sub">ON THE LINKS, Inc. · Hiroshima-based logistics DX company</span>
-      <p class="lp-desc">Serves as the Council's representative and principal organizer — leading operations, external relations, and field implementation. Co-developer and joint patent applicant on the Logistics Decision Packet, the first domain profile of the Hiroshima AI Assurance Protocol.<span style="display:block;font-size:0.84em;color:var(--ink-sub);margin-top:0.5rem;" lang="ja">協議会の代表および主幹として運営・対外窓口・広島での実装検証を担います。物流判断パケットの共同特許出願人でもあります。</span></p>
-    </div>
-
-    <div class="ls">
-      <div class="lc lc-acc">
-        <div class="lc-role">Initiator · 発起人</div>
-        <div class="lc-name">GhostDrift Mathematical Institute</div>
-        <span class="lc-sub" lang="ja">株式会社GhostDrift数理研究所</span>
-        <p class="lc-desc">Proposed the initial concept. Contributes Responsibility OS, ADIC, and early drafts of the Hiroshima AI Assurance Protocol as open technical foundations. Not the Council representative and does not govern operations.<span style="display:block;font-size:0.84em;color:var(--ink-sub);margin-top:0.4rem;" lang="ja">構想の発起人。責任OS・ADIC・プロトコル初期案を提供。協議会の代表・運営主体ではありません。</span></p>
-      </div>
-      <div class="lc">
-        <div class="lc-role">Participating Members · 参加メンバー</div>
-        <div class="lc-name">Open to all sectors</div>
-        <span class="lc-sub" lang="ja">国内外の企業・大学・自治体・個人技術者</span>
-        <p class="lc-desc">Companies, research institutions, universities, public organizations, and individual engineers. Participation may take the form of specification review, field validation, or domain expertise contribution. Membership structure is being formalized.<span style="display:block;font-size:0.84em;color:var(--ink-sub);margin-top:0.4rem;" lang="ja">仕様検討・実装検証・専門知識の提供等を通じて参加できます。正式な会員区分は整備中です。</span></p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- HOW WE OPERATE -->
-<section id="operations" class="sec">
-  <div class="wrap">
-    <div class="sec-n">02</div>
-    <div class="lbl">How we operate</div>
-    <h2 class="sh">協議会の運営原則と範囲。</h2>
-    <div class="two">
+  <section class="hero">
+    <div class="hero-inner">
       <div>
-        <div style="font-family:var(--mono);font-size:0.63rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink-sub);margin-bottom:0.85rem;">Principles</div>
-        <div class="op-list">
-          <div class="op-item"><span class="op-n">01</span><span class="op-text">ON THE LINKS serves as Council representative for external relations and operations.</span></div>
-          <div class="op-item"><span class="op-n">02</span><span class="op-text">Technical drafts and public materials are reviewed by participating members before release.</span></div>
-          <div class="op-item"><span class="op-n">03</span><span class="op-text">Reference technologies — including Responsibility OS and ADIC — are open, not mandatory. The Council is not a sales or certification channel for any single organization.</span></div>
-          <div class="op-item"><span class="op-n">04</span><span class="op-text">Validated findings and future proposals are clearly distinguished in all publications.</span></div>
-        </div>
-        <div class="note-box" style="margin-top:1.5rem">Formal governance — decision procedures, voting rights, IP policy — is being developed with founding members. Contact us with questions.<span style="display:block;font-size:0.9em;margin-top:0.3rem;" lang="ja">意思決定手続き・IP方針は整備中です。</span></div>
+        <div class="kicker">About the Council</div>
+        <h1>Independent,<br><em>industry-led,</em><br>Hiroshima-based.</h1>
+        <p class="hero-lead">The Council is represented by ON THE LINKS, Inc. GhostDrift Mathematical Institute initiated the project and contributes the technical foundations. Participating members are invited from all sectors.</p>
+        <span class="ja" lang="ja">代表・技術基盤・参加メンバーの役割を分け、特定企業や政府機関の代替に見えない形で運営します。</span>
+      </div>
+      <div class="signal-panel">
+        <div class="signal-row"><span class="sig-num">Rep</span><span class="sig-title">ON THE LINKS, Inc.</span><span class="sig-state">Operations</span></div>
+        <div class="signal-row"><span class="sig-num">Tech</span><span class="sig-title">GhostDrift Mathematical Institute</span><span class="sig-state">Foundation</span></div>
+        <div class="signal-row"><span class="sig-num">Open</span><span class="sig-title">Members across sectors</span><span class="sig-state">Validation</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section alt">
+    <div class="wrap">
+      <div class="label">Leadership and Roles</div>
+      <h2>Clear roles reduce<br><em>institutional ambiguity.</em></h2>
+      <div class="grid-3">
+        <div class="card brand"><div class="card-meta">Council representative</div><div class="card-title">ON THE LINKS, Inc.</div><p>Hiroshima-based logistics DX company. Leads Council operations, external coordination, and field implementation. Joint patent applicant for the first logistics decision-packet work.</p></div>
+        <div class="card accent"><div class="card-meta">Initiator / technical partner</div><div class="card-title">GhostDrift Mathematical Institute</div><p>Proposed the initial concept and contributes Responsibility OS, ADIC, protocol drafts, open repositories, and formal verification work. It is not the Council representative.</p></div>
+        <div class="card"><div class="card-meta">Participating members</div><div class="card-title">Open to all sectors</div><p>Companies, universities, research institutions, public organizations, and individual engineers may join through specification review, field validation, joint research, or technical contribution.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap grid-2">
+      <div>
+        <div class="label">How We Operate</div>
+        <h2>Public scope,<br><em>technical evidence,</em><br>member review.</h2>
+        <p class="lead">The Council develops specifications, reference vocabulary, and implementation PoCs. Validated findings and future proposals are kept separate so the site does not overstate maturity.</p>
+      </div>
+      <div class="row-list">
+        <div class="row"><span class="row-num">01</span><span class="row-name">Reviewed public materials</span><p>Protocol materials and public claims should be reviewed by participating members before release.</p></div>
+        <div class="row"><span class="row-num">02</span><span class="row-name">Open reference technology</span><p>Responsibility OS and ADIC are reference foundations. Participation does not require exclusive adoption of them.</p></div>
+        <div class="row"><span class="row-num">03</span><span class="row-name">Formation stage</span><p>Formal membership terms, voting rights, working groups, and IP policy are being developed with founding members.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section alt">
+    <div class="wrap">
+      <div class="label">Scope Boundaries</div>
+      <h2>What the Council<br><em>does not claim.</em></h2>
+      <div class="scope-list">
+        <ul>
+          <li>Does not represent Hiroshima Prefecture, Hiroshima City, the G7, or any government body.</li>
+          <li>Does not represent or act on behalf of the Hiroshima AI Process.</li>
+          <li>Does not provide legal certification, compliance guarantees, or safety endorsements.</li>
+        </ul>
+        <ul>
+          <li>Does not require adoption of any single vendor, platform, or technology.</li>
+          <li>Does not function as a sales channel for GhostDrift or ON THE LINKS.</li>
+          <li>Does not promise that every AI outcome can be controlled.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="section dark">
+    <div class="wrap grid-2">
+      <div>
+        <div class="label">Why Hiroshima</div>
+        <h2>Global agenda,<br><em>local implementation.</em></h2>
       </div>
       <div>
-        <div style="font-family:var(--mono);font-size:0.63rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink-sub);margin-bottom:0.85rem;">What we do not do</div>
-        <div class="row-r"><span class="rsym rs">—</span><span>Represent Hiroshima Prefecture, Hiroshima City, or any government body.</span></div>
-        <div class="row-r"><span class="rsym rs">—</span><span>Represent or act on behalf of the Hiroshima AI Process.</span></div>
-        <div class="row-r"><span class="rsym rs">—</span><span>Provide legal certification, compliance guarantees, or safety endorsements.</span></div>
-        <div class="row-r"><span class="rsym rs">—</span><span>Require adoption of any specific technology as a condition of participation.</span></div>
-        <div class="row-r"><span class="rsym rs">—</span><span>Promise that all AI outcomes can be controlled or accountability automatically satisfied.</span></div>
+        <p class="lead">Hiroshima is internationally associated with the Hiroshima AI Process. The Council is independently operated and focuses on a narrower implementation question: how to translate trustworthy AI principles into verifiable operational conditions.</p>
+        <div class="actions"><a class="btn primary" href="contact.html">Join / Contact</a><a class="btn secondary" href="protocol.html">View Protocol</a></div>
       </div>
     </div>
-  </div>
-</section>
-
-<!-- WHY HIROSHIMA -->
-<section id="why" class="sec alt">
-  <div class="wrap">
-    <div class="sec-n">03</div>
-    <div class="lbl">Why Hiroshima</div>
-    <h2 class="sh">なぜ広島から始めるのか。</h2>
-    <div class="two">
-      <div class="why-prose">
-        <p>Hiroshima is known internationally as the city where the Hiroshima AI Process originated (G7, 2023). The Council is independently operated and does not represent that governmental process — or any government authority.</p>
-        <p>Its focus is narrower: translating principles of trustworthy AI into real operational conditions, beginning with Hiroshima-based logistics. Starting here reflects a concrete choice — ON THE LINKS, the Council's representative, is rooted in the city, and implementation begins where real expertise and real operations exist.</p>
-      </div>
-      <div class="why-prose" lang="ja">
-        <p>広島は、2023年のG7サミットを契機に広島AIプロセスが生まれた都市として国際的に知られています。本協議会はこの政府プロセスや行政機関を代表するものではなく、民間主導で独立して運営されています。</p>
-        <p>協議会の目的はより具体的です。信頼できるAIに関する理念を、広島の物流現場から具体的な運用条件へ落とし込むことです。代表企業・オンザリンクスが広島に根ざしているからこそ、実装はここから始まります。</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- CTA -->
-<section class="cta-sec" id="contact" aria-label="Join">
-  <div class="wrap">
-    <div class="cta-grid">
-      <div>
-        <div class="lbl lbl-lt">Participate</div>
-        <div class="cta-h">Participate in<br>the work.</div>
-        <div class="cta-ja" lang="ja">協議会の活動に参加する。</div>
-        <p class="cta-desc">Organizations interested in field validation, specification review, or joint research are welcome to contact the Council. Membership terms are being developed.<span style="display:block;font-size:0.84em;margin-top:0.4rem;color:rgba(255,255,255,0.3);" lang="ja">実装検証・技術レビュー・共同研究等に関心のある方はご連絡ください。</span></p>
-        <div class="cta-btns">
-          <a href="join-the-council.html" class="btn-dk-f">Join the Council →</a>
-          <a href="haac-protocol.html" class="btn-dk-l">View the Protocol</a>
-          <a href="beacon-cycle.html" class="btn-dk-l">View Beacon Cycle</a>
-        </div>
-      </div>
-      <div class="contact-box">
-        <div class="cb-title">Contact</div>
-        <div class="cb-item">
-          <div class="cb-lbl">Council representative</div>
-          <div class="cb-val"><span lang="ja">株式会社オンザリンクス</span><span class="cb-sub" lang="ja">ON THE LINKS, Inc. · 広島市中区大手町</span></div>
-        </div>
-        <div class="cb-item">
-          <div class="cb-lbl">Technical partner &amp; contact</div>
-          <div class="cb-val">GhostDrift Mathematical Institute<span class="cb-sub" lang="ja">株式会社GhostDrift数理研究所</span></div>
-        </div>
-        <div class="cb-item">
-          <div class="cb-lbl">Contact form</div>
-          <div class="cb-val"><a href="https://www.ghostdriftresearch.com/contact" target="_blank" rel="noopener noreferrer" class="cb-link">ghostdriftresearch.com/contact →</a></div>
-        </div>
-        <div style="margin-top:1.25rem;padding-top:1.25rem;border-top:1px solid rgba(255,255,255,0.08);font-size:0.78rem;color:rgba(255,255,255,0.3);line-height:1.62">Independent from the Hiroshima AI Process and all government bodies.</div>
-      </div>
-    </div>
-  </div>
-</section>
-
+  </section>
 </main>
-
 <footer>
-  <div class="wrap">
-    <div class="ft">
-      <div class="ft-l">Hiroshima AI Assurance Council · About · © 2026</div>
-      <div class="ft-r">
-        <a href="haac-lp.html">← Home</a>
-        <a href="haac-protocol.html">Protocol</a>
-        <a href="beacon-cycle.html">Beacon Cycle</a>
-        <a href="join-the-council.html">Join</a>
-      </div>
-    </div>
+  <div class="wrap footer-grid">
+    <div><div class="footer-brand">Hiroshima AI Assurance Council</div><div class="footer-sub">About / scope / independence.</div></div>
+    <div class="footer-links"><a href="index.html">Home</a><a href="protocol.html">Protocol</a><a href="beacon-cycle.html">Beacon Cycle</a><a href="contact.html">Join</a></div>
   </div>
 </footer>
-
-<script>
-function toggleMenu(btn){
-  var menu=document.getElementById('mobile-menu');
-  var expanded=btn.getAttribute('aria-expanded')==='true';
-  btn.setAttribute('aria-expanded',!expanded);
-  menu.classList.toggle('open');
-}
-function closeMenu(){
-  var menu=document.getElementById('mobile-menu');
-  var btn=document.querySelector('.ham-btn');
-  if(btn)btn.setAttribute('aria-expanded','false');
-  menu.classList.remove('open');
-}
-document.addEventListener('click',function(e){
-  var menu=document.getElementById('mobile-menu');
-  var btn=document.querySelector('.ham-btn');
-  if(menu&&menu.classList.contains('open')&&!menu.contains(e.target)&&btn&&!btn.contains(e.target)){closeMenu();}
-});
-</script>
 </body>
 </html>
