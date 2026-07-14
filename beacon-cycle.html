@@ -3,655 +3,119 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Beacon Cycle — Hiroshima AI Assurance Council</title>
-<meta name="description" content="Beacon Cycle is an operational model that translates stable guiding principles into responsibility design, pre-execution assurance, authorized action, verifiable records, independent verification, and evidence-based redesign.">
-<meta property="og:title" content="Beacon Cycle — Hiroshima AI Assurance Council">
-<meta property="og:description" content="From guiding principles to responsible action and verifiable review.">
+<title>Beacon Cycle - Hiroshima AI Assurance Council</title>
+<meta name="description" content="Beacon Cycle is an operational model for responsibility design, pre-execution assurance, authorized action, verifiable records, independent verification, and redesign.">
+<meta property="og:title" content="Beacon Cycle - Hiroshima AI Assurance Council">
 <meta property="og:type" content="website">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:ital,wght@0,300;0,400;0,500;1,300;1,400&family=IBM+Plex+Sans:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
-<style>
-/* ============= TOKENS ============= */
-:root {
-  --bg:       #F5F7FA;
-  --bg-alt:   #ECEEF5;
-  --bg-dk:    #0F1924;
-  --ink:      #0F1924;
-  --ink-mid:  #4A5568;
-  --ink-sub:  #6B7A96;
-  --brand:    #1B3D6E;
-  --accent:   #2B7A78;
-  --amber:    #B87500;
-  --danger:   #B03A2E;
-  --acc-pale: rgba(43,122,120,0.09);
-  --amb-pale: rgba(184,117,0,0.1);
-  --dan-pale: rgba(176,58,46,0.09);
-  --rule:     #D6DBE8;
-  --white:    #FFFFFF;
-  --serif:    'IBM Plex Serif',Georgia,serif;
-  --sans:     'IBM Plex Sans',system-ui,sans-serif;
-  --mono:     'IBM Plex Mono',monospace;
-}
-
-/* ============= RESET ============= */
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{font-family:var(--sans);background:var(--bg);color:var(--ink);line-height:1.65;-webkit-font-smoothing:antialiased}
-a{color:inherit;text-decoration:none}
-img{display:block;max-width:100%}
-
-/* ============= SKIP ============= */
-.skip{position:absolute;top:-100%;left:0;background:var(--accent);color:var(--white);padding:0.5rem 1rem;font-size:0.9rem;z-index:999}
-.skip:focus{top:0}
-
-/* ============= NAV ============= */
-.pnav{position:fixed;top:0;left:0;right:0;z-index:300;height:58px;display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:0 2.5rem;background:rgba(15,25,36,0.96);backdrop-filter:blur(14px);border-bottom:1px solid rgba(255,255,255,0.08)}
-.pnav-back{font-family:var(--mono);font-size:0.68rem;letter-spacing:0.06em;color:rgba(255,255,255,0.5);transition:color 0.18s;flex-shrink:0}
-.pnav-back:hover,.pnav-back:focus{color:var(--accent);outline:none}
-.pnav-links{display:flex;gap:1.5rem;list-style:none}
-.pnav-links a{font-family:var(--mono);font-size:0.58rem;letter-spacing:0.16em;text-transform:uppercase;color:rgba(255,255,255,0.4);transition:color 0.18s}
-.pnav-links a:hover,.pnav-links a:focus{color:var(--accent);outline:none}
-.pnav-right{display:flex;align-items:center;gap:1rem}
-.pnav-join{font-family:var(--mono);font-size:0.74rem;color:var(--white);border:1px solid rgba(255,255,255,0.25);padding:0.42rem 1.1rem;transition:all 0.18s;flex-shrink:0}
-.pnav-join:hover,.pnav-join:focus{border-color:var(--accent);color:var(--accent);outline:none}
-
-/* hamburger */
-.ham-btn{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:0.4rem}
-.ham-btn span{display:block;width:22px;height:1.5px;background:rgba(255,255,255,0.7);transition:all 0.2s}
-.ham-btn[aria-expanded=true] span:nth-child(1){transform:translateY(6.5px) rotate(45deg)}
-.ham-btn[aria-expanded=true] span:nth-child(2){opacity:0}
-.ham-btn[aria-expanded=true] span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg)}
-
-/* mobile menu */
-.mobile-menu{display:none;position:fixed;top:58px;left:0;right:0;background:rgba(15,25,36,0.98);z-index:200;padding:1.25rem 2.5rem;flex-direction:column;border-bottom:1px solid rgba(255,255,255,0.08)}
-.mobile-menu.open{display:flex}
-.mobile-menu a{font-family:var(--mono);font-size:0.8rem;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.65);padding:0.75rem 0;border-bottom:1px solid rgba(255,255,255,0.07);transition:color 0.18s}
-.mobile-menu a:last-child{border-bottom:none}
-.mobile-menu a:hover,.mobile-menu a:focus{color:var(--accent);outline:none}
-
-/* ============= SHARED ============= */
-.sec{padding:5.5rem 0;scroll-margin-top:58px}
-.alt{background:var(--bg-alt)}
-.dk{background:var(--bg-dk);color:var(--white)}
-.wrap{max-width:1100px;margin:0 auto;padding:0 2.5rem}
-.lbl{font-family:var(--mono);font-size:0.66rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--ink-sub);margin-bottom:0.55rem}
-.lbl::before{content:'[ '}.lbl::after{content:' ]'}
-.lbl-lt{color:rgba(255,255,255,0.5)}
-.sh{font-family:var(--serif);font-size:clamp(1.8rem,3.4vw,2.8rem);font-weight:400;line-height:1.1;color:var(--ink);margin-bottom:1.25rem}
-.sh em{font-style:italic;color:var(--brand)}
-.sh-lt{color:var(--white)}.sh-lt em{color:var(--accent)}
-.lead{font-size:0.95rem;color:var(--ink-mid);max-width:640px;line-height:1.78;margin-bottom:2rem}
-.ja{display:block;font-size:0.82em;color:var(--ink-sub);font-weight:300;margin-top:0.25rem}
-.ja-lt{color:rgba(255,255,255,0.38)}
-.sec-n{font-family:var(--mono);font-size:0.64rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent);margin-bottom:0.4rem}
-
-/* ============= HERO ============= */
-#overview{
-  position:relative;min-height:100svh;display:flex;align-items:center;
-  background-color:var(--bg);
-  background-image:radial-gradient(circle,rgba(27,61,110,0.052) 1px,transparent 1px);
-  background-size:28px 28px;
-  padding-top:58px;
-}
-#overview::before{content:'';position:absolute;left:0;top:0;bottom:0;width:2px;background:var(--accent)}
-#overview::after{content:'';position:absolute;bottom:0;left:0;right:0;height:80px;background:linear-gradient(transparent,var(--bg));pointer-events:none}
-.hero-inner{display:grid;grid-template-columns:1fr auto;gap:4rem;align-items:center;z-index:2;width:100%;max-width:1100px;margin:0 auto;padding:4rem 2.5rem}
-.hero-tag{font-family:var(--mono);font-size:0.66rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--accent);margin-bottom:1.75rem;display:flex;align-items:center;gap:0.9rem}
-.hero-tag::before{content:'';width:24px;height:1px;background:var(--accent)}
-.hero-h1{font-family:var(--serif);font-size:clamp(3rem,6.5vw,5.2rem);font-weight:400;line-height:1.05;color:var(--ink);margin-bottom:0.5rem;letter-spacing:-0.01em}
-.hero-h1 em{font-style:italic;color:var(--brand)}
-.hero-sub{font-size:1.05rem;color:var(--ink-mid);margin-bottom:0.3rem;line-height:1.5;font-style:italic}
-.hero-sub-ja{font-size:0.82rem;color:var(--ink-sub);margin-bottom:2rem}
-.hero-desc{font-size:0.93rem;color:var(--ink-mid);max-width:500px;line-height:1.78;margin-bottom:0.4rem}
-.hero-desc-ja{font-size:0.78rem;color:var(--ink-sub);max-width:500px;line-height:1.65;margin-bottom:2.5rem}
-.btn-primary{display:inline-flex;align-items:center;gap:0.4rem;padding:0.72rem 1.6rem;background:var(--brand);color:var(--white);font-size:0.84rem;font-weight:500;letter-spacing:0.02em;transition:background 0.18s}
-.btn-primary:hover,.btn-primary:focus{background:var(--accent);outline:none}
-
-/* hero beacon symbol */
-.hero-symbol{flex-shrink:0;opacity:0.9}
-.hero-symbol svg{display:block}
-
-/* ============= WHY BEACON ============= */
-.why-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start}
-.beacon-def{border-left:2px solid var(--accent);padding:1.25rem 1.5rem;background:var(--acc-pale);margin-bottom:2rem}
-.beacon-def-title{font-family:var(--mono);font-size:0.66rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent);margin-bottom:0.75rem}
-.beacon-def p{font-size:0.93rem;color:var(--ink-mid);line-height:1.72}
-.why-prose p{font-size:0.93rem;color:var(--ink-mid);line-height:1.78;margin-bottom:1rem}
-.why-prose p:last-child{margin-bottom:0}
-.not-list{list-style:none;display:flex;flex-direction:column;margin-top:0.5rem}
-.not-item{display:flex;gap:0.75rem;align-items:flex-start;padding:0.6rem 0;border-top:1px solid var(--rule);font-size:0.88rem;color:var(--ink-mid)}
-.not-item:last-of-type{border-bottom:1px solid var(--rule)}
-.not-dash{font-family:var(--mono);font-size:0.7rem;color:var(--ink-sub);flex-shrink:0;padding-top:0.1rem}
-.beacon-change{margin-top:1.75rem;padding:1rem 1.25rem;border:1px solid var(--rule);background:var(--white)}
-.beacon-change-label{font-family:var(--mono);font-size:0.64rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink-sub);margin-bottom:0.5rem}
-.beacon-change p{font-size:0.86rem;color:var(--ink-mid);line-height:1.68}
-
-/* ============= THE CYCLE ============= */
-.cycle-img-card{background:var(--white);border:1px solid var(--rule);box-shadow:0 2px 16px rgba(27,61,110,0.06);padding:2rem;cursor:pointer;transition:box-shadow 0.2s;margin-bottom:2rem;max-width:1060px}
-.cycle-img-card:hover{box-shadow:0 4px 28px rgba(27,61,110,0.1)}
-.cycle-img-card img{width:100%;height:auto;display:block}
-.cycle-img-hint{font-family:var(--mono);font-size:0.64rem;color:var(--ink-sub);text-align:center;margin-top:0.75rem;letter-spacing:0.06em}
-
-.cycle-banner{background:var(--bg-alt);border-left:3px solid var(--brand);padding:0.9rem 1.25rem;margin-bottom:2.5rem}
-.cycle-banner-en{font-size:0.88rem;color:var(--ink-mid);line-height:1.65;font-style:italic}
-.cycle-banner-ja{font-size:0.78rem;color:var(--ink-sub);margin-top:0.2rem}
-
-.steps-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
-.step-card{background:var(--white);border:1px solid var(--rule);padding:1.75rem;position:relative}
-.step-card::before{content:'';position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--accent)}
-.step-num{font-family:var(--mono);font-size:0.64rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent);margin-bottom:0.65rem}
-.step-en{font-family:var(--serif);font-size:1.05rem;font-weight:400;color:var(--ink);line-height:1.2;margin-bottom:0.2rem}
-.step-ja{font-family:var(--sans);font-size:0.75rem;color:var(--ink-sub);font-weight:300;margin-bottom:0.85rem;display:block}
-.step-desc{font-size:0.84rem;color:var(--ink-mid);line-height:1.65}
-
-/* ============= PRE-EXECUTION GATE ============= */
-.gate-statement{max-width:680px;margin-bottom:3rem}
-.gate-quote{font-family:var(--serif);font-size:clamp(1.1rem,2.2vw,1.55rem);font-weight:400;line-height:1.35;color:var(--white);margin-bottom:0.6rem}
-.gate-quote-ja{font-size:0.82rem;color:rgba(255,255,255,0.45);line-height:1.65}
-.gate-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem}
-.gate-card{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.1);padding:1.75rem;position:relative}
-.gate-card::before{content:'';position:absolute;left:0;top:0;bottom:0;width:3px}
-.gc-proceed::before{background:var(--accent)}
-.gc-hold::before{background:var(--amber)}
-.gc-stop::before{background:var(--danger)}
-.gate-icon{width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1rem;margin-bottom:1rem;flex-shrink:0}
-.gi-proceed{background:rgba(43,122,120,0.2);color:var(--accent)}
-.gi-hold{background:rgba(184,117,0,0.2);color:var(--amber)}
-.gi-stop{background:rgba(176,58,46,0.2);color:var(--danger)}
-.gate-card-status{font-family:var(--mono);font-size:0.7rem;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:0.5rem}
-.gcs-proceed{color:var(--accent)}
-.gcs-hold{color:var(--amber)}
-.gcs-stop{color:var(--danger)}
-.gate-card-action{font-family:var(--serif);font-size:1rem;font-weight:400;color:var(--white);line-height:1.3;margin-bottom:0.4rem}
-.gate-card-ja{font-size:0.78rem;color:rgba(255,255,255,0.38);margin-bottom:0.75rem}
-.gate-card-desc{font-size:0.83rem;color:rgba(255,255,255,0.55);line-height:1.62}
-
-/* ============= PDCA ============= */
-.tbl-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch}
-.pdca-tbl{width:100%;border-collapse:collapse;margin:2rem 0}
-.pdca-tbl th{font-family:var(--mono);font-size:0.64rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink-sub);text-align:left;padding:0.7rem 1rem 0.7rem 0;border-bottom:2px solid var(--rule);font-weight:400;vertical-align:top}
-.pdca-tbl td{padding:1rem 1rem 1rem 0;border-bottom:1px solid var(--rule);font-size:0.88rem;color:var(--ink-mid);line-height:1.65;vertical-align:top}
-.pdca-tbl td:first-child{font-family:var(--serif);font-size:0.94rem;color:var(--ink);font-style:italic;width:200px;font-weight:400}
-.pdca-tbl tr:last-child td{border-bottom:none}
-.pdca-col-bc td:first-child{color:var(--brand)}
-.pdca-conclusion{border-left:2px solid var(--rule);padding:0.9rem 1.25rem;margin-top:1.5rem;font-size:0.9rem;color:var(--ink-mid);line-height:1.72}
-.pdca-conclusion strong{color:var(--ink)}
-
-/* ============= FOUNDATIONS ============= */
-.found-top{background:var(--brand);color:var(--white);padding:1.75rem 2rem;margin-bottom:1.25rem;position:relative}
-.found-top::before{content:'← Operational model';position:absolute;right:1.5rem;top:50%;transform:translateY(-50%);font-family:var(--mono);font-size:0.62rem;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.45)}
-.found-top-role{font-family:var(--mono);font-size:0.62rem;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.55);margin-bottom:0.4rem}
-.found-top-name{font-family:var(--serif);font-size:1.3rem;font-weight:400;color:var(--white);margin-bottom:0.5rem}
-.found-top-desc{font-size:0.84rem;color:rgba(255,255,255,0.65);line-height:1.65;max-width:680px}
-.found-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem}
-.found-card{background:var(--white);border:1px solid var(--rule);padding:1.5rem;border-top:3px solid var(--rule)}
-.found-card-role{font-family:var(--mono);font-size:0.62rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink-sub);margin-bottom:0.5rem}
-.found-card-name{font-family:var(--serif);font-size:1rem;font-weight:400;color:var(--ink);margin-bottom:0.2rem;line-height:1.25}
-.found-card-name-ja{font-size:0.74rem;color:var(--ink-sub);font-weight:300;display:block;margin-bottom:0.65rem}
-.found-card-desc{font-size:0.83rem;color:var(--ink-mid);line-height:1.62}
-.fc-ros{border-top-color:var(--brand)}
-.fc-haap{border-top-color:var(--accent)}
-.fc-adic{border-top-color:var(--amber)}
-
-/* ============= APPLICATIONS ============= */
-.app-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-bottom:3rem}
-.app-card{padding:1.75rem;border:1px solid var(--rule);background:var(--white)}
-.app-domain{font-family:var(--mono);font-size:0.66rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent);margin-bottom:0.7rem}
-.app-title{font-family:var(--serif);font-size:1.1rem;font-weight:400;color:var(--ink);margin-bottom:0.65rem;line-height:1.25}
-.app-desc{font-size:0.84rem;color:var(--ink-mid);line-height:1.65;margin-bottom:0.5rem}
-.app-ja{font-size:0.76rem;color:var(--ink-sub);font-weight:300;line-height:1.58}
-
-.boundary{border:1px solid var(--rule);padding:1.25rem 1.5rem;background:var(--bg)}
-.boundary-en{font-size:0.84rem;color:var(--ink-sub);line-height:1.7}
-.boundary-ja{font-size:0.78rem;color:var(--ink-sub);margin-top:0.4rem;line-height:1.65}
-
-/* ============= CTA ============= */
-.cta-sec{padding:5.5rem 0;background:var(--bg-dk)}
-.cta-inner{display:flex;align-items:center;justify-content:space-between;gap:3rem;flex-wrap:wrap}
-.cta-title{font-family:var(--serif);font-size:clamp(1.6rem,3vw,2.4rem);font-weight:400;color:var(--white);line-height:1.15;margin-bottom:0.4rem}
-.cta-title-ja{font-size:0.84rem;color:rgba(255,255,255,0.4)}
-.cta-btns{display:flex;gap:1rem;flex-wrap:wrap;flex-shrink:0}
-.btn-dk-fill{display:inline-flex;align-items:center;gap:0.4rem;padding:0.72rem 1.6rem;background:var(--accent);color:var(--white);font-size:0.84rem;font-weight:500;transition:background 0.18s}
-.btn-dk-fill:hover,.btn-dk-fill:focus{background:rgba(43,122,120,0.75);outline:none}
-.btn-dk-line{display:inline-flex;align-items:center;gap:0.4rem;padding:0.72rem 1.6rem;border:1px solid rgba(255,255,255,0.25);color:var(--white);font-size:0.84rem;font-weight:500;transition:all 0.18s}
-.btn-dk-line:hover,.btn-dk-line:focus{border-color:var(--accent);color:var(--accent);outline:none}
-
-/* ============= FOOTER ============= */
-footer{background:var(--bg-dk);border-top:1px solid rgba(255,255,255,0.07);padding:2.25rem 0}
-.ft{display:flex;justify-content:space-between;align-items:center;gap:2rem;flex-wrap:wrap}
-.ft-left{font-family:var(--mono);font-size:0.68rem;color:rgba(255,255,255,0.35)}
-.ft-right{display:flex;gap:1.5rem}
-.ft-right a{font-size:0.76rem;color:rgba(255,255,255,0.38);transition:color 0.18s}
-.ft-right a:hover,.ft-right a:focus{color:var(--accent);outline:none}
-
-/* ============= LIGHTBOX ============= */
-.lightbox{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.94);z-index:1000;align-items:center;justify-content:center}
-.lightbox.open{display:flex}
-.lb-img{max-width:92vw;max-height:92vh;object-fit:contain;cursor:default}
-.lb-close{position:absolute;top:1.25rem;right:1.75rem;background:none;border:none;color:rgba(255,255,255,0.7);font-size:2.2rem;cursor:pointer;line-height:1;padding:0.25rem;transition:color 0.18s}
-.lb-close:hover,.lb-close:focus{color:var(--white);outline:none}
-
-/* ============= RESPONSIVE ============= */
-@media(max-width:860px){
-  .pnav-links{display:none}
-  .ham-btn{display:flex}
-  .hero-inner{grid-template-columns:1fr;gap:2rem;padding:3rem 1.5rem}
-  .hero-symbol{display:none}
-  .why-grid{grid-template-columns:1fr;gap:2.5rem}
-  .steps-grid{grid-template-columns:1fr 1fr;gap:1.25rem}
-  .gate-cards{grid-template-columns:1fr;gap:1rem}
-  .found-grid{grid-template-columns:1fr;gap:1rem}
-  .found-top::before{display:none}
-  .app-grid{grid-template-columns:1fr;gap:1.25rem}
-  .cta-inner{flex-direction:column;align-items:flex-start}
-  .ft{flex-direction:column;align-items:flex-start;gap:1rem}
-}
-@media(max-width:500px){
-  .steps-grid{grid-template-columns:1fr}
-}
-@media(prefers-reduced-motion:reduce){
-  html{scroll-behavior:auto}
-  *{transition:none !important}
-}
-</style>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:ital,wght@0,400;0,500;1,400&family=IBM+Plex+Sans:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
 </head>
 <body>
-
 <a href="#main" class="skip">Skip to main content</a>
-
-<!-- NAV -->
-<nav aria-label="Page navigation">
-  <div class="pnav">
-    <a href="haac-lp.html" class="pnav-back">← Hiroshima AI Assurance Council</a>
-    <ul class="pnav-links" aria-label="Sections">
-      <li><a href="#overview">OVERVIEW</a></li>
-      <li><a href="#cycle">CYCLE</a></li>
-      <li><a href="#gate">GATE</a></li>
-      <li><a href="#pdca">PDCA</a></li>
-      <li><a href="#foundations">FOUNDATIONS</a></li>
-      <li><a href="#applications">APPLICATIONS</a></li>
-    </ul>
-    <div class="pnav-right">
-      <button class="ham-btn" aria-expanded="false" aria-controls="mobile-menu" aria-label="Open menu" onclick="toggleMenu(this)">
-        <span></span><span></span><span></span>
-      </button>
-      <a href="haac-lp.html#join" class="pnav-join">Join →</a>
-    </div>
+<nav class="site-nav" aria-label="Primary navigation">
+  <a class="site-brand" href="index.html">Hiroshima AI Assurance Council</a>
+  <div class="nav-links">
+    <a href="about.html">About</a>
+    <a href="protocol.html">Protocol</a>
+    <a class="active" href="beacon-cycle.html">Beacon Cycle</a>
+    <a href="index.html#projects">Projects</a>
+    <a class="nav-join" href="contact.html">Join</a>
   </div>
 </nav>
-
-<!-- MOBILE MENU -->
-<div class="mobile-menu" id="mobile-menu" role="dialog" aria-label="Site navigation">
-  <a href="#overview" onclick="closeMenu()">Overview</a>
-  <a href="#cycle" onclick="closeMenu()">Cycle</a>
-  <a href="#gate" onclick="closeMenu()">Gate</a>
-  <a href="#pdca" onclick="closeMenu()">PDCA</a>
-  <a href="#foundations" onclick="closeMenu()">Foundations</a>
-  <a href="#applications" onclick="closeMenu()">Applications</a>
-  <a href="haac-lp.html#join">Join the Council →</a>
-</div>
-
 <main id="main">
-
-<!-- 01 HERO -->
-<section id="overview" aria-label="Beacon Cycle overview">
-  <div class="hero-inner">
-    <div>
-      <div class="hero-tag">Operational Model · Draft v0.1</div>
-      <h1 class="hero-h1">Beacon<br><em>Cycle</em></h1>
-      <p class="hero-sub">From guiding principles to responsible action and verifiable review.</p>
-      <p class="hero-sub-ja" lang="ja">守るべき原則を、責任ある実行と検証可能な見直しへ。</p>
-      <p class="hero-desc">Organizations cannot control every outcome. They can define which conditions must be satisfied before action, what evidence is required, who is responsible, and how decisions remain independently reviewable.</p>
-      <p class="hero-desc-ja" lang="ja">組織は、すべての結果を完全には制御できません。しかし、実行前に満たすべき条件、必要な証拠、責任主体、後から検証する方法を設計することはできます。</p>
-      <a href="#cycle" class="btn-primary">Explore the Cycle ↓</a>
-    </div>
-    <!-- Geometric beacon symbol -->
-    <div class="hero-symbol" aria-hidden="true">
-      <svg width="100" height="140" viewBox="0 0 100 140" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <!-- Light rays -->
-        <line x1="50" y1="28" x2="10" y2="4" stroke="#2B7A78" stroke-width="1.5" stroke-linecap="round" opacity="0.65"/>
-        <line x1="50" y1="28" x2="50" y2="2" stroke="#2B7A78" stroke-width="1.5" stroke-linecap="round" opacity="0.65"/>
-        <line x1="50" y1="28" x2="90" y2="4" stroke="#2B7A78" stroke-width="1.5" stroke-linecap="round" opacity="0.65"/>
-        <!-- Lantern -->
-        <rect x="38" y="26" width="24" height="14" rx="2" fill="#1B3D6E"/>
-        <!-- Tower -->
-        <path d="M43 40 L35 120 H65 L57 40Z" fill="#1B3D6E"/>
-        <!-- Bands -->
-        <rect x="35" y="60" width="30" height="3.5" fill="#2B7A78" opacity="0.35"/>
-        <rect x="35" y="82" width="30" height="3.5" fill="#2B7A78" opacity="0.35"/>
-        <rect x="35" y="104" width="30" height="3.5" fill="#2B7A78" opacity="0.35"/>
-        <!-- Base -->
-        <rect x="28" y="118" width="44" height="6" rx="1.5" fill="#1B3D6E" opacity="0.5"/>
-        <!-- Ground -->
-        <line x1="10" y1="132" x2="90" y2="132" stroke="#D6DBE8" stroke-width="1.5"/>
-      </svg>
-    </div>
-  </div>
-</section>
-
-<!-- 02 WHY BEACON -->
-<section id="why" class="sec alt">
-  <div class="wrap">
-    <div class="sec-n">02 · What Is Beacon</div>
-    <div class="lbl">A stable point of reference</div>
-    <h2 class="sh">変化の中で、判断基準を<em>失わないために。</em></h2>
-    <div class="why-grid">
+  <section class="hero">
+    <div class="hero-inner">
       <div>
-        <div class="beacon-def">
-          <div class="beacon-def-title">Definition</div>
-          <p>Beacon is the guiding purpose, principles, and boundaries an organization uses when determining whether an important decision or action is acceptable.<span class="ja" lang="ja">Beaconとは、重要な判断や行動を認めてよいかを決める際に基準となる、守るべき目的・原則・越えてはならない境界です。</span></p>
-        </div>
-        <p class="why-prose" style="font-size:0.93rem;color:var(--ink-mid);line-height:1.78;">A Beacon is not a vision statement or motivational slogan. It is the stable reference point an organization can return to when assessing whether a specific action is permissible — regardless of how conditions change around it.</p>
+        <div class="kicker">Operational Model / Draft v0.1</div>
+        <h1>Beacon Cycle:<br><em>responsibility before action.</em></h1>
+        <p class="hero-lead">Beacon Cycle translates stable guiding principles into responsibility design, pre-execution assurance, authorized action, verifiable records, independent verification, and evidence-based redesign.</p>
+        <span class="ja" lang="ja">実行前に条件を確認し、実行後に証拠と責任を検証できる形で残すための運用モデルです。</span>
       </div>
+      <div class="diagram-card">
+        <img src="beacon-cycle-en.png" alt="Beacon Cycle diagram showing Beacon at the center and six surrounding steps.">
+      </div>
+    </div>
+  </section>
+
+  <section class="section alt">
+    <div class="wrap">
+      <div class="label">Cycle</div>
+      <h2>Six steps around<br><em>a stable Beacon.</em></h2>
+      <div class="diagram-card" style="margin-bottom:2rem">
+        <img src="beacon-cycle-en.png" alt="Beacon Cycle diagram: Responsibility Design, Pre-Execution Assurance, Authorized Action, Verifiable Record, Independent Verification, and Review and Redesign.">
+      </div>
+      <div class="grid-3">
+        <div class="card brand"><div class="card-meta">Step 01</div><div class="card-title">Responsibility Design</div><p>Translate the Beacon into conditions, evidence requirements, responsibility boundaries, approval rules, and exception handling.</p></div>
+        <div class="card accent"><div class="card-meta">Step 02</div><div class="card-title">Pre-Execution Assurance</div><p>Before state changes, check required evidence, authority, policy version, and expected scope of effect.</p></div>
+        <div class="card amber"><div class="card-meta">Step 03</div><div class="card-title">Authorized Action</div><p>Execute only operations bound to a satisfied assurance result. If assurance is not satisfied, the state-changing operation does not proceed.</p></div>
+        <div class="card"><div class="card-meta">Step 04</div><div class="card-title">Verifiable Record</div><p>Bind decision, conditions, evidence, approvals, unresolved assumptions, pre-state, and result.</p></div>
+        <div class="card"><div class="card-meta">Step 05</div><div class="card-title">Independent Verification</div><p>Confirm from outside the executor whether design, assurance, execution, and records stayed consistent.</p></div>
+        <div class="card"><div class="card-meta">Step 06</div><div class="card-title">Review & Redesign</div><p>Use verification results to revise conditions, boundaries, evidence requirements, approvals, and verification methods.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section dark">
+    <div class="wrap grid-2">
       <div>
-        <ul class="not-list" role="list">
-          <li class="not-item"><span class="not-dash">—</span><span>Not a KPI or performance target</span></li>
-          <li class="not-item"><span class="not-dash">—</span><span>Not a short-term achievement goal</span></li>
-          <li class="not-item"><span class="not-dash">—</span><span>Not a request for personal belief or loyalty</span></li>
-          <li class="not-item"><span class="not-dash">—</span><span>Not changed through ordinary operational improvement</span></li>
-        </ul>
-        <div class="beacon-change">
-          <div class="beacon-change-label">On changing Beacon itself</div>
-          <p>A Beacon may require revision when it is found to be incorrect, when legal or societal responsibilities shift, or when it produces unintended consequences. Changing Beacon requires a separate fundamental review — outside the normal cycle — not routine redesign.<span class="ja" lang="ja">Beacon自体の変更は、通常のサイクル外の根本審査によります。</span></p>
-        </div>
+        <div class="label">Pre-Execution Gate</div>
+        <h2>Design alone<br><em>does not authorize action.</em></h2>
+        <p class="lead">The required assurance conditions must be satisfied at the time of execution. This is where the model differs from a purely after-the-fact review cycle.</p>
+      </div>
+      <div class="grid-3">
+        <div class="dark-card"><p><strong>Proceed:</strong> all required evidence, authority, and approvals are confirmed.</p></div>
+        <div class="dark-card"><p><strong>Hold:</strong> evidence is missing, ambiguous, stale, or outside the acceptable window.</p></div>
+        <div class="dark-card"><p><strong>Stop:</strong> required conditions are not met; the state-changing operation does not proceed.</p></div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- 03 THE CYCLE -->
-<section id="cycle" class="sec">
-  <div class="wrap">
-    <div class="sec-n">03 · The Model</div>
-    <div class="lbl">The Cycle</div>
-    <h2 class="sh" style="max-width:640px;">Six steps connecting principles<br>to <em>verifiable action.</em></h2>
-    <p class="lead">Beacon Cycle is an operational model that translates stable guiding principles into responsibility design, pre-execution assurance, authorized action, verifiable records, independent verification, and evidence-based redesign.<span class="ja" lang="ja">Beacon Cycleは、守るべき原則を、責任設計、実行前保証、実行、証拠記録、独立検証、見直しへつなぐ運用モデルです。</span></p>
-
-    <!-- Diagram with lightbox -->
-    <div class="cycle-img-card" onclick="openLightbox('beacon-cycle-en.png','Beacon Cycle diagram showing six steps: Responsibility Design, Pre-Execution Assurance, Authorized Action, Verifiable Record, Independent Verification, and Review & Redesign, organized around a central Beacon.')" role="button" tabindex="0" aria-label="View Beacon Cycle diagram — click to enlarge" onkeydown="if(event.key==='Enter'||event.key===' ')openLightbox('beacon-cycle-en.png','Beacon Cycle diagram')">
-      <img src="beacon-cycle-en.png" alt="Beacon Cycle diagram: six steps arranged in a cycle around the central Beacon — Responsibility Design, Pre-Execution Assurance, Authorized Action, Verifiable Record, Independent Verification, Review & Redesign. A note indicates that accountability-relevant information is recorded and versioned throughout all steps, and that Beacon itself is changed only through a separate fundamental review.">
-      <div class="cycle-img-hint">Click or tap to enlarge</div>
-    </div>
-
-    <!-- Cross-cutting principle -->
-    <div class="cycle-banner">
-      <div class="cycle-banner-en">Record and version accountability-relevant information throughout the cycle — not only after execution.</div>
-      <div class="cycle-banner-ja" lang="ja">全工程を通じて責任情報を記録・版管理する。実行後だけではありません。</div>
-    </div>
-
-    <!-- 6 steps -->
-    <div class="steps-grid">
-      <div class="step-card">
-        <div class="step-num">Step 01</div>
-        <div class="step-en">Responsibility Design</div>
-        <span class="step-ja" lang="ja">責任設計</span>
-        <p class="step-desc">Translate the Beacon into operating conditions, evidence requirements, responsibility boundaries, approval conditions, and exception handling.</p>
-      </div>
-      <div class="step-card">
-        <div class="step-num">Step 02</div>
-        <div class="step-en">Pre-Execution Assurance</div>
-        <span class="step-ja" lang="ja">実行前保証</span>
-        <p class="step-desc">Before an operation changes real-world state, check required conditions, evidence, authority, approvals, policy version, pre-operation state, and expected scope of effect.</p>
-      </div>
-      <div class="step-card">
-        <div class="step-num">Step 03</div>
-        <div class="step-en">Authorized Action</div>
-        <span class="step-ja" lang="ja">実行</span>
-        <p class="step-desc">Execute only the operation bound to a satisfied assurance result. If assurance conditions are not met, do not proceed.</p>
-      </div>
-      <div class="step-card">
-        <div class="step-num">Step 04</div>
-        <div class="step-en">Verifiable Record</div>
-        <span class="step-ja" lang="ja">証拠記録</span>
-        <p class="step-desc">Bind the decision, conditions, evidence, approvals, unverified conditions, pre-operation state, and execution result so they can be reviewed or recalculated later.</p>
-      </div>
-      <div class="step-card">
-        <div class="step-num">Step 05</div>
-        <div class="step-en">Independent Verification</div>
-        <span class="step-ja" lang="ja">独立検証</span>
-        <p class="step-desc">Confirm, from a standpoint independent of the executor, whether responsibility design, pre-execution assurance, execution, and records remained consistent.</p>
-      </div>
-      <div class="step-card">
-        <div class="step-num">Step 06</div>
-        <div class="step-en">Review &amp; Redesign</div>
-        <span class="step-ja" lang="ja">見直し</span>
-        <p class="step-desc">Use verification results to update conditions, responsibility boundaries, evidence requirements, approval processes, and verification methods.</p>
+  <section class="section">
+    <div class="wrap">
+      <div class="label">PDCA Relationship</div>
+      <h2>Not a replacement<br><em>for PDCA.</em></h2>
+      <p class="lead">PDCA asks how an organization improves its work. Beacon Cycle asks whether an important action was permitted under defined conditions and whether that decision remains independently verifiable.</p>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Aspect</th><th>PDCA</th><th>Beacon Cycle</th></tr></thead>
+          <tbody>
+            <tr><td>Main concern</td><td>Performance and process improvement.</td><td>Justifiable, verifiable decisions and actions.</td></tr>
+            <tr><td>Sequence</td><td>Plan, Do, Check, Act.</td><td>Design, assure, authorize, record, verify, redesign.</td></tr>
+            <tr><td>Blocking mechanism</td><td>Usually improves after the fact.</td><td>Includes a pre-execution gate that can prevent action.</td></tr>
+          </tbody>
+        </table>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- 04 PRE-EXECUTION GATE -->
-<section id="gate" class="sec dk">
-  <div class="wrap">
-    <div class="sec-n" style="color:rgba(255,255,255,0.45)">04 · Step 02 in Detail</div>
-    <div class="lbl lbl-lt">The Pre-Execution Gate</div>
-    <h2 class="sh sh-lt" style="margin-bottom:1rem;">設計しただけでは、<br><em>実行は認められない。</em></h2>
-    <div class="gate-statement">
-      <p class="gate-quote">Responsibility design does not authorize action by itself. The required assurance conditions must be satisfied at the time of execution.</p>
-      <p class="gate-quote-ja" lang="ja">責任設計が存在するだけでは、実行は認められません。実行時点で必要な保証条件が成立している必要があります。</p>
-    </div>
-    <div class="gate-cards">
-      <div class="gate-card gc-proceed">
-        <div class="gate-icon gi-proceed" aria-hidden="true">✓</div>
-        <div class="gate-card-status gcs-proceed">Conditions satisfied</div>
-        <div class="gate-card-action">Proceed to the authorized action.</div>
-        <p class="gate-card-ja" lang="ja">条件成立 — 実行へ進む。</p>
-        <p class="gate-card-desc">All required conditions, evidence, authority, and approvals are confirmed. The operation may proceed within its authorized scope.</p>
-      </div>
-      <div class="gate-card gc-hold">
-        <div class="gate-icon gi-hold" aria-hidden="true">!</div>
-        <div class="gate-card-status gcs-hold">Unverified or insufficient evidence</div>
-        <div class="gate-card-action">Hold the operation and request confirmation.</div>
-        <p class="gate-card-ja" lang="ja">未確認・証拠不足 — 保留し、確認を求める。</p>
-        <p class="gate-card-desc">Evidence is missing, ambiguous, or outside the acceptable window. The operation is held until confirmation is received.</p>
-      </div>
-      <div class="gate-card gc-stop">
-        <div class="gate-icon gi-stop" aria-hidden="true">✕</div>
-        <div class="gate-card-status gcs-stop">Conditions not satisfied</div>
-        <div class="gate-card-action">Do not execute the state-changing operation.</div>
-        <p class="gate-card-ja" lang="ja">条件不成立 — 状態を変える操作を実行しない。</p>
-        <p class="gate-card-desc">Required conditions are not met. The operation does not proceed. The result is recorded as a rejected assurance attempt.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- 05 PDCA COMPARISON -->
-<section id="pdca" class="sec alt">
-  <div class="wrap">
-    <div class="sec-n">05 · Context</div>
-    <div class="lbl">How it relates to PDCA</div>
-    <h2 class="sh">Not a replacement<br>for <em>PDCA.</em></h2>
-    <p class="lead">Beacon Cycle does not supersede Plan-Do-Check-Act or claim alignment with ISO standards. It addresses a different question. PDCAを置き換えるものではなく、補完関係にあります。</p>
-    <div class="tbl-wrap">
-      <table class="pdca-tbl" aria-label="Comparison of PDCA and Beacon Cycle">
-        <thead>
-          <tr>
-            <th scope="col">Aspect</th>
-            <th scope="col">PDCA</th>
-            <th scope="col">Beacon Cycle</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Main concern</td>
-            <td>Improving performance and processes</td>
-            <td class="pdca-col-bc">Whether important decisions and actions remain justifiable and verifiable</td>
-          </tr>
-          <tr>
-            <td>Sequence</td>
-            <td>Plan → Do → Check → Act</td>
-            <td class="pdca-col-bc">Responsibility Design → Pre-Execution Assurance → Authorized Action → Verifiable Record → Independent Verification → Review &amp; Redesign</td>
-          </tr>
-          <tr>
-            <td>Evaluation focus</td>
-            <td>Targets, gaps, and outcomes</td>
-            <td class="pdca-col-bc">Conditions, evidence, responsibility, unresolved assumptions, and reviewability</td>
-          </tr>
-          <tr>
-            <td>Blocking mechanism</td>
-            <td>Not a feature — PDCA improves after the fact</td>
-            <td class="pdca-col-bc">Pre-execution gate: operations that fail assurance do not proceed</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-    <div class="pdca-conclusion">
-      <strong>PDCA asks how an organization can improve its work.</strong> The Beacon Cycle additionally asks whether an important action was permitted under defined conditions and whether that decision remains independently verifiable.<span class="ja" lang="ja" style="display:block;margin-top:0.4rem;font-size:0.86em;">PDCAは業務をどのように改善するかを問います。Beacon Cycleはそれに加えて、重要な実行が定められた条件の下で認められたか、その判断を後から独立して確かめられるかを問います。</span>
-    </div>
-  </div>
-</section>
-
-<!-- 06 FOUNDATIONS -->
-<section id="foundations" class="sec">
-  <div class="wrap">
-    <div class="sec-n">06 · Architecture</div>
-    <div class="lbl">One operating model, three supporting layers</div>
-    <h2 class="sh" style="max-width:640px;margin-bottom:1rem;">一つの運用モデルを支える<br><em>三つの基盤。</em></h2>
-    <p class="lead" style="margin-bottom:2.5rem;">Beacon Cycle is the operational layer. Responsibility OS, HAAP, and ADIC each provide a distinct supporting function beneath it. They are not the same thing, and should not be used interchangeably.</p>
-
-    <!-- Beacon Cycle top card -->
-    <div class="found-top">
-      <div class="found-top-role">Operational model</div>
-      <div class="found-top-name">Beacon Cycle</div>
-      <div class="found-top-desc">Defines how an organization repeatedly designs responsibility conditions, assures execution before state changes, records decisions verifiably, verifies independently, and revises based on evidence.</div>
-    </div>
-
-    <!-- Three supporting layers -->
-    <div class="found-grid">
-      <div class="found-card fc-ros">
-        <div class="found-card-role">Conceptual &amp; formal foundation</div>
-        <div class="found-card-name">Responsibility OS<span class="found-card-name-ja" lang="ja">責任OS</span></div>
-        <p class="found-card-desc">Structures decisions, responsibility, evidence, unverified conditions, and state transitions together as a formal system. Provides the mathematical and conceptual basis for what the Beacon Cycle tracks.</p>
-      </div>
-      <div class="found-card fc-haap">
-        <div class="found-card-role">Interoperability layer</div>
-        <div class="found-card-name">Hiroshima AI Assurance Protocol<span class="found-card-name-ja" lang="ja">広島AIアシュアランス・プロトコル</span></div>
-        <p class="found-card-desc">Defines how requirements, accountability-relevant information, evidence, verification outcomes, adoption states, and authorized transitions can be handled across organizations and systems.</p>
-      </div>
-      <div class="found-card fc-adic">
-        <div class="found-card-role">Reference assurance implementation</div>
-        <div class="found-card-name">ADIC<span class="found-card-name-ja">Advanced Data Integrity by Ledger of Computation</span></div>
-        <p class="found-card-desc">Implements pre-execution checks, replayable evidence records, independent recalculation, integrity verification, and post-execution comparison. Reference implementation for the Protocol's verification mechanisms.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- 07 APPLICATIONS + BOUNDARY -->
-<section id="applications" class="sec alt">
-  <div class="wrap">
-    <div class="sec-n">07 · Applications</div>
-    <div class="lbl">Where it can apply</div>
-    <h2 class="sh" style="margin-bottom:1rem;">Any domain where <em>conditions matter</em><br>before action is taken.</h2>
-    <p class="lead">Beacon Cycle can apply wherever important decisions require verifiable conditions, responsible parties, and reviewable evidence. The following are illustrative — not exhaustive, and not presented as validated deployments.</p>
-
-    <div class="app-grid">
-      <div class="app-card">
-        <div class="app-domain">Logistics</div>
-        <div class="app-title">Pharmaceutical handoff</div>
-        <p class="app-desc">Before a pharmaceutical handoff, verify temperature evidence, custody records, authority, and acceptance conditions. If conditions are not satisfied, do not proceed with the handoff.</p>
-        <p class="app-ja" lang="ja">製薬物流の引き渡し前に、温度記録、保管証拠、権限、受取条件を確認できる領域で適用可能です。</p>
-      </div>
-      <div class="app-card">
-        <div class="app-domain">Cybersecurity</div>
-        <div class="app-title">Critical configuration changes</div>
-        <p class="app-desc">Before external data transmission, privilege escalation, or critical configuration changes, verify required evidence and approvals. Operations without sufficient assurance do not proceed.</p>
-        <p class="app-ja" lang="ja">外部データ送信、権限昇格、重要設定変更の前に、証拠と承認を確認できる領域で対象となり得ます。</p>
-      </div>
-      <div class="app-card">
-        <div class="app-domain">AI Agents</div>
-        <div class="app-title">Autonomous decision adoption</div>
-        <p class="app-desc">Before an autonomous agent selects a provider or changes business state, verify task requirements, accountability-relevant information, evidence, and authority. State changes without verified assurance do not proceed.</p>
-        <p class="app-ja" lang="ja">自律エージェントが業務状態を変える前に、要件、責任情報、証拠、権限を確認できる領域で適用できます。</p>
-      </div>
-    </div>
-
-    <!-- Boundary note -->
-    <div class="boundary">
-      <p class="boundary-en">The Beacon Cycle is not a certification scheme, a legal guarantee, an automated ethics score, or a promise that every outcome can be controlled. It is a structured operational model for making responsibility conditions, evidence, verification, and revision explicit.</p>
-      <p class="boundary-ja" lang="ja">Beacon Cycleは、認証制度、法的保証、倫理スコア、または全ての結果を制御できるという約束ではありません。責任条件、証拠、検証、見直しを明示的に扱うための運用モデルです。</p>
-    </div>
-  </div>
-</section>
-
-<!-- CTA -->
-<div class="cta-sec">
-  <div class="wrap">
-    <div class="cta-inner">
+  <section class="section alt">
+    <div class="wrap grid-2">
       <div>
-        <div class="cta-title">Build verifiable operations<br>around a clear Beacon.</div>
-        <div class="cta-title-ja" lang="ja">明確なBeaconを、検証可能な運用へ。</div>
+        <div class="label">Foundations</div>
+        <h2>One model,<br><em>three supporting layers.</em></h2>
       </div>
-      <div class="cta-btns">
-        <a href="haac-protocol.html" class="btn-dk-line">View the Hiroshima AI Assurance Protocol</a>
-        <a href="haac-lp.html#join" class="btn-dk-fill">Join the Council →</a>
+      <div class="row-list">
+        <div class="row"><span class="row-num">ROS</span><span class="row-name">Responsibility OS</span><p>Conceptual and formal foundation for binding decisions, responsibility, evidence, unverified conditions, and state transitions.</p></div>
+        <div class="row"><span class="row-num">HAAP</span><span class="row-name">Hiroshima AI Assurance Protocol</span><p>Interoperability layer for requirements, evidence, verification outcomes, adoption states, and authorized transitions.</p></div>
+        <div class="row"><span class="row-num">ADIC</span><span class="row-name">Reference implementation</span><p>Implements replayable records, independent recalculation, integrity verification, and post-execution comparison.</p></div>
       </div>
     </div>
-  </div>
-</div>
+  </section>
 
+  <section class="section dark">
+    <div class="wrap grid-2">
+      <div><div class="label">Apply</div><h2>Use it where<br><em>conditions matter before action.</em></h2></div>
+      <div><p class="lead">Illustrative domains include pharmaceutical logistics, critical configuration changes, and AI agent delegation. Beacon Cycle is not a certification scheme, legal guarantee, or automated ethics score.</p><div class="actions"><a class="btn primary" href="protocol.html">View Protocol</a><a class="btn secondary" href="contact.html">Join / Contact</a></div></div>
+    </div>
+  </section>
 </main>
-
 <footer>
-  <div class="wrap">
-    <div class="ft">
-      <div class="ft-left">Beacon Cycle · Operational Model · Draft v0.1 · © 2026 Hiroshima AI Assurance Council</div>
-      <div class="ft-right">
-        <a href="haac-lp.html">← Council Home</a>
-        <a href="haac-protocol.html">Protocol</a>
-        <a href="haac-lp.html#join">Join</a>
-      </div>
-    </div>
+  <div class="wrap footer-grid">
+    <div><div class="footer-brand">Beacon Cycle</div><div class="footer-sub">Operational model / Draft v0.1.</div></div>
+    <div class="footer-links"><a href="index.html">Home</a><a href="about.html">About</a><a href="protocol.html">Protocol</a><a href="contact.html">Join</a></div>
   </div>
 </footer>
-
-<!-- LIGHTBOX -->
-<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Beacon Cycle diagram enlarged" tabindex="-1" onclick="if(event.target===this)closeLightbox()">
-  <button class="lb-close" onclick="closeLightbox()" aria-label="Close enlarged diagram">×</button>
-  <img class="lb-img" id="lb-img" src="" alt="">
-</div>
-
-<script>
-/* Hamburger menu */
-function toggleMenu(btn){
-  var menu=document.getElementById('mobile-menu');
-  var expanded=btn.getAttribute('aria-expanded')==='true';
-  btn.setAttribute('aria-expanded',!expanded);
-  menu.classList.toggle('open');
-}
-function closeMenu(){
-  var menu=document.getElementById('mobile-menu');
-  var btn=document.querySelector('.ham-btn');
-  if(btn)btn.setAttribute('aria-expanded','false');
-  menu.classList.remove('open');
-}
-/* Close mobile menu on outside click */
-document.addEventListener('click',function(e){
-  var menu=document.getElementById('mobile-menu');
-  var btn=document.querySelector('.ham-btn');
-  if(menu&&menu.classList.contains('open')&&!menu.contains(e.target)&&btn&&!btn.contains(e.target)){
-    closeMenu();
-  }
-});
-
-/* Lightbox */
-function openLightbox(src,alt){
-  var lb=document.getElementById('lightbox');
-  var img=document.getElementById('lb-img');
-  img.src=src;
-  img.alt=alt;
-  lb.classList.add('open');
-  lb.focus();
-}
-function closeLightbox(){
-  document.getElementById('lightbox').classList.remove('open');
-}
-document.addEventListener('keydown',function(e){
-  if(e.key==='Escape')closeLightbox();
-});
-</script>
-
 </body>
 </html>
