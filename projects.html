@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Projects - Hiroshima AI Assurance Council</title>
+<meta name="description" content="Phase 1 project scope for the Logistics Profile PoC of the Hiroshima AI Assurance Protocol.">
+<meta property="og:title" content="Projects - Hiroshima AI Assurance Council">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:ital,wght@0,400;0,500;1,400&family=IBM+Plex+Sans:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+</head>
+<body>
+<a href="#main" class="skip">Skip to main content</a>
+<nav class="site-nav" aria-label="Primary navigation">
+  <a class="site-brand" href="index.html">Hiroshima AI Assurance Council</a>
+  <div class="nav-links">
+    <a href="about.html">About</a>
+    <a href="protocol.html">Protocol</a>
+    <a class="active" href="projects.html">Projects</a>
+    <a href="index.html#technical-evidence">Technical Basis</a>
+    <a class="nav-contact" href="contact.html">Contact</a>
+  </div>
+</nav>
+<main id="main">
+  <section class="hero hero-compact">
+    <div class="hero-inner hero-inner-single">
+      <div>
+        <div class="kicker">Projects / Phase 1 PoC</div>
+        <h1>Logistics Profile:<br><em>PoC-tested scope.</em></h1>
+        <p class="hero-lead">The first HAAP implementation project tested a Logistics Profile for pharmaceutical cold-chain handoff. The purpose was not temperature management itself, but verification of adoption conditions and transition authorization for a specified operational handoff.</p>
+        <span class="ja" lang="ja">温度管理そのものではなく、引き渡し判断の採用条件と状態遷移許可を機械的に確認するためのPoCです。</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="section alt">
+    <div class="wrap grid-2">
+      <div>
+        <div class="label">Project Profile</div>
+        <h2>One domain,<br><em>clearly bounded.</em></h2>
+      </div>
+      <div class="row-list">
+        <div class="row"><span class="row-num">01</span><span class="row-name">Project title</span><p>Logistics Profile Phase 1 PoC: pharmaceutical cold-chain handoff assurance.</p></div>
+        <div class="row"><span class="row-num">02</span><span class="row-name">Partners and roles</span><p>ON THE LINKS provided the Hiroshima logistics implementation context. GhostDrift Mathematical Institute, Inc. provided technical foundations and reference implementation work.</p></div>
+        <div class="row"><span class="row-num">03</span><span class="row-name">Operational problem</span><p>Determine whether a handoff-related decision can be adopted when required evidence, thresholds, and responsibility conditions are evaluated at the relevant time.</p></div>
+        <div class="row"><span class="row-num">04</span><span class="row-name">Target state transition</span><p>Whether a downstream logistics handoff may proceed, require review, or remain unauthorized based on upstream evidence and profile rules.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="label">PoC-Tested Functions</div>
+      <h2>Implemented and exercised<br><em>against Phase 1 scenarios.</em></h2>
+      <div class="scope-list">
+        <ul>
+          <li>Task Requirements Packet and ruleset binding at evaluation time.</li>
+          <li>Evidence field inspection and gap detection.</li>
+          <li>Independent temperature metric recalculation from supplied records.</li>
+          <li>Logistics-profile disposition generation: RELEASE, HOLD, QA_REVIEW, or REJECT.</li>
+          <li>Downstream transition-authorization control using last-good and first-fail anchors.</li>
+          <li>Digest-based replay verification using the same implementation and same inputs.</li>
+        </ul>
+        <ul>
+          <li>Sensor and logger authenticity were not tested.</li>
+          <li>Production integration with operational systems was not tested.</li>
+          <li>Cross-company API exchange was not tested.</li>
+          <li>Multi-implementation interoperability was not tested.</li>
+          <li>Regulatory approval, SLA, and legal compliance were outside scope.</li>
+          <li>Full HAAP wire format, JSON Schema, signing policy, and trust anchors remain under development.</li>
+        </ul>
+      </div>
+      <p class="note" style="margin-top:1.6rem">"PoC-tested" means implemented and exercised against documented Phase 1 test scenarios. It does not mean independent certification, production validation, regulatory approval, or multi-implementation interoperability.</p>
+    </div>
+  </section>
+
+  <section class="section dark">
+    <div class="wrap grid-2">
+      <div>
+        <div class="label">Evidence Examined</div>
+        <h2>What the PoC<br><em>looked at.</em></h2>
+      </div>
+      <div>
+        <p class="lead">The PoC examined profile-defined evidence fields such as seal, custody, logger, and temperature records. It recalculated metrics and compared them against profile thresholds. It did not establish the physical authenticity of the underlying sensor or logger sources.</p>
+        <div class="actions"><a class="btn primary" href="protocol.html#poc">Protocol PoC summary</a><a class="btn secondary" href="contact.html">Request discussion</a></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section alt">
+    <div class="wrap grid-2">
+      <div>
+        <div class="label">Next Phase</div>
+        <h2>From tested logic<br><em>to interoperable practice.</em></h2>
+      </div>
+      <div class="row-list">
+        <div class="row"><span class="row-num">01</span><span class="row-name">Wire specification</span><p>JSON Schema, required fields, signing policy, error handling, and trust anchor configuration.</p></div>
+        <div class="row"><span class="row-num">02</span><span class="row-name">Cross-organization exchange</span><p>Message exchange between independent organizations and multiple implementations.</p></div>
+        <div class="row"><span class="row-num">03</span><span class="row-name">Additional domains</span><p>Manufacturing, supply chain, public-sector operations, AI agent delegation, and cyber assurance profiles.</p></div>
+      </div>
+    </div>
+  </section>
+</main>
+<footer>
+  <div class="wrap footer-grid">
+    <div><div class="footer-brand">Projects</div><div class="footer-sub">Phase 1 PoC scope and next-phase targets.</div></div>
+    <div class="footer-links"><a href="index.html">Home</a><a href="about.html">About</a><a href="protocol.html">Protocol</a><a href="beacon-cycle.html">Beacon Cycle</a><a href="contact.html">Contact</a></div>
+  </div>
+</footer>
+</body>
+</html>

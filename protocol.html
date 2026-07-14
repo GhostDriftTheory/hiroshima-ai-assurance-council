@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Protocol - Hiroshima AI Assurance Council</title>
+<meta name="description" content="Technical overview of the Hiroshima AI Assurance Protocol, Draft v0.1.">
+<meta property="og:title" content="Hiroshima AI Assurance Protocol">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:ital,wght@0,400;0,500;1,400&family=IBM+Plex+Sans:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+</head>
+<body>
+<a href="#main" class="skip">Skip to main content</a>
+<nav class="site-nav" aria-label="Primary navigation">
+  <a class="site-brand" href="index.html">Hiroshima AI Assurance Council</a>
+  <div class="nav-links">
+    <a href="about.html">About</a>
+    <a class="active" href="protocol.html">Protocol</a>
+    <a href="projects.html">Projects</a>
+    <a href="index.html#technical-evidence">Technical Basis</a>
+    <a class="nav-contact" href="contact.html">Contact</a>
+  </div>
+</nav>
+<main id="main">
+  <section class="hero">
+    <div class="hero-inner">
+      <div>
+        <div class="kicker">HAAP / Non-Normative Overview / Discussion Draft v0.1</div>
+        <h1>Hiroshima AI Assurance Protocol<br><em>in one sentence.</em></h1>
+        <p class="hero-lead">HAAP lets organizations adopt an AI-assisted decision only after defined conditions are evaluated against profile-defined evidence. It then preserves the requirement, evidence, verification result, adoption state, and transition authorization as a replayable assurance record.</p>
+        <span class="ja" lang="ja">AI判断を採用する前に、事前に定めた条件を証拠に照らして検証し、要求・証拠・検証結果・採用状態・状態遷移許可を再検証可能な記録として残すための共通レイヤーです。</span>
+        <div class="hero-note">This page is a non-normative technical overview of HAAP Discussion Draft v0.1. Wire format, mandatory fields, signing policy, trust anchors, error handling, and interoperability requirements remain under development.</div>
+      </div>
+      <div class="signal-panel">
+        <div class="signal-row"><span class="sig-num">A</span><span class="sig-title">Business profile</span><span class="sig-state">Rules</span></div>
+        <div class="signal-row"><span class="sig-num">B</span><span class="sig-title">HAAP accountability layer</span><span class="sig-state">Evidence</span></div>
+        <div class="signal-row"><span class="sig-num">C</span><span class="sig-title">A2A / MCP</span><span class="sig-state">Agent & tool interaction</span></div>
+        <div class="signal-row"><span class="sig-num">D</span><span class="sig-title">HTTP / gRPC</span><span class="sig-state">Transport / RPC</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section alt">
+    <div class="wrap">
+      <div class="label">3-Line Summary</div>
+      <h2>The protocol defines<br><em>what must travel together.</em></h2>
+      <div class="grid-3">
+        <div class="card brand"><div class="card-meta">Task Requirement</div><div class="card-title">What must be true for this operation?</div><p>A Task Requirements Packet binds the target operation, applicable profile and ruleset versions, evidence requirements, thresholds, authority, evaluation time, validity window, and permitted tolerances.</p></div>
+        <div class="card accent"><div class="card-meta">Responsibility Information</div><div class="card-title">What evidence and responsibility information are available?</div><p>Accountability-Relevant Information Packets link claims, evidence references, responsible actors, authority, and unverified conditions for the relevant operation.</p></div>
+        <div class="card amber"><div class="card-meta">Verification and Authorization</div><div class="card-title">What state transition is permitted?</div><p>The verifier records a verification outcome, adoption state, and transition authorization for the specified operation.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="gap" class="section">
+    <div class="wrap grid-2">
+      <div>
+        <div class="label">Position</div>
+        <h2>A proposed layer for<br><em>verifiable adoption.</em></h2>
+        <p class="lead">Transport, agent, and tool protocols move messages and connect capabilities. HAAP addresses a different question: can this AI-assisted decision be adopted as an organizational decision with conditions evaluated against profile-defined evidence?</p>
+      </div>
+      <div class="row-list">
+        <div class="row"><span class="row-num">01</span><span class="row-name">Agent2Agent (A2A) / Model Context Protocol (MCP)</span><p>Useful for agent and tool interaction. They do not by themselves define adoption conditions or accountability records.</p></div>
+        <div class="row"><span class="row-num">02</span><span class="row-name">HTTP / gRPC</span><p>Useful for transport. They do not define evidence semantics, verification outcomes, or transition authorization.</p></div>
+        <div class="row"><span class="row-num">03</span><span class="row-name">Business profiles</span><p>Contain reusable domain rules, while Task Requirements Packets bind those rules to a specific operation, evaluation time, and evidence set.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="messages" class="section alt">
+    <div class="wrap">
+      <div class="label">Protocol Records and Messages</div>
+      <h2>Nine proposed semantic categories,<br><em>five functions tested in Phase 1.</em></h2>
+      <p class="lead">This discussion draft describes protocol semantics, not a normative wire specification. JSON Schema, required fields, signing algorithms, trust anchors, error handling, and interoperability requirements remain under development.</p>
+      <p class="note">"PoC-tested" means that the function was implemented and exercised against documented Phase 1 test scenarios. It does not mean independent certification, production validation, regulatory approval, or multi-implementation interoperability.</p>
+      <div class="table-wrap" role="region" aria-label="Protocol record categories table" tabindex="0">
+        <table>
+          <caption class="visually-hidden">Proposed HAAP protocol record and message categories</caption>
+          <thead><tr><th scope="col">Category</th><th scope="col">Status</th><th scope="col">Purpose</th></tr></thead>
+          <tbody>
+            <tr><td>Capability Declaration</td><td>Phase 2 target</td><td>Exchange supported profiles, evidence formats, protocol versions, and signing methods.</td></tr>
+            <tr><td>Task Requirements Packet</td><td>Implemented and tested in the Phase 1 PoC</td><td>Bind the target operation, applicable profile and ruleset versions, adoption conditions, evidence requirements, evaluation criteria, and validity window.</td></tr>
+            <tr><td>Accountability-Relevant Information Packet</td><td>Phase 2 target</td><td>Submit responsibility scope, execution capability, claims, and evidence references for the relevant actor or system.</td></tr>
+            <tr><td>Evidence Package</td><td>Implemented and tested in the Phase 1 PoC</td><td>Provide evidence fields for verification, under trust requirements defined by the applicable profile.</td></tr>
+            <tr><td>Verification Result</td><td>Implemented and tested in the Phase 1 PoC</td><td>Record recalculated values, missing evidence, satisfied conditions, and result digest.</td></tr>
+            <tr><td>Adoption State Record</td><td>Implemented and tested in the Phase 1 PoC</td><td>Assign a domain-independent adoption state from the verification result and applicable profile rules.</td></tr>
+            <tr><td>Transition Authorization</td><td>Implemented and tested in the Phase 1 PoC</td><td>Record whether the specified state transition is AUTHORIZED, REQUIRES_REVIEW, or NOT_AUTHORIZED.</td></tr>
+            <tr><td>Transition Receipt</td><td>Phase 2</td><td>Record the actual state change after execution.</td></tr>
+            <tr><td>Status Update</td><td>Phase 2</td><td>Record expiry, revocation, supersession, or evidence updates as append-only entries.</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section id="states" class="section dark">
+    <div class="wrap">
+      <div class="label">State Separation</div>
+      <h2>Do not collapse<br><em>verification, adoption, and authorization.</em></h2>
+      <div class="grid-3">
+        <div class="dark-card"><p><strong>Verification outcome:</strong> SATISFIED, UNSATISFIED, or INDETERMINATE.</p></div>
+        <div class="dark-card"><p><strong>Adoption state:</strong> ADOPTABLE, CONDITIONALLY_ADOPTABLE, NOT_ADOPTABLE, or PENDING_EVIDENCE.</p></div>
+        <div class="dark-card"><p><strong>Transition authorization:</strong> AUTHORIZED, REQUIRES_REVIEW, or NOT_AUTHORIZED.</p></div>
+      </div>
+      <p class="note" style="margin-top:1.6rem">Responsibility information is preserved inside the accountability-relevant information packet: who confirmed what, who retains responsibility, which conditions remain unverified, and which state transition the record concerns.</p>
+      <p class="note" style="margin-top:1rem">AUTHORIZED is a protocol-level state for a specified operation. It does not create legal, regulatory, contractual, safety, or organizational authority that did not otherwise exist.</p>
+    </div>
+  </section>
+
+  <section id="poc" class="section">
+    <div class="wrap grid-2">
+      <div>
+        <div class="label">Phase 1 PoC</div>
+        <h2>Logistics Profile:<br><em>PoC-tested scope.</em></h2>
+        <p class="lead">Phase 1 implemented and tested core verification and transition-authorization functions for pharmaceutical cold-chain logistics in Hiroshima. It is not yet a proof of the full protocol, production deployment, or regulatory compliance.</p>
+      </div>
+      <div class="scope-list">
+        <ul>
+          <li>Ruleset binding at evaluation time.</li>
+          <li>Evidence field inspection and gap detection.</li>
+          <li>Independent temperature metric recalculation.</li>
+          <li>Logistics-profile disposition generation: RELEASE, HOLD, QA_REVIEW, or REJECT.</li>
+        </ul>
+        <ul>
+          <li>Sensor authenticity not covered.</li>
+          <li>Production integration not covered.</li>
+          <li>Cross-company API exchange not covered.</li>
+          <li>Multi-implementation interoperability not covered.</li>
+        </ul>
+      </div>
+      <p class="note" style="margin-top:1.6rem">RELEASE, HOLD, QA_REVIEW, and REJECT are domain-specific dispositions used by the Logistics Profile. They are not replacements for HAAP's domain-independent verification outcomes, adoption states, or transition-authorization states.</p>
+    </div>
+  </section>
+
+  <section id="evidence" class="section alt">
+    <div class="wrap">
+      <div class="label">Technical Evidence</div>
+      <h2>Public technical materials<br><em>support independent inspection.</em></h2>
+      <p class="lead">The formal foundations are public. Phase 1 PoC scope is separated from future protocol claims so reviewers can see what has and has not been implemented and tested.</p>
+      <div class="evidence-links">
+        <div class="evidence-link"><a href="https://github.com/GhostDriftTheory/adic-ai-assurance-lean" target="_blank" rel="noopener noreferrer">ADIC AI Assurance / Lean</a><p>Formal assurance core and verification instructions.</p></div>
+        <div class="evidence-link"><a href="https://github.com/GhostDriftTheory/responsibility-os-kernel" target="_blank" rel="noopener noreferrer">Responsibility OS Kernel</a><p>Lean-verified preservation of audit and responsibility structures.</p></div>
+        <div class="evidence-link"><a href="projects.html">Phase 1 PoC Scope</a><p>Project scope, covered functions, not-covered functions, and next phase.</p></div>
+      </div>
+      <p class="note" style="margin-top:1.4rem">The linked Lean repositories formalize supporting mathematical structures. They do not by themselves prove the safety, compliance, or correctness of any real-world deployment.</p>
+    </div>
+  </section>
+
+  <section class="section dark">
+    <div class="wrap grid-2">
+      <div><div class="label">Next</div><h2>Draft v0.1 needs<br><em>review and field validation.</em></h2></div>
+      <div><p class="lead">Phase 2 targets include wire format, JSON Schema, signing and trust anchor policy, cross-company message exchange, and additional domain profiles.</p><div class="actions"><a class="btn primary" href="contact.html">Contribute to review</a><a class="btn secondary" href="beacon-cycle.html">View Beacon Cycle</a></div></div>
+    </div>
+  </section>
+</main>
+<footer>
+  <div class="wrap footer-grid">
+    <div><div class="footer-brand">Hiroshima AI Assurance Protocol</div><div class="footer-sub">Technical overview / Draft v0.1.</div></div>
+    <div class="footer-links"><a href="index.html">Home</a><a href="about.html">About</a><a href="projects.html">Projects</a><a href="beacon-cycle.html">Beacon Cycle</a><a href="contact.html">Contact</a></div>
+  </div>
+</footer>
+</body>
+</html>

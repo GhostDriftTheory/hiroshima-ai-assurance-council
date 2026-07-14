@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Beacon Cycle - Hiroshima AI Assurance Council</title>
+<meta name="description" content="Beacon Cycle is an operational model for responsibility design, pre-execution assurance, authorized action, verifiable records, independent verification, and redesign.">
+<meta property="og:title" content="Beacon Cycle - Hiroshima AI Assurance Council">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:ital,wght@0,400;0,500;1,400&family=IBM+Plex+Sans:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+</head>
+<body>
+<a href="#main" class="skip">Skip to main content</a>
+<nav class="site-nav" aria-label="Primary navigation">
+  <a class="site-brand" href="index.html">Hiroshima AI Assurance Council</a>
+  <div class="nav-links">
+    <a href="about.html">About</a>
+    <a href="protocol.html">Protocol</a>
+    <a href="projects.html">Projects</a>
+    <a href="index.html#technical-evidence">Technical Basis</a>
+    <a class="nav-contact" href="contact.html">Contact</a>
+  </div>
+</nav>
+<main id="main">
+  <section class="hero hero-compact">
+    <div class="hero-inner hero-inner-single">
+      <div>
+        <div class="kicker">Operational Model / Draft v0.1</div>
+        <h1>Beacon Cycle:<br><em>responsibility before action.</em></h1>
+        <p class="hero-lead">Beacon Cycle translates stable guiding principles into responsibility design, pre-execution assurance, authorized action, verifiable records, independent verification, and evidence-based redesign.</p>
+        <span class="ja" lang="ja">実行前に条件を確認し、実行後に証拠と責任を検証できる形で残すための運用モデルです。</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="section alt">
+    <div class="wrap">
+      <div class="label">Cycle</div>
+      <h2>Six steps around<br><em>a stable Beacon.</em></h2>
+      <figure class="diagram-card" style="margin-bottom:2rem">
+        <img src="beacon-cycle-en.svg" width="1448" height="1086" loading="lazy" decoding="async" alt="Beacon Cycle diagram showing Responsibility Design, Pre-Execution Assurance, Transition-Authorized Action, Verifiable Record, Independent Verification, and Review and Redesign around a stable Beacon.">
+        <figcaption class="note" style="margin-top:1rem">The Beacon remains stable during ordinary operational improvement. Changes to the Beacon itself require a separate foundational review.</figcaption>
+      </figure>
+      <div class="actions" style="margin-top:-1rem;margin-bottom:2rem">
+        <a class="btn secondary" href="beacon-cycle-en.svg" target="_blank" rel="noopener noreferrer">Open full-size diagram</a>
+      </div>
+      <div class="grid-3">
+        <div class="card brand"><div class="card-meta">Step 01</div><div class="card-title">Responsibility Design</div><p>Translate the Beacon into conditions, evidence requirements, responsibility boundaries, approval rules, and exception handling.</p></div>
+        <div class="card accent"><div class="card-meta">Step 02</div><div class="card-title">Pre-Execution Assurance</div><p>Before the specified state change, evaluate required evidence, authority, approvals, policy version, pre-operation state, and expected scope of effect.</p></div>
+        <div class="card amber"><div class="card-meta">Step 03</div><div class="card-title">Transition-Authorized Action</div><p>Execute only the specified operation when its transition authorization is AUTHORIZED. A review-required or unauthorized result does not establish execution authority.</p></div>
+        <div class="card"><div class="card-meta">Step 04</div><div class="card-title">Verifiable Record</div><p>Bind decision, conditions, evidence, approvals, unverified conditions, pre-state, and result.</p></div>
+        <div class="card"><div class="card-meta">Step 05</div><div class="card-title">Independent Verification</div><p>Confirm from outside the executor whether design, assurance, execution, and records stayed consistent.</p></div>
+        <div class="card"><div class="card-meta">Step 06</div><div class="card-title">Review & Redesign</div><p>Use verification results to revise conditions, boundaries, evidence requirements, approvals, and verification methods.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section dark">
+    <div class="wrap grid-2">
+      <div>
+        <div class="label">Transition Authorization</div>
+        <h2>Verification alone<br><em>does not authorize action.</em></h2>
+        <p class="lead">Evidence and policy conditions are evaluated at the relevant execution time. The result is then mapped to an explicit transition authorization for the specified state change.</p>
+      </div>
+      <div class="grid-3">
+        <div class="dark-card"><p><strong>AUTHORIZED:</strong> all required evidence, authority, approvals, and policy conditions are satisfied for the specified transition.</p></div>
+        <div class="dark-card"><p><strong>REQUIRES_REVIEW:</strong> evidence is missing, ambiguous, stale, or outside the acceptable window; no automatic execution authority is established.</p></div>
+        <div class="dark-card"><p><strong>NOT_AUTHORIZED:</strong> required conditions are not satisfied; the specified state transition remains unauthorized.</p></div>
+      </div>
+      <p class="note" style="margin-top:1.6rem">AUTHORIZED is a protocol-level state for a specified operation. It does not create legal, regulatory, contractual, safety, or organizational authority that did not otherwise exist.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="label">PDCA Relationship</div>
+      <h2>Not a replacement<br><em>for PDCA.</em></h2>
+      <p class="lead">PDCA asks how an organization improves its work. Beacon Cycle asks whether an important action was permitted under defined conditions and whether that decision remains independently verifiable.</p>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Aspect</th><th>PDCA</th><th>Beacon Cycle</th></tr></thead>
+          <tbody>
+            <tr><td>Main concern</td><td>Performance and process improvement.</td><td>Justifiable, verifiable decisions and actions.</td></tr>
+            <tr><td>Sequence</td><td>Plan, Do, Check, Act.</td><td>Design, assure, authorize, record, verify, redesign.</td></tr>
+            <tr><td>Before execution</td><td>Usually does not define a machine-checkable authorization condition.</td><td>Requires an explicit transition-authorization result before the specified state change.</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="note">PDCA implementations may include preventive controls and approval procedures. This comparison concerns the core purpose of the cycle: continuous process improvement versus explicit, machine-checkable transition authorization and replayable assurance records.</p>
+    </div>
+  </section>
+
+  <section class="section alt">
+    <div class="wrap grid-2">
+      <div>
+        <div class="label">Foundations</div>
+        <h2>One model,<br><em>three supporting layers.</em></h2>
+      </div>
+      <div class="row-list">
+        <div class="row"><span class="row-num">ROS</span><span class="row-name">Responsibility OS</span><p>Conceptual and formal foundation for binding decisions, responsibility, evidence, unverified conditions, and state transitions.</p></div>
+        <div class="row"><span class="row-num">HAAP</span><span class="row-name">Hiroshima AI Assurance Protocol</span><p>Interoperability layer for requirements, evidence, verification outcomes, adoption states, and authorized transitions.</p></div>
+        <div class="row"><span class="row-num">ADIC</span><span class="row-name">Advanced Data Integrity by Ledger of Computation</span><p>Provides reference implementations for replayable records, independent recalculation, integrity verification, and post-execution comparison.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section dark">
+    <div class="wrap grid-2">
+      <div><div class="label">Apply</div><h2>Use it where<br><em>conditions matter before action.</em></h2></div>
+      <div><p class="lead">Illustrative domains include pharmaceutical logistics, critical configuration changes, and AI agent delegation. Beacon Cycle is not a certification scheme, legal guarantee, or automated ethics score.</p><div class="actions"><a class="btn primary" href="protocol.html">View Protocol</a><a class="btn secondary" href="contact.html">Contact the Council</a></div></div>
+    </div>
+  </section>
+</main>
+<footer>
+  <div class="wrap footer-grid">
+    <div><div class="footer-brand">Beacon Cycle</div><div class="footer-sub">Operational model / Draft v0.1.</div></div>
+    <div class="footer-links"><a href="index.html">Home</a><a href="about.html">About</a><a href="protocol.html">Protocol</a><a href="projects.html">Projects</a><a href="contact.html">Contact</a></div>
+  </div>
+</footer>
+</body>
+</html>
