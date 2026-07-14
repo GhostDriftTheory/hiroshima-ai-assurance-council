@@ -3,492 +3,118 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Join the Council — Hiroshima AI Assurance Council</title>
-<meta name="description" content="Join the Hiroshima AI Assurance Council — an independent, industry-led initiative developing the Hiroshima AI Assurance Protocol for verifiable AI adoption.">
-<meta property="og:title" content="Join the Council — Hiroshima AI Assurance Council">
-<meta property="og:description" content="Open to companies, universities, public organizations, and engineers working on verifiable AI adoption.">
+<title>Join / Contact - Hiroshima AI Assurance Council</title>
+<meta name="description" content="Contact the Hiroshima AI Assurance Council for specification review, field validation, joint research, or technical contribution.">
+<meta property="og:title" content="Join / Contact - Hiroshima AI Assurance Council">
 <meta property="og:type" content="website">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:ital,wght@0,300;0,400;0,500;1,300;1,400&family=IBM+Plex+Sans:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
-<style>
-/* ============= TOKENS ============= */
-:root {
-  --bg:#F5F7FA; --bg-alt:#ECEEF5; --bg-dk:#0F1924;
-  --ink:#0F1924; --ink-mid:#4A5568; --ink-sub:#6B7A96;
-  --brand:#1B3D6E; --accent:#2B7A78; --acc-pale:rgba(43,122,120,0.09);
-  --rule:#D6DBE8; --white:#FFFFFF;
-  --serif:'IBM Plex Serif',Georgia,serif;
-  --sans:'IBM Plex Sans',system-ui,sans-serif;
-  --mono:'IBM Plex Mono',monospace;
-}
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{font-family:var(--sans);background:var(--bg);color:var(--ink);line-height:1.65;-webkit-font-smoothing:antialiased}
-a{color:inherit;text-decoration:none}
-
-/* SKIP */
-.skip{position:absolute;top:-100%;left:0;background:var(--accent);color:var(--white);padding:0.5rem 1rem;font-size:0.9rem;z-index:999}
-.skip:focus{top:0}
-
-/* NAV */
-.pnav{position:fixed;top:0;left:0;right:0;z-index:300;height:58px;display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:0 2.5rem;background:rgba(15,25,36,0.96);backdrop-filter:blur(14px);border-bottom:1px solid rgba(255,255,255,0.08)}
-.pnav-back{font-family:var(--mono);font-size:0.68rem;letter-spacing:0.06em;color:rgba(255,255,255,0.5);transition:color 0.18s;flex-shrink:0}
-.pnav-back:hover,.pnav-back:focus{color:var(--accent);outline:none}
-.pnav-links{display:flex;gap:1.5rem;list-style:none}
-.pnav-links a{font-family:var(--mono);font-size:0.58rem;letter-spacing:0.16em;text-transform:uppercase;color:rgba(255,255,255,0.4);transition:color 0.18s}
-.pnav-links a:hover,.pnav-links a:focus{color:var(--accent);outline:none}
-.pnav-right{display:flex;align-items:center;gap:1rem}
-.pnav-contact{font-family:var(--mono);font-size:0.74rem;color:var(--white);border:1px solid rgba(255,255,255,0.25);padding:0.42rem 1.1rem;transition:all 0.18s;flex-shrink:0}
-.pnav-contact:hover,.pnav-contact:focus{border-color:var(--accent);color:var(--accent);outline:none}
-.ham-btn{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:0.4rem}
-.ham-btn span{display:block;width:22px;height:1.5px;background:rgba(255,255,255,0.7);transition:all 0.2s}
-.ham-btn[aria-expanded=true] span:nth-child(1){transform:translateY(6.5px) rotate(45deg)}
-.ham-btn[aria-expanded=true] span:nth-child(2){opacity:0}
-.ham-btn[aria-expanded=true] span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg)}
-.mobile-menu{display:none;position:fixed;top:58px;left:0;right:0;background:rgba(15,25,36,0.98);z-index:200;padding:1.25rem 2.5rem;flex-direction:column;border-bottom:1px solid rgba(255,255,255,0.08)}
-.mobile-menu.open{display:flex}
-.mobile-menu a{font-family:var(--mono);font-size:0.8rem;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.65);padding:0.75rem 0;border-bottom:1px solid rgba(255,255,255,0.07);transition:color 0.18s}
-.mobile-menu a:last-child{border-bottom:none}
-.mobile-menu a:hover,.mobile-menu a:focus{color:var(--accent);outline:none}
-
-/* SHARED */
-.sec{padding:5.5rem 0;scroll-margin-top:58px}
-.alt{background:var(--bg-alt)}.dk{background:var(--bg-dk);color:var(--white)}
-.wrap{max-width:1100px;margin:0 auto;padding:0 2.5rem}
-.lbl{font-family:var(--mono);font-size:0.66rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--ink-sub);margin-bottom:0.55rem}
-.lbl::before{content:'[ '}.lbl::after{content:' ]'}
-.lbl-lt{color:rgba(255,255,255,0.5)}
-.sh{font-family:var(--serif);font-size:clamp(1.8rem,3.4vw,2.8rem);font-weight:400;line-height:1.1;color:var(--ink);margin-bottom:1.25rem}
-.sh em{font-style:italic;color:var(--brand)}
-.sh-lt{color:var(--white)}.sh-lt em{color:var(--accent)}
-.lead{font-size:0.95rem;color:var(--ink-mid);max-width:640px;line-height:1.78;margin-bottom:2rem}
-.sec-n{font-family:var(--mono);font-size:0.64rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent);margin-bottom:0.4rem}
-.ja{display:block;font-size:0.82em;font-weight:300;margin-top:0.22rem}
-.ja-ink{color:var(--ink-sub)}.ja-lt{color:rgba(255,255,255,0.38)}
-.row-rule{display:flex;gap:0.85rem;padding:0.72rem 0;border-top:1px solid var(--rule);font-size:0.88rem;color:var(--ink-mid);align-items:flex-start}
-.row-rule:last-of-type{border-bottom:1px solid var(--rule)}
-.r-sym{font-family:var(--mono);font-size:0.68rem;flex-shrink:0;padding-top:0.12rem}
-.r-acc{color:var(--accent)}.r-sub{color:var(--ink-sub)}
-
-/* HERO */
-#hero{position:relative;min-height:100svh;display:flex;align-items:center;background-color:var(--bg);background-image:radial-gradient(circle,rgba(27,61,110,0.052) 1px,transparent 1px);background-size:28px 28px;padding-top:58px}
-#hero::before{content:'';position:absolute;left:0;top:0;bottom:0;width:2px;background:var(--accent)}
-#hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:80px;background:linear-gradient(transparent,var(--bg));pointer-events:none}
-.hero-inner{z-index:2;width:100%;max-width:1100px;margin:0 auto;padding:4rem 2.5rem;display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center}
-.hero-tag{font-family:var(--mono);font-size:0.66rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--accent);margin-bottom:1.75rem;display:flex;align-items:center;gap:0.9rem}
-.hero-tag::before{content:'';width:24px;height:1px;background:var(--accent)}
-.hero-h1{font-family:var(--serif);font-size:clamp(2.8rem,5.5vw,4.4rem);font-weight:400;line-height:1.06;color:var(--ink);margin-bottom:0.5rem}
-.hero-h1 em{font-style:italic;color:var(--brand)}
-.hero-sub{font-size:0.95rem;color:var(--ink-mid);line-height:1.72;max-width:480px;margin-bottom:0.4rem}
-.hero-sub-ja{font-size:0.78rem;color:var(--ink-sub);max-width:480px;line-height:1.65;margin-bottom:2.5rem}
-.btn-fill{display:inline-flex;align-items:center;gap:0.4rem;padding:0.72rem 1.6rem;background:var(--brand);color:var(--white);font-size:0.84rem;font-weight:500;letter-spacing:0.02em;transition:background 0.18s}
-.btn-fill:hover,.btn-fill:focus{background:var(--accent);outline:none}
-.btn-line{display:inline-flex;align-items:center;gap:0.4rem;padding:0.72rem 1.6rem;border:1px solid var(--brand);color:var(--brand);font-size:0.84rem;font-weight:500;transition:all 0.18s}
-.btn-line:hover,.btn-line:focus{background:var(--brand);color:var(--white);outline:none}
-
-/* hero phase note */
-.hero-phase-note{background:var(--bg-alt);border-left:2px solid var(--accent);padding:1.1rem 1.4rem}
-.hpn-label{font-family:var(--mono);font-size:0.62rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent);margin-bottom:0.6rem}
-.hpn-body{font-size:0.86rem;color:var(--ink-mid);line-height:1.68}
-.hpn-body + .hpn-body{margin-top:0.65rem}
-
-/* WHO */
-.who-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start}
-.who-intro{font-size:0.93rem;color:var(--ink-mid);line-height:1.78;margin-bottom:1.75rem}
-.cat-list{display:flex;flex-direction:column}
-.cat-row{display:flex;gap:1rem;align-items:flex-start;padding:0.85rem 0;border-top:1px solid var(--rule)}
-.cat-row:last-child{border-bottom:1px solid var(--rule)}
-.cat-icon{font-family:var(--mono);font-size:0.68rem;color:var(--accent);flex-shrink:0;padding-top:0.12rem;min-width:1.2rem}
-.cat-text{font-size:0.9rem;color:var(--ink-mid);line-height:1.6}
-.cat-text strong{color:var(--ink);font-weight:500}
-.domain-chips{display:flex;flex-wrap:wrap;gap:0.5rem;margin-top:1rem}
-.domain-chip{font-family:var(--mono);font-size:0.7rem;padding:0.35rem 0.75rem;border:1px solid var(--rule);color:var(--ink-mid);background:var(--white)}
-
-/* INVOLVES */
-.involves-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start}
-.inv-steps{display:flex;flex-direction:column;gap:0}
-.inv-step{display:flex;gap:1.25rem;padding:1.25rem 0;border-top:1px solid var(--rule);align-items:flex-start}
-.inv-step:last-child{border-bottom:1px solid var(--rule)}
-.inv-n{font-family:var(--mono);font-size:0.62rem;color:var(--accent);flex-shrink:0;padding-top:0.15rem;min-width:1.5rem}
-.inv-title{font-family:var(--serif);font-size:1rem;font-weight:400;color:var(--ink);line-height:1.25;margin-bottom:0.4rem}
-.inv-desc{font-size:0.85rem;color:var(--ink-mid);line-height:1.65}
-.inv-note{background:var(--bg);border:1px solid var(--rule);padding:1.25rem 1.5rem}
-.inv-note-lbl{font-family:var(--mono);font-size:0.62rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink-sub);margin-bottom:0.6rem}
-.inv-note p{font-size:0.86rem;color:var(--ink-mid);line-height:1.68;margin-bottom:0.6rem}
-.inv-note p:last-child{margin-bottom:0}
-
-/* SCOPE */
-.scope-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start}
-.scope-col-lbl{font-family:var(--mono);font-size:0.64rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--ink-sub);margin-bottom:0.9rem}
-
-/* STRUCTURE */
-.struct-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start}
-.struct-card{padding:1.75rem;border:1px solid var(--rule);background:var(--white);border-top:3px solid var(--brand)}
-.sc-role{font-family:var(--mono);font-size:0.62rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink-sub);margin-bottom:0.5rem}
-.sc-name{font-family:var(--serif);font-size:1.15rem;font-weight:400;color:var(--ink);margin-bottom:0.2rem}
-.sc-name-ja{font-size:0.76rem;color:var(--ink-sub);font-weight:300;display:block;margin-bottom:0.75rem}
-.sc-desc{font-size:0.85rem;color:var(--ink-mid);line-height:1.65}
-.sc-open{border-top-color:var(--accent)}
-.struct-phase{margin-top:3rem;border-left:2px solid var(--rule);padding:1rem 1.25rem}
-.struct-phase-lbl{font-family:var(--mono);font-size:0.62rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink-sub);margin-bottom:0.5rem}
-.struct-phase p{font-size:0.86rem;color:var(--ink-mid);line-height:1.68}
-
-/* IP NOTE */
-.ip-box{background:var(--bg-alt);border-left:2px solid var(--rule);padding:1.25rem 1.5rem;margin-top:3rem}
-.ip-label{font-family:var(--mono);font-size:0.62rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--ink-sub);margin-bottom:0.6rem}
-.ip-body{font-size:0.85rem;color:var(--ink-mid);line-height:1.7}
-
-/* CONTACT CTA */
-.cta-sec{padding:5.5rem 0;background:var(--bg-dk)}
-.cta-grid{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start}
-.cta-left-title{font-family:var(--serif);font-size:clamp(1.6rem,3vw,2.4rem);font-weight:400;color:var(--white);line-height:1.15;margin-bottom:0.4rem}
-.cta-left-ja{font-size:0.84rem;color:rgba(255,255,255,0.4);margin-bottom:1.5rem}
-.cta-left-desc{font-size:0.88rem;color:rgba(255,255,255,0.55);line-height:1.72;margin-bottom:2rem;max-width:400px}
-.cta-btns{display:flex;flex-direction:column;gap:0.85rem}
-.btn-dk-fill{display:inline-flex;align-items:center;gap:0.4rem;padding:0.8rem 1.75rem;background:var(--accent);color:var(--white);font-size:0.86rem;font-weight:500;transition:background 0.18s}
-.btn-dk-fill:hover,.btn-dk-fill:focus{background:rgba(43,122,120,0.75);outline:none}
-.btn-dk-line{display:inline-flex;align-items:center;gap:0.4rem;padding:0.8rem 1.75rem;border:1px solid rgba(255,255,255,0.22);color:var(--white);font-size:0.86rem;transition:all 0.18s}
-.btn-dk-line:hover,.btn-dk-line:focus{border-color:var(--accent);color:var(--accent);outline:none}
-
-/* Contact detail card */
-.contact-card{padding:2rem;border:1px solid rgba(255,255,255,0.1);background:rgba(255,255,255,0.03)}
-.cc-title{font-family:var(--serif);font-size:1.25rem;font-weight:400;color:var(--white);margin-bottom:1.75rem}
-.cc-item{margin-bottom:1.4rem}
-.cc-label{font-family:var(--mono);font-size:0.6rem;letter-spacing:0.12em;text-transform:uppercase;color:rgba(255,255,255,0.35);margin-bottom:0.3rem}
-.cc-val{font-size:0.9rem;color:rgba(255,255,255,0.65);line-height:1.55}
-.cc-val a{color:var(--accent);transition:opacity 0.18s}
-.cc-val a:hover,.cc-val a:focus{opacity:0.8;outline:none}
-.cc-sub{display:block;font-size:0.78em;color:rgba(255,255,255,0.35);margin-top:0.12rem}
-.cc-divider{border:none;border-top:1px solid rgba(255,255,255,0.08);margin:1.5rem 0}
-
-/* FOOTER */
-footer{background:var(--bg-dk);border-top:1px solid rgba(255,255,255,0.07);padding:2.25rem 0}
-.ft{display:flex;justify-content:space-between;align-items:center;gap:2rem;flex-wrap:wrap}
-.ft-left{font-family:var(--mono);font-size:0.68rem;color:rgba(255,255,255,0.35)}
-.ft-right{display:flex;gap:1.5rem;flex-wrap:wrap}
-.ft-right a{font-size:0.76rem;color:rgba(255,255,255,0.38);transition:color 0.18s}
-.ft-right a:hover,.ft-right a:focus{color:var(--accent);outline:none}
-
-/* RESPONSIVE */
-@media(max-width:860px){
-  .pnav-links{display:none}.ham-btn{display:flex}
-  .hero-inner{grid-template-columns:1fr;gap:2.5rem;padding:3rem 1.5rem}
-  .who-grid,.involves-grid,.scope-grid,.struct-grid,.cta-grid{grid-template-columns:1fr;gap:2.5rem}
-  .ft{flex-direction:column;align-items:flex-start;gap:1rem}
-}
-@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none !important}}
-</style>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:ital,wght@0,400;0,500;1,400&family=IBM+Plex+Sans:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
 </head>
 <body>
-
 <a href="#main" class="skip">Skip to main content</a>
-
-<nav aria-label="Page navigation">
-  <div class="pnav">
-    <a href="haac-lp.html" class="pnav-back">← Hiroshima AI Assurance Council</a>
-    <ul class="pnav-links" aria-label="Sections">
-      <li><a href="#who">WHO</a></li>
-      <li><a href="#involves">PARTICIPATION</a></li>
-      <li><a href="#scope">SCOPE</a></li>
-      <li><a href="#structure">STRUCTURE</a></li>
-      <li><a href="#contact">CONTACT</a></li>
-    </ul>
-    <div class="pnav-right">
-      <button class="ham-btn" aria-expanded="false" aria-controls="mobile-menu" aria-label="Open menu" onclick="toggleMenu(this)">
-        <span></span><span></span><span></span>
-      </button>
-      <a href="#contact" class="pnav-contact">Contact →</a>
-    </div>
+<nav class="site-nav" aria-label="Primary navigation">
+  <a class="site-brand" href="index.html">Hiroshima AI Assurance Council</a>
+  <div class="nav-links">
+    <a href="about.html">About</a>
+    <a href="protocol.html">Protocol</a>
+    <a href="beacon-cycle.html">Beacon Cycle</a>
+    <a href="index.html#projects">Projects</a>
+    <a class="nav-join active" href="contact.html">Join</a>
   </div>
 </nav>
-
-<div class="mobile-menu" id="mobile-menu" role="dialog" aria-label="Site navigation">
-  <a href="#who" onclick="closeMenu()">Who should join</a>
-  <a href="#involves" onclick="closeMenu()">What participation involves</a>
-  <a href="#scope" onclick="closeMenu()">Scope</a>
-  <a href="#structure" onclick="closeMenu()">Structure</a>
-  <a href="#contact" onclick="closeMenu()">Contact</a>
-  <a href="haac-lp.html">← Council Home</a>
-</div>
-
 <main id="main">
-
-<!-- HERO -->
-<section id="hero" aria-label="Join the Council">
-  <div class="hero-inner">
-    <div>
-      <div class="hero-tag">Hiroshima AI Assurance Council</div>
-      <h1 class="hero-h1">Join the<br><em>Council.</em></h1>
-      <p class="hero-sub">Open to organizations and individuals working toward verifiable AI adoption — in Japan and internationally.</p>
-      <p class="hero-sub-ja" lang="ja">AI判断の検証可能な採用に取り組む組織・個人への参加を歓迎します。国内外を問いません。</p>
-      <div style="display:flex;gap:1rem;flex-wrap:wrap">
-        <a href="#contact" class="btn-fill">Contact Us →</a>
-        <a href="#who" class="btn-line">Who should join</a>
+  <section class="hero">
+    <div class="hero-inner">
+      <div>
+        <div class="kicker">Join / Contact</div>
+        <h1>Tell us what you want<br><em>to validate.</em></h1>
+        <p class="hero-lead">Participation is open to organizations and individuals working on verifiable AI adoption. Start with one clear track: specification review, field validation, joint research, or technical contribution.</p>
+        <span class="ja" lang="ja">参加区分が未確定でも、まずは「何を一緒に検証したいか」から相談できます。</span>
+      </div>
+      <div class="signal-panel">
+        <div class="signal-row"><span class="sig-num">01</span><span class="sig-title">Choose inquiry track</span><span class="sig-state">Focus</span></div>
+        <div class="signal-row"><span class="sig-num">02</span><span class="sig-title">Share domain and use case</span><span class="sig-state">Context</span></div>
+        <div class="signal-row"><span class="sig-num">03</span><span class="sig-title">Coordinate with Council</span><span class="sig-state">Next step</span></div>
       </div>
     </div>
-    <div class="hero-phase-note">
-      <div class="hpn-label">Current stage · 現在のフェーズ</div>
-      <p class="hpn-body">The Council is in its early formation phase. The Hiroshima AI Assurance Protocol is under development at Draft v0.1. The Logistics Profile Phase 1 PoC has been completed with 株式会社オンザリンクス.</p>
-      <p class="hpn-body">This is an active stage to join — participants can shape the specification, contribute domain expertise, and participate in field validation across new sectors.</p>
-      <p class="hpn-body" style="font-size:0.8rem;color:var(--ink-sub);margin-top:0.5rem;" lang="ja">協議会は初期設立フェーズにあります。仕様策定、フィールド検証、領域専門知識の提供に関心をお持ちの方のご参加を歓迎します。</p>
-    </div>
-  </div>
-</section>
+  </section>
 
-<!-- WHO SHOULD JOIN -->
-<section id="who" class="sec alt">
-  <div class="wrap">
-    <div class="sec-n">01</div>
-    <div class="lbl">Who should join</div>
-    <h2 class="sh">Any domain where AI decisions<br><em>require verifiable conditions.</em></h2>
-    <div class="who-grid">
-      <div>
-        <p class="who-intro">The Council is not limited to logistics or any single sector. It is designed for any organization or individual engaged in AI adoption where conditions, evidence, responsibility, and reviewability matter.</p>
-        <div class="cat-list">
-          <div class="cat-row">
-            <span class="cat-icon r-acc">◎</span>
-            <div class="cat-text"><strong>Companies in high-accountability sectors</strong><br>Where AI decisions affect safety, regulatory compliance, or significant operational outcomes.</div>
-          </div>
-          <div class="cat-row">
-            <span class="cat-icon r-acc">◎</span>
-            <div class="cat-text"><strong>Technology developers and AI system providers</strong><br>Building systems where adoption-state management and evidence-based verification are required by clients or regulation.</div>
-          </div>
-          <div class="cat-row">
-            <span class="cat-icon r-acc">◎</span>
-            <div class="cat-text"><strong>Research institutions and universities</strong><br>Working on AI governance, formal verification, accountability, or responsible AI deployment.</div>
-          </div>
-          <div class="cat-row">
-            <span class="cat-icon r-acc">◎</span>
-            <div class="cat-text"><strong>Public-sector organizations</strong><br>Developing AI policy, procurement criteria, or operational AI assurance frameworks.</div>
-          </div>
-          <div class="cat-row">
-            <span class="cat-icon r-acc">◎</span>
-            <div class="cat-text"><strong>Individual engineers and researchers</strong><br>Interested in contributing to open specification development, formal methods, or field validation work.</div>
-          </div>
-        </div>
-      </div>
-      <div>
-        <div style="font-family:var(--mono);font-size:0.64rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink-sub);margin-bottom:0.85rem;">Relevant sectors</div>
-        <div class="domain-chips">
-          <span class="domain-chip" lang="ja">物流 / Logistics</span>
-          <span class="domain-chip" lang="ja">製薬 / Pharmaceuticals</span>
-          <span class="domain-chip">Manufacturing</span>
-          <span class="domain-chip">Public services</span>
-          <span class="domain-chip">Finance</span>
-          <span class="domain-chip">Critical infrastructure</span>
-          <span class="domain-chip">Cybersecurity</span>
-          <span class="domain-chip">AI agent systems</span>
-          <span class="domain-chip">Supply chain</span>
-          <span class="domain-chip">Quality assurance</span>
-          <span class="domain-chip">Healthcare</span>
-          <span class="domain-chip">Energy</span>
-        </div>
-        <div style="margin-top:2rem;font-size:0.82rem;color:var(--ink-sub);line-height:1.68;border-left:2px solid var(--rule);padding:0.65rem 1rem;">This list is illustrative. The Protocol is designed to generalize across domains where AI-assisted decisions carry accountability requirements — not limited to those listed here.</div>
+  <section class="section alt">
+    <div class="wrap">
+      <div class="label">Participation Tracks</div>
+      <h2>Make the first contact<br><em>specific and useful.</em></h2>
+      <div class="grid-3">
+        <div class="card brand"><div class="card-meta">Track 01</div><div class="card-title">Specification review</div><p>Review HAAP Draft v0.1, message semantics, state separation, terminology, or profile design.</p></div>
+        <div class="card accent"><div class="card-meta">Track 02</div><div class="card-title">Field validation</div><p>Discuss a domain where AI-assisted decisions require evidence-based adoption and chain-stop behavior.</p></div>
+        <div class="card amber"><div class="card-meta">Track 03</div><div class="card-title">Joint research</div><p>Explore research on formal verification, governance implementation, responsible AI operations, or assurance records.</p></div>
+        <div class="card"><div class="card-meta">Track 04</div><div class="card-title">Technical contribution</div><p>Contribute implementation feedback, tests, schema design, reference code, interoperability review, or documentation.</p></div>
+        <div class="card"><div class="card-meta">Track 05</div><div class="card-title">Council membership</div><p>Ask about future working groups, participation terms, governance, contribution policy, and member review process.</p></div>
+        <div class="card"><div class="card-meta">Track 06</div><div class="card-title">General inquiry</div><p>Use this only if your question does not fit the above. Specific use cases receive clearer next steps.</p></div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- WHAT PARTICIPATION INVOLVES -->
-<section id="involves" class="sec">
-  <div class="wrap">
-    <div class="sec-n">02</div>
-    <div class="lbl">What participation involves</div>
-    <h2 class="sh">Contributing to an open<br><em>implementation standard.</em></h2>
-    <div class="involves-grid">
+  <section class="section">
+    <div class="wrap grid-2">
       <div>
-        <div class="inv-steps">
-          <div class="inv-step">
-            <span class="inv-n">01</span>
-            <div>
-              <div class="inv-title">Specification development</div>
-              <p class="inv-desc">Contribute to the Hiroshima AI Assurance Protocol specification — message types, state models, evidence requirements, and domain profiles. The current focus is Draft v0.1.</p>
-            </div>
-          </div>
-          <div class="inv-step">
-            <span class="inv-n">02</span>
-            <div>
-              <div class="inv-title">Field validation</div>
-              <p class="inv-desc">Participate in implementation PoC projects in your domain. The Logistics Profile Phase 1 is complete; Phase 2 and new sector profiles are open for validation partners.</p>
-            </div>
-          </div>
-          <div class="inv-step">
-            <span class="inv-n">03</span>
-            <div>
-              <div class="inv-title">Vocabulary and glossary</div>
-              <p class="inv-desc">Help maintain the shared vocabulary based on the Responsibility OS glossary, and contribute domain-specific terminology for business profiles.</p>
-            </div>
-          </div>
-          <div class="inv-step">
-            <span class="inv-n">04</span>
-            <div>
-              <div class="inv-title">Global framework connection</div>
-              <p class="inv-desc">Connect Hiroshima-based and internationally based operations to global AI governance frameworks — including the Hiroshima AI Process, NIST AI RMF, and ISO/IEC 42001.</p>
-            </div>
-          </div>
-        </div>
+        <div class="label">What to Include</div>
+        <h2>Four items are enough<br><em>for an initial contact.</em></h2>
       </div>
-      <div>
-        <div class="inv-note">
-          <div class="inv-note-lbl">Participation does not require</div>
-          <p>Exclusive adoption of any specific technology. Organizations retain full choice over their technical stack. Responsibility OS, ADIC, and the reference PoC implementation are provided as open reference — not as mandatory components.</p>
-          <p>Membership fees or financial contribution at this stage. The Council is in early formation and participation terms are being defined collaboratively.</p>
-          <p>Representing or endorsing the Hiroshima AI Process or any government body. The Council is independent of and not affiliated with any government authority.</p>
-        </div>
-        <div style="margin-top:1.5rem;font-size:0.84rem;color:var(--ink-mid);line-height:1.7;">Participation form and scope are flexible at this stage. Organizations may contribute through specification review, field validation, domain expertise, or formal membership. Contact us to discuss what makes sense for your situation.</div>
+      <div class="row-list">
+        <div class="row"><span class="row-num">01</span><span class="row-name">Your organization or role</span><p>Company, university, public organization, engineer, researcher, or other role.</p></div>
+        <div class="row"><span class="row-num">02</span><span class="row-name">Inquiry track</span><p>Specification review, field validation, joint research, technical contribution, membership, or general inquiry.</p></div>
+        <div class="row"><span class="row-num">03</span><span class="row-name">Domain and decision type</span><p>For example: logistics handoff, manufacturing inspection, agent delegation, safety-critical approval, or public-sector operation.</p></div>
+        <div class="row"><span class="row-num">04</span><span class="row-name">Evidence problem</span><p>What must be verified before adoption, and what record must remain reviewable after?</p></div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- SCOPE & INDEPENDENCE -->
-<section id="scope" class="sec alt">
-  <div class="wrap">
-    <div class="sec-n">03</div>
-    <div class="lbl">Scope and independence</div>
-    <h2 class="sh">What the Council provides<br><em>and does not provide.</em></h2>
-    <div class="scope-grid">
+  <section class="section alt">
+    <div class="wrap grid-2">
       <div>
-        <div class="scope-col-lbl">What the Council provides</div>
-        <div class="row-rule"><span class="r-sym r-acc">◎</span><span>A practical protocol specification for verifiable AI adoption — Hiroshima AI Assurance Protocol, currently Draft v0.1.</span></div>
-        <div class="row-rule"><span class="r-sym r-acc">◎</span><span>Shared vocabulary based on the Responsibility OS glossary, maintained consistently across the specification and field implementations.</span></div>
-        <div class="row-rule"><span class="r-sym r-acc">◎</span><span>Field validation PoC projects with participating organizations, beginning with the Logistics Profile.</span></div>
-        <div class="row-rule"><span class="r-sym r-acc">◎</span><span>Connection to global AI governance frameworks as a reference point for specification design.</span></div>
-        <div class="row-rule"><span class="r-sym r-acc">◎</span><span>Open reference implementations through GhostDrift Mathematical Institute (Responsibility OS, ADIC, PoC repositories).</span></div>
+        <div class="label">Who Should Contact</div>
+        <h2>Any sector where<br><em>AI decisions carry responsibility.</em></h2>
+        <p class="lead">The Council is not limited to logistics. The first PoC is logistics because it provides a concrete implementation path, not because the protocol is sector-specific.</p>
       </div>
-      <div>
-        <div class="scope-col-lbl">What the Council does not provide</div>
-        <div class="row-rule"><span class="r-sym r-sub">—</span><span>Legal certification or compliance guarantees for AI systems or organizations.</span></div>
-        <div class="row-rule"><span class="r-sym r-sub">—</span><span>Government endorsement or representation of the Hiroshima AI Process.</span></div>
-        <div class="row-rule"><span class="r-sym r-sub">—</span><span>Certification marks or assumption of members' legal liability.</span></div>
-        <div class="row-rule"><span class="r-sym r-sub">—</span><span>Mandatory technology adoption — any specific platform, library, or vendor.</span></div>
-        <div class="row-rule"><span class="r-sym r-sub">—</span><span>Substitution for legal, regulatory, organizational governance, or risk management processes.</span></div>
-        <div class="row-rule"><span class="r-sym r-sub">—</span><span>A promise that every AI outcome can be controlled or that all accountability obligations are automatically satisfied.</span></div>
+      <div class="scope-list">
+        <ul>
+          <li>Companies in high-accountability operations.</li>
+          <li>AI system providers and technology developers.</li>
+          <li>Research institutions and universities.</li>
+        </ul>
+        <ul>
+          <li>Public-sector organizations and policy teams.</li>
+          <li>Individual engineers and formal methods researchers.</li>
+          <li>Organizations exploring AI agent governance.</li>
+        </ul>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- COUNCIL STRUCTURE -->
-<section id="structure" class="sec">
-  <div class="wrap">
-    <div class="sec-n">04</div>
-    <div class="lbl">Current structure</div>
-    <h2 class="sh">Industry-led,<br><em>technically grounded.</em></h2>
-    <div class="struct-grid">
-      <div style="display:flex;flex-direction:column;gap:1.25rem">
-        <div class="struct-card">
-          <div class="sc-role">Principal organizer · Joint patent applicant</div>
-          <div class="sc-name">株式会社オンザリンクス<span class="sc-name-ja">ONZALINX Inc.</span></div>
-          <p class="sc-desc">Hiroshima-based logistics DX company specializing in high-precision manufacturing supply chains. Co-developing the Logistics Profile as the first domain implementation of the Protocol. Joint patent applicant on the Logistics Decision Packet technology.</p>
-        </div>
-        <div class="struct-card sc-open">
-          <div class="sc-role">Founding technical partner</div>
-          <div class="sc-name">GhostDrift Mathematical Institute<span class="sc-name-ja" lang="ja">株式会社GhostDrift数理研究所</span></div>
-          <p class="sc-desc">Provides Responsibility OS, ADIC, and open verification tools as the formal and technical foundation of the Protocol. Maintains the reference implementation and Lean 4 formal proofs.</p>
-        </div>
-        <div class="struct-card sc-open">
-          <div class="sc-role">Open to all sectors</div>
-          <div class="sc-name">Additional members<span class="sc-name-ja" lang="ja">参加メンバー募集中</span></div>
-          <p class="sc-desc">Companies, research institutions, universities, public-sector organizations, and individual engineers in Japan and internationally. The Council is actively seeking domain validation partners, specification contributors, and implementation partners.</p>
-        </div>
-      </div>
+  <section id="contact" class="section dark">
+    <div class="wrap grid-2">
       <div>
-        <div class="struct-phase">
-          <div class="struct-phase-lbl">Governance · 設立フェーズ</div>
-          <p>The Council is in its formation phase. Formal governance structure — decision-making process, participation tiers, working groups, and voting rights — is being developed collaboratively with founding members.</p>
-        </div>
-
-        <div class="ip-box" style="margin-top:1.5rem">
-          <div class="ip-label">IP &amp; Specification policy</div>
-          <p class="ip-body">The Hiroshima AI Assurance Protocol specification is developed under the Council's open governance. Reference implementations (Responsibility OS, ADIC) are available as open repositories. The Logistics Decision Packet technology is subject to a joint patent application by 前木秀光 and 株式会社オンザリンクス.</p>
-          <p class="ip-body" style="margin-top:0.6rem">The relationship between the patent, the Protocol specification, and participant IP rights is currently being formalized. Prospective members with questions about IP, contribution licensing, or specification rights are encouraged to raise these directly in initial contact.</p>
-          <p class="ip-body" style="margin-top:0.6rem;font-size:0.8rem;color:var(--ink-sub)" lang="ja">特許と仕様書の関係、参加者のIP権については現在整理中です。詳細はお問い合わせください。</p>
-        </div>
-
-        <div style="margin-top:1.5rem;border-left:2px solid var(--rule);padding:0.75rem 1.1rem;font-size:0.84rem;color:var(--ink-sub);line-height:1.68">
-          Participation does not confer IP rights in the joint patent. The Council's specification is intended to remain openly referenceable independent of any single technology.
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- CONTACT CTA -->
-<section class="cta-sec" id="contact" aria-label="Contact">
-  <div class="wrap">
-    <div class="cta-grid">
-      <div>
-        <div class="lbl lbl-lt">Contact</div>
-        <div class="cta-left-title">Get in touch<br>to join or learn more.</div>
-        <div class="cta-left-ja" lang="ja">参加またはお問い合わせはこちら。</div>
-        <p class="cta-left-desc">Whether you are exploring participation, have questions about the specification, or want to discuss field validation in your domain — reach out. There is no formal application process at this stage.</p>
-        <div class="cta-btns">
-          <a href="https://www.ghostdriftresearch.com/contact" target="_blank" rel="noopener noreferrer" class="btn-dk-fill">Contact via GhostDrift →</a>
-          <a href="haac-protocol.html" class="btn-dk-line">View the Protocol</a>
-          <a href="beacon-cycle.html" class="btn-dk-line">View Beacon Cycle</a>
-        </div>
+        <div class="label">Council Contact</div>
+        <h2>One official entry point,<br><em>coordinated by the Council.</em></h2>
+        <p class="lead">Council contact is currently coordinated by ON THE LINKS and GhostDrift Mathematical Institute. Until a dedicated Council form or address is published, inquiries are routed through the temporary technical contact form below.</p>
+        <span class="ja" lang="ja">専用フォーム整備までの間、協議会への問い合わせは暫定窓口を通じて調整します。</span>
       </div>
       <div class="contact-card">
-        <div class="cc-title">Council details</div>
-        <div class="cc-item">
-          <div class="cc-label">Principal organizer</div>
-          <div class="cc-val"><span lang="ja">株式会社オンザリンクス</span><span class="cc-sub" lang="ja">広島市中区大手町 · Hiroshima-based logistics DX company</span></div>
-        </div>
-        <div class="cc-item">
-          <div class="cc-label">Technical partner &amp; contact</div>
-          <div class="cc-val">
-            GhostDrift Mathematical Institute<span class="cc-sub" lang="ja">株式会社GhostDrift数理研究所 · 東京都新宿区</span>
-          </div>
-        </div>
-        <div class="cc-item">
-          <div class="cc-label">Contact form</div>
-          <div class="cc-val"><a href="https://www.ghostdriftresearch.com/contact" target="_blank" rel="noopener noreferrer">ghostdriftresearch.com/contact →</a></div>
-        </div>
-        <hr class="cc-divider">
-        <div class="cc-item" style="margin-bottom:0">
-          <div class="cc-label">Independent from</div>
-          <div class="cc-val" style="font-size:0.82rem;color:rgba(255,255,255,0.42);line-height:1.6">The Hiroshima AI Process, G7, and all government bodies. Inspired by the international agenda; not a government-affiliated organization.</div>
-        </div>
+        <p><strong>Council representative:</strong><br>ON THE LINKS, Inc. / Hiroshima-based logistics DX company.</p>
+        <p><strong>Founding technical partner:</strong><br>GhostDrift Mathematical Institute.</p>
+        <p><strong>Temporary contact form:</strong><br><a href="https://www.ghostdriftresearch.com/contact" target="_blank" rel="noopener noreferrer">ghostdriftresearch.com/contact</a></p>
+        <p class="note">When using the temporary form, include "Hiroshima AI Assurance Council" and your inquiry track in the message subject or first line.</p>
       </div>
     </div>
-  </div>
-</section>
-
+  </section>
 </main>
-
 <footer>
-  <div class="wrap">
-    <div class="ft">
-      <div class="ft-left">Hiroshima AI Assurance Council · © 2026</div>
-      <div class="ft-right">
-        <a href="haac-lp.html">← Council Home</a>
-        <a href="haac-protocol.html">Protocol</a>
-        <a href="beacon-cycle.html">Beacon Cycle</a>
-      </div>
-    </div>
+  <div class="wrap footer-grid">
+    <div><div class="footer-brand">Join / Contact</div><div class="footer-sub">Specification review, field validation, joint research, and technical contribution.</div></div>
+    <div class="footer-links"><a href="index.html">Home</a><a href="about.html">About</a><a href="protocol.html">Protocol</a><a href="beacon-cycle.html">Beacon Cycle</a></div>
   </div>
 </footer>
-
-<script>
-function toggleMenu(btn){
-  var menu=document.getElementById('mobile-menu');
-  var expanded=btn.getAttribute('aria-expanded')==='true';
-  btn.setAttribute('aria-expanded',!expanded);
-  menu.classList.toggle('open');
-}
-function closeMenu(){
-  var menu=document.getElementById('mobile-menu');
-  var btn=document.querySelector('.ham-btn');
-  if(btn)btn.setAttribute('aria-expanded','false');
-  menu.classList.remove('open');
-}
-document.addEventListener('click',function(e){
-  var menu=document.getElementById('mobile-menu');
-  var btn=document.querySelector('.ham-btn');
-  if(menu&&menu.classList.contains('open')&&!menu.contains(e.target)&&btn&&!btn.contains(e.target)){closeMenu();}
-});
-</script>
-
 </body>
 </html>
