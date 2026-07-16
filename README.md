@@ -2,6 +2,9 @@
 
 Static public website package for the Hiroshima AI Assurance Council.
 
+This website is currently under development.
+The content, structure, and terminology are being refined and may change without notice.
+
 ## Pages
 
 - `index.html` - Home and technical evidence overview
