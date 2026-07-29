@@ -73,8 +73,9 @@
 
   <!--
     PROTOCOL RECORDS
-    When a new PoC validates a record category, update
-    the Validation column for that row. No other changes needed.
+    When a new PoC validates an existing record category, update
+    the Validation column for that row. Add a new row only when
+    the PoC introduces a new record category.
   -->
   <section id="messages" class="section alt">
     <div class="wrap">
@@ -87,7 +88,7 @@
           <caption class="visually-hidden">Proposed HAAP protocol record and message categories</caption>
           <thead><tr><th scope="col">Category</th><th scope="col">Validation</th><th scope="col">Purpose</th></tr></thead>
           <tbody>
-            <tr><td>Capability Declaration</td><td>Not yet validated</td><td>Exchange supported profiles, evidence formats, protocol versions, and signing methods.</td></tr>
+            <tr><td>Capability Declaration</td><td>Not yet validated</td><td>Exchange supported profiles, evidence formats, and signing methods.</td></tr>
             <tr><td>Task Requirements Packet</td><td>Hiroshima cold-chain logistics PoC</td><td>Bind the target operation, applicable profile and ruleset versions, adoption conditions, evidence requirements, evaluation criteria, and validity window.</td></tr>
             <tr><td>Accountability-Relevant Information Packet</td><td>Not yet validated</td><td>Submit responsibility scope, execution capability, claims, and evidence references for the relevant actor or system.</td></tr>
             <tr><td>Evidence Package</td><td>Hiroshima cold-chain logistics PoC</td><td>Provide evidence fields for verification, under trust requirements defined by the applicable profile.</td></tr>
