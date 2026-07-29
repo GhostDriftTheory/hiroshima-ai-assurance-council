@@ -33,7 +33,7 @@
         <h1>Hiroshima AI Assurance Protocol<br><em>in one sentence.</em></h1>
         <p class="hero-lead">HAAP is a common layer that enables organizations to formally adopt an AI-assisted decision only after predefined conditions have been verified against the required evidence, while preserving the requirements, evidence, verification results, adoption state, and state-transition authorization as a replayable assurance record.</p>
         <span class="ja" lang="ja">AI判断を採用する前に、事前に定めた条件を証拠に照らして検証し、要求・証拠・検証結果・採用状態・状態遷移許可を再検証可能な記録として残すための共通レイヤーです。</span>
-        <div class="hero-note">This page is a non-normative overview of HAAP. It does not define a normative wire specification or conformance requirements. Current draft status, validation scope, and open specification work are listed in the <a href="#development-status">Development Status</a> section.</div>
+        <div class="hero-note">This page provides a non-normative technical overview of HAAP. The protocol continues to evolve by incorporating requirements, verification methods, and assurance records validated through practical proof-of-concept projects.</div>
       </div>
       <div class="signal-panel">
         <div class="signal-row"><span class="sig-num">A</span><span class="sig-title">Business profile</span><span class="sig-state">Rules</span></div>
@@ -71,26 +71,31 @@
     </div>
   </section>
 
+  <!--
+    PROTOCOL RECORDS
+    When a new PoC validates a record category, update
+    the Validation column for that row. No other changes needed.
+  -->
   <section id="messages" class="section alt">
     <div class="wrap">
       <div class="label">Protocol Records and Messages</div>
       <h2>Proposed protocol records<br><em>and their distinct functions.</em></h2>
-      <p class="lead">Each record category serves a distinct function in the assurance lifecycle. The Phase 1 evidence column records which functions were exercised in the Phase 1 PoC; it is a historical record that does not change as future phases progress.</p>
-      <p class="note">"Exercised in the Phase 1 PoC" means that the function was implemented and tested against documented Phase 1 test scenarios. It does not mean independent certification, production validation, regulatory approval, or multi-implementation interoperability.</p>
+      <p class="lead">Each record category serves a distinct function in the assurance lifecycle. The validation column shows which functions have been exercised through completed proof-of-concept projects.</p>
+      <p class="note">"Validated" means that the function was implemented and exercised against documented PoC test scenarios. It does not mean independent certification, production validation, regulatory approval, or multi-implementation interoperability.</p>
       <div class="table-wrap" role="region" aria-label="Protocol record categories table" tabindex="0">
         <table>
           <caption class="visually-hidden">Proposed HAAP protocol record and message categories</caption>
-          <thead><tr><th scope="col">Category</th><th scope="col">Phase 1 evidence</th><th scope="col">Purpose</th></tr></thead>
+          <thead><tr><th scope="col">Category</th><th scope="col">Validation</th><th scope="col">Purpose</th></tr></thead>
           <tbody>
-            <tr><td>Capability Declaration</td><td>Not exercised in the Phase 1 PoC</td><td>Exchange supported profiles, evidence formats, protocol versions, and signing methods.</td></tr>
-            <tr><td>Task Requirements Packet</td><td>Exercised in the Phase 1 PoC</td><td>Bind the target operation, applicable profile and ruleset versions, adoption conditions, evidence requirements, evaluation criteria, and validity window.</td></tr>
-            <tr><td>Accountability-Relevant Information Packet</td><td>Not exercised in the Phase 1 PoC</td><td>Submit responsibility scope, execution capability, claims, and evidence references for the relevant actor or system.</td></tr>
-            <tr><td>Evidence Package</td><td>Exercised in the Phase 1 PoC</td><td>Provide evidence fields for verification, under trust requirements defined by the applicable profile.</td></tr>
-            <tr><td>Verification Result</td><td>Exercised in the Phase 1 PoC</td><td>Record recalculated values, missing evidence, satisfied conditions, and result digest.</td></tr>
-            <tr><td>Adoption State Record</td><td>Exercised in the Phase 1 PoC</td><td>Assign a domain-independent adoption state from the verification result and applicable profile rules.</td></tr>
-            <tr><td>Transition Authorization</td><td>Exercised in the Phase 1 PoC</td><td>Record whether the specified state transition is AUTHORIZED, REQUIRES_REVIEW, or NOT_AUTHORIZED.</td></tr>
-            <tr><td>Transition Receipt</td><td>Not exercised in the Phase 1 PoC</td><td>Record the actual state change after execution.</td></tr>
-            <tr><td>Status Update</td><td>Not exercised in the Phase 1 PoC</td><td>Record expiry, revocation, supersession, or evidence updates as append-only entries.</td></tr>
+            <tr><td>Capability Declaration</td><td>Not yet validated</td><td>Exchange supported profiles, evidence formats, protocol versions, and signing methods.</td></tr>
+            <tr><td>Task Requirements Packet</td><td>Hiroshima cold-chain logistics PoC</td><td>Bind the target operation, applicable profile and ruleset versions, adoption conditions, evidence requirements, evaluation criteria, and validity window.</td></tr>
+            <tr><td>Accountability-Relevant Information Packet</td><td>Not yet validated</td><td>Submit responsibility scope, execution capability, claims, and evidence references for the relevant actor or system.</td></tr>
+            <tr><td>Evidence Package</td><td>Hiroshima cold-chain logistics PoC</td><td>Provide evidence fields for verification, under trust requirements defined by the applicable profile.</td></tr>
+            <tr><td>Verification Result</td><td>Hiroshima cold-chain logistics PoC</td><td>Record recalculated values, missing evidence, satisfied conditions, and result digest.</td></tr>
+            <tr><td>Adoption State Record</td><td>Hiroshima cold-chain logistics PoC</td><td>Assign a domain-independent adoption state from the verification result and applicable profile rules.</td></tr>
+            <tr><td>Transition Authorization</td><td>Hiroshima cold-chain logistics PoC</td><td>Record whether the specified state transition is AUTHORIZED, REQUIRES_REVIEW, or NOT_AUTHORIZED.</td></tr>
+            <tr><td>Transition Receipt</td><td>Not yet validated</td><td>Record the actual state change after execution.</td></tr>
+            <tr><td>Status Update</td><td>Not yet validated</td><td>Record expiry, revocation, supersession, or evidence updates as append-only entries.</td></tr>
           </tbody>
         </table>
       </div>
@@ -114,9 +119,9 @@
   <section id="poc" class="section">
     <div class="wrap grid-2">
       <div>
-        <div class="label">Completed Phase 1 PoC</div>
+        <div class="label">Hiroshima Cold-Chain Logistics PoC</div>
         <h2>Logistics Profile:<br><em>PoC-tested scope.</em></h2>
-        <p class="lead">Phase 1 implemented and tested core verification and transition-authorization functions for pharmaceutical cold-chain logistics in Hiroshima. It is not yet a proof of the full protocol, production deployment, or regulatory compliance.</p>
+        <p class="lead">This PoC implemented and tested core verification and transition-authorization functions for pharmaceutical cold-chain logistics in Hiroshima. It is not a proof of the full protocol, production deployment, or regulatory compliance.</p>
       </div>
       <div class="scope-list">
         <ul>
@@ -144,31 +149,16 @@
       <div class="evidence-links">
         <div class="evidence-link"><a href="https://github.com/GhostDriftTheory/adic-ai-assurance-lean" target="_blank" rel="noopener noreferrer">ADIC AI Assurance / Lean</a><p>Formal assurance core and verification instructions.</p></div>
         <div class="evidence-link"><a href="https://github.com/GhostDriftTheory/responsibility-os-kernel" target="_blank" rel="noopener noreferrer">Responsibility OS Kernel</a><p>Lean-verified preservation of audit and responsibility structures.</p></div>
-        <div class="evidence-link"><a href="projects.html">Phase 1 PoC Scope</a><p>Project scope, covered functions, not-covered functions, and next phase.</p></div>
+        <div class="evidence-link"><a href="projects.html">PoC Projects</a><p>Completed and ongoing proof-of-concept projects.</p></div>
       </div>
       <p class="note" style="margin-top:1.4rem">The linked Lean repositories formalize supporting mathematical structures. They do not by themselves prove the safety, compliance, or correctness of any real-world deployment.</p>
     </div>
   </section>
 
-  <!--
-  DEVELOPMENT STATUS
-  When HAAP advances, update this section only.
-  All other content on this page is version-independent.
-  -->
-  <section id="development-status" class="section dark">
-    <div class="wrap">
-      <div class="label">Development Status</div>
-      <h2>Current draft and validation scope.</h2>
-      <dl>
-        <div><dt>Current draft</dt><dd>Discussion Draft v0.1</dd></div>
-        <div><dt>Validated scope</dt><dd>Five core functions exercised in the Phase 1 PoC.</dd></div>
-        <div><dt>Open specification work</dt><dd>Wire format, JSON Schema, mandatory fields, signing policy, trust anchors, error handling, and interoperability requirements.</dd></div>
-        <div><dt>Next validation targets</dt><dd>Cross-company exchange and additional domain profiles.</dd></div>
-      </dl>
-      <ul class="release-notes">
-        <li><time datetime="2026-07-29">29 July 2026</time> — Discussion Draft v0.1 published for technical review.</li>
-      </ul>
-      <div class="actions"><a class="btn primary" href="contact.html">Contribute to review</a><a class="btn secondary" href="beacon-cycle.html">View Beacon Cycle</a></div>
+  <section class="section dark">
+    <div class="wrap grid-2">
+      <div><div class="label">Contribute</div><h2>Review, validate,<br><em>or propose a new PoC.</em></h2></div>
+      <div><p class="lead">HAAP deepens as new proof-of-concept projects validate additional requirements, verification methods, and record formats. Contributions to review and new PoC proposals are welcome.</p><div class="actions"><a class="btn primary" href="contact.html">Contact</a><a class="btn secondary" href="beacon-cycle.html">View Beacon Cycle</a></div></div>
     </div>
   </section>
 </main>
