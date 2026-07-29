@@ -10,7 +10,6 @@ The content, structure, and terminology are being refined and may change without
 - `index.html` - Home and technical evidence overview
 - `about.html` - Council structure and operating scope
 - `protocol.html` - HAAP non-normative overview / discussion draft v0.1
-- `projects.html` - Phase 1 PoC scope and next-phase targets
 - `beacon-cycle.html` - Beacon Cycle concept and diagram
 - `contact.html` - Official contact entry point
 - `404.html` - Not-found page
