@@ -117,30 +117,79 @@
     </div>
   </section>
 
-  <section id="poc" class="section">
-    <div class="wrap grid-2">
-      <div>
-        <div class="label">Hiroshima Cold-Chain Logistics PoC</div>
-        <h2>Logistics Profile:<br><em>PoC-tested scope.</em></h2>
-        <p class="lead">This PoC implemented and tested core verification and transition-authorization functions for pharmaceutical cold-chain logistics in Hiroshima. It is not a proof of the full protocol, production deployment, or regulatory compliance.</p>
-      </div>
-      <div class="scope-list">
-        <ul>
-          <li>Ruleset binding at evaluation time.</li>
-          <li>Evidence field inspection and gap detection.</li>
-          <li>Independent temperature metric recalculation.</li>
-          <li>Logistics-profile disposition generation: RELEASE, HOLD, QA_REVIEW, or REJECT.</li>
-        </ul>
-        <ul>
-          <li>Sensor authenticity not covered.</li>
-          <li>Production integration not covered.</li>
-          <li>Cross-company API exchange not covered.</li>
-          <li>Multi-implementation interoperability not covered.</li>
-        </ul>
-      </div>
-      <p class="note" style="margin-top:1.6rem">RELEASE, HOLD, QA_REVIEW, and REJECT are domain-specific dispositions used by the Logistics Profile. They are not replacements for HAAP's domain-independent verification outcomes, adoption states, or transition-authorization states.</p>
+<section id="poc" class="section">
+  <div class="wrap grid-2">
+
+    <div>
+      <div class="label">PoC-01 | Hiroshima Cold-Chain Logistics</div>
+
+      <h2>
+        Logistics Profile:<br>
+        <em>Scope implemented and tested.</em>
+      </h2>
+
+      <p class="lead">
+        This PoC implemented and tested core HAAP verification and
+        transition-authorization functions for pharmaceutical cold-chain
+        logistics in Hiroshima, using documented test scenarios.
+      </p>
+
+      <p>
+        This PoC does not demonstrate the full HAAP protocol, production
+        deployment, regulatory compliance, or interoperability across
+        multiple implementations.
+      </p>
     </div>
-  </section>
+
+    <div>
+      <div class="scope-list">
+
+        <div>
+          <p><strong>Functions Implemented and Tested</strong></p>
+          <ul>
+            <li>Ruleset binding at evaluation time.</li>
+            <li>Evidence-field inspection and missing-evidence detection.</li>
+            <li>Independent recalculation of temperature metrics.</li>
+            <li>
+              Generation of Logistics Profile dispositions:
+              RELEASE, HOLD, QA_REVIEW, or REJECT.
+            </li>
+          </ul>
+        </div>
+
+        <div>
+          <p><strong>Not Covered by This PoC</strong></p>
+          <ul>
+            <li>Sensor authenticity verification.</li>
+            <li>Production-system integration.</li>
+            <li>Cross-company API exchange.</li>
+            <li>Multi-implementation interoperability.</li>
+          </ul>
+        </div>
+
+      </div>
+
+      <p class="note" style="margin-top:1.6rem">
+        RELEASE, HOLD, QA_REVIEW, and REJECT are domain-specific operational
+        dispositions defined by the Logistics Profile. They do not replace
+        HAAP’s domain-independent verification outcomes, adoption states,
+        or transition-authorization states.
+      </p>
+
+      <div class="actions" style="margin-top:1.4rem">
+        <a
+          class="btn primary"
+          href="https://github.com/GhostDriftTheory/coldchain-handoff-assurance"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          View Implementation on GitHub
+        </a>
+      </div>
+    </div>
+
+  </div>
+</section>
 
   <section id="evidence" class="section alt">
     <div class="wrap">
