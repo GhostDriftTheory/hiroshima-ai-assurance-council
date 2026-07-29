@@ -21,7 +21,7 @@
     <a href="about.html">About</a>
     <a class="active" href="protocol.html">Protocol</a>
     <a href="projects.html">Projects</a>
-    <a href="index.html#technical-evidence">Technical Basis</a>
+    <a href="index.html#technical-evidence">Technical Evidence</a>
     <a class="nav-contact" href="contact.html">Contact</a>
   </div>
 </nav>
@@ -31,15 +31,15 @@
       <div>
         <div class="kicker">HAAP / Non-Normative Technical Overview</div>
         <h1>Hiroshima AI Assurance Protocol<br><em>in one sentence.</em></h1>
-        <p class="hero-lead">HAAP is a common layer that enables organizations to formally adopt an AI-assisted decision only after predefined conditions have been verified against the required evidence, while preserving the requirements, evidence, verification results, adoption state, and state-transition authorization as a replayable assurance record.</p>
-        <span class="ja" lang="ja">AI判断を採用する前に、事前に定めた条件を証拠に照らして検証し、要求・証拠・検証結果・採用状態・状態遷移許可を再検証可能な記録として残すための共通レイヤーです。</span>
-        <div class="hero-note">This page provides a non-normative technical overview of HAAP. The protocol continues to evolve by incorporating requirements, verification methods, and assurance records validated through practical proof-of-concept projects.</div>
+        <p class="hero-lead">HAAP is a proposed assurance and interoperability layer that enables organizations to formally adopt an AI-assisted decision only after predefined conditions have been verified against the required evidence, while preserving the requirements, accountability-relevant information, evidence, verification results, adoption state, and transition authorization as a verifiable record.</p>
+        <span class="ja" lang="ja">AI判断を採用する前に、事前に定めた条件を必要な証拠に照らして検証し、要求・責任情報・証拠・検証結果・採用状態・状態遷移許可を再検証可能な記録として残すための、アシュアランスと相互運用の共通レイヤーです。</span>
+        <div class="hero-note">This page provides a non-normative technical overview of HAAP. The protocol continues to evolve by incorporating requirements, verification methods, and assurance records tested through practical proof-of-concept projects.</div>
       </div>
       <div class="signal-panel">
-        <div class="signal-row"><span class="sig-num">A</span><span class="sig-title">Business profile</span><span class="sig-state">Domain rules</span></div>
-        <div class="signal-row"><span class="sig-num">B</span><span class="sig-title">HAAP accountability layer</span><span class="sig-state">Verification & adoption records</span></div>
-        <div class="signal-row"><span class="sig-num">C</span><span class="sig-title">A2A / MCP</span><span class="sig-state">Agent & tool interaction</span></div>
-        <div class="signal-row"><span class="sig-num">D</span><span class="sig-title">HTTP / gRPC</span><span class="sig-state">Message transport</span></div>
+        <div class="signal-row"><span class="sig-num">A</span><span class="sig-title">Business Profile</span><span class="sig-state">Business Rules</span></div>
+        <div class="signal-row"><span class="sig-num">B</span><span class="sig-title">HAAP Assurance and Interoperability Layer</span><span class="sig-state">Assurance Records</span></div>
+        <div class="signal-row"><span class="sig-num">C</span><span class="sig-title">A2A / MCP</span><span class="sig-state">Agent and Tool Protocols</span></div>
+        <div class="signal-row"><span class="sig-num">D</span><span class="sig-title">HTTP / gRPC</span><span class="sig-state">Transport Protocols</span></div>
       </div>
     </div>
   </section>
@@ -49,8 +49,8 @@
       <div class="label">3-Line Summary</div>
       <h2>The protocol defines<br><em>what must travel together.</em></h2>
       <div class="grid-3">
-        <div class="card brand"><div class="card-meta">Task Requirement</div><div class="card-title">What must be true for this operation?</div><p>A Task Requirements Packet binds the target operation, applicable profile and ruleset versions, evidence requirements, thresholds, authority, evaluation time, validity window, and permitted tolerances.</p></div>
-        <div class="card accent"><div class="card-meta">Responsibility Information</div><div class="card-title">What evidence and responsibility information are available?</div><p>Accountability-Relevant Information Packets link claims, evidence references, responsible actors, authority, and unverified conditions for the relevant operation.</p></div>
+        <div class="card brand"><div class="card-meta">Task Requirements Packet</div><div class="card-title">What must be true for this operation?</div><p>A Task Requirements Packet binds the target operation, applicable profile and ruleset versions, evidence requirements, thresholds, authority, evaluation time, validity window, and permitted tolerances.</p></div>
+        <div class="card accent"><div class="card-meta">Accountability-Relevant Information Packet</div><div class="card-title">What evidence and responsibility information are available?</div><p>Accountability-Relevant Information Packets link claims, evidence references, responsible actors, authority, and unverified conditions for the relevant operation.</p></div>
         <div class="card amber"><div class="card-meta">Verification and Authorization</div><div class="card-title">What state transition is permitted?</div><p>The verifier records a verification outcome, adoption state, and transition authorization for the specified operation.</p></div>
       </div>
     </div>
@@ -66,37 +66,37 @@
       <div class="row-list">
         <div class="row"><span class="row-num">01</span><span class="row-name">Agent2Agent (A2A) / Model Context Protocol (MCP)</span><p>Useful for agent and tool interaction. They do not by themselves define adoption conditions or accountability records.</p></div>
         <div class="row"><span class="row-num">02</span><span class="row-name">HTTP / gRPC</span><p>Useful for transport. They do not define evidence semantics, verification outcomes, or transition authorization.</p></div>
-        <div class="row"><span class="row-num">03</span><span class="row-name">Business profiles</span><p>Contain reusable domain rules, while Task Requirements Packets bind those rules to a specific operation, evaluation time, and evidence set.</p></div>
+        <div class="row"><span class="row-num">03</span><span class="row-name">Business profiles</span><p>Contain reusable business rules, while Task Requirements Packets bind those rules to a specific operation, evaluation time, and evidence set.</p></div>
       </div>
     </div>
   </section>
 
   <!--
     PROTOCOL RECORDS
-    When a new PoC validates an existing record category, update
-    the Validation column for that row. Add a new row only when
-    the PoC introduces a new record category.
+    When a new PoC exercises an existing record category, update
+    the PoC column for that row. Add a new row only when the PoC
+    introduces a new record category.
   -->
   <section id="messages" class="section alt">
     <div class="wrap">
       <div class="label">Protocol Records and Messages</div>
       <h2>Proposed protocol records<br><em>and their distinct functions.</em></h2>
-      <p class="lead">Each record category serves a distinct function in the assurance lifecycle. The validation column shows which functions have been exercised through completed proof-of-concept projects.</p>
-      <p class="note">"Validated" means that the function was implemented and exercised against documented PoC test scenarios. It does not mean independent certification, production validation, regulatory approval, or multi-implementation interoperability.</p>
+      <p class="lead">Each record category serves a distinct function in the assurance lifecycle. The PoC column shows which functions have been exercised through completed proof-of-concept projects.</p>
+      <p class="note">"PoC-tested" means that the function was implemented and exercised against documented PoC test scenarios. It does not mean independent certification, production validation, regulatory approval, or multi-implementation interoperability.</p>
       <div class="table-wrap" role="region" aria-label="Protocol record categories table" tabindex="0">
         <table>
           <caption class="visually-hidden">Proposed HAAP protocol record and message categories</caption>
-          <thead><tr><th scope="col">Category</th><th scope="col">Validation</th><th scope="col">Purpose</th></tr></thead>
+          <thead><tr><th scope="col">Category</th><th scope="col">PoC</th><th scope="col">Purpose</th></tr></thead>
           <tbody>
-            <tr><td>Capability Declaration</td><td>Not yet validated</td><td>Exchange supported profiles, evidence formats, and signing methods.</td></tr>
+            <tr><td>Capability Declaration</td><td>Not yet PoC-tested</td><td>Exchange supported profiles, evidence formats, and signing methods.</td></tr>
             <tr><td>Task Requirements Packet</td><td>Hiroshima cold-chain logistics PoC</td><td>Bind the target operation, applicable profile and ruleset versions, adoption conditions, evidence requirements, evaluation criteria, and validity window.</td></tr>
-            <tr><td>Accountability-Relevant Information Packet</td><td>Not yet validated</td><td>Submit responsibility scope, execution capability, claims, and evidence references for the relevant actor or system.</td></tr>
+            <tr><td>Accountability-Relevant Information Packet</td><td>Not yet PoC-tested</td><td>Submit responsibility scope, execution capability, claims, and evidence references for the relevant actor or system.</td></tr>
             <tr><td>Evidence Package</td><td>Hiroshima cold-chain logistics PoC</td><td>Provide evidence fields for verification, under trust requirements defined by the applicable profile.</td></tr>
             <tr><td>Verification Result</td><td>Hiroshima cold-chain logistics PoC</td><td>Record recalculated values, missing evidence, satisfied conditions, and result digest.</td></tr>
             <tr><td>Adoption State Record</td><td>Hiroshima cold-chain logistics PoC</td><td>Assign a domain-independent adoption state from the verification result and applicable profile rules.</td></tr>
             <tr><td>Transition Authorization</td><td>Hiroshima cold-chain logistics PoC</td><td>Record whether the specified state transition is AUTHORIZED, REQUIRES_REVIEW, or NOT_AUTHORIZED.</td></tr>
-            <tr><td>Transition Receipt</td><td>Not yet validated</td><td>Record the actual state change after execution.</td></tr>
-            <tr><td>Status Update</td><td>Not yet validated</td><td>Record expiry, revocation, supersession, or evidence updates as append-only entries.</td></tr>
+            <tr><td>Transition Receipt</td><td>Not yet PoC-tested</td><td>Record the actual state change after execution.</td></tr>
+            <tr><td>Status Update</td><td>Not yet PoC-tested</td><td>Record expiry, revocation, supersession, or evidence updates as append-only entries.</td></tr>
           </tbody>
         </table>
       </div>
@@ -112,7 +112,7 @@
         <div class="dark-card"><p><strong>Adoption state:</strong> ADOPTABLE, CONDITIONALLY_ADOPTABLE, NOT_ADOPTABLE, or PENDING_EVIDENCE.</p></div>
         <div class="dark-card"><p><strong>Transition authorization:</strong> AUTHORIZED, REQUIRES_REVIEW, or NOT_AUTHORIZED.</p></div>
       </div>
-      <p class="note" style="margin-top:1.6rem">Responsibility information is preserved inside the accountability-relevant information packet: who confirmed what, who retains responsibility, which conditions remain unverified, and which state transition the record concerns.</p>
+      <p class="note" style="margin-top:1.6rem">Responsibility information is preserved inside the Accountability-Relevant Information Packet: who confirmed what, who retains responsibility, which conditions remain unverified, and which state transition the record concerns.</p>
       <p class="note" style="margin-top:1rem">AUTHORIZED is a protocol-level state for a specified operation. It does not create legal, regulatory, contractual, safety, or organizational authority that did not otherwise exist.</p>
     </div>
   </section>
@@ -146,7 +146,7 @@
     <div class="wrap">
       <div class="label">Technical Evidence</div>
       <h2>Public technical materials<br><em>support independent inspection.</em></h2>
-      <p class="lead">Public technical materials document the formal foundations and completed validation work available for independent inspection.</p>
+      <p class="lead">Public technical materials document the formal foundations and completed PoC testing available for independent inspection.</p>
       <div class="evidence-links">
         <div class="evidence-link"><a href="https://github.com/GhostDriftTheory/adic-ai-assurance-lean" target="_blank" rel="noopener noreferrer">ADIC AI Assurance / Lean</a><p>Formal assurance core and verification instructions.</p></div>
         <div class="evidence-link"><a href="https://github.com/GhostDriftTheory/responsibility-os-kernel" target="_blank" rel="noopener noreferrer">Responsibility OS Kernel</a><p>Lean-verified preservation of audit and responsibility structures.</p></div>
@@ -159,7 +159,7 @@
   <section class="section dark">
     <div class="wrap grid-2">
       <div><div class="label">Contribute</div><h2>Review, validate,<br><em>or propose a new PoC.</em></h2></div>
-      <div><p class="lead">HAAP deepens as new proof-of-concept projects validate additional requirements, verification methods, and record formats. Contributions to review and new PoC proposals are welcome.</p><div class="actions"><a class="btn primary" href="contact.html">Contact</a><a class="btn secondary" href="beacon-cycle.html">View Beacon Cycle</a></div></div>
+      <div><p class="lead">HAAP deepens as new proof-of-concept projects test additional requirements, verification methods, and record formats. Contributions to review and new PoC proposals are welcome.</p><div class="actions"><a class="btn primary" href="contact.html">Contact</a><a class="btn secondary" href="beacon-cycle.html">View Beacon Cycle</a></div></div>
     </div>
   </section>
 </main>
