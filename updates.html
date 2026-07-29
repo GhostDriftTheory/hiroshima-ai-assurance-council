@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Updates - Hiroshima AI Assurance Council</title>
+<meta name="description" content="Official updates on HAAP, Beacon Cycle, proof-of-concept implementation, and public technical materials from the Hiroshima AI Assurance Council.">
+<meta property="og:title" content="Updates - Hiroshima AI Assurance Council">
+<meta property="og:description" content="Implementation, publication, and progress from the Hiroshima AI Assurance Council.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:ital,wght@0,400;0,500;1,400&family=IBM+Plex+Sans:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<style>
+  .updates-list{border-top:1px solid var(--rule)}
+  .update-item{display:grid;grid-template-columns:120px 150px minmax(0,1fr);gap:1.5rem;padding:2rem 0;border-bottom:1px solid var(--rule)}
+  .update-date,.update-category{font-family:var(--mono);font-size:.66rem;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-soft)}
+  .update-category{color:var(--accent)}
+  .update-content h2{font-size:clamp(1.35rem,2.2vw,1.8rem);margin-bottom:.65rem}
+  .update-content p{max-width:680px;font-size:.9rem;color:var(--ink-mid);margin-bottom:.85rem}
+  .update-link{display:inline-flex;align-items:center;min-height:40px;color:var(--brand);font-family:var(--mono);font-size:.68rem;letter-spacing:.08em;text-transform:uppercase}
+  .update-link:hover,.update-link:focus{color:var(--accent)}
+  @media(max-width:720px){
+    .update-item{grid-template-columns:1fr;gap:.45rem;padding:1.65rem 0}
+  }
+</style>
+</head>
+<body>
+<a href="#main" class="skip">Skip to main content</a>
+<nav class="site-nav" aria-label="Primary navigation">
+  <a class="site-brand" href="index.html">Hiroshima AI Assurance Council</a>
+  <div class="nav-links">
+    <a href="about.html">About</a>
+    <a href="protocol.html">Protocol</a>
+    <a href="beacon-cycle.html">Beacon Cycle</a>
+    <a class="active" href="updates.html" aria-current="page">Updates</a>
+    <a class="nav-contact" href="contact.html">Contact</a>
+  </div>
+</nav>
+
+<main id="main">
+  <section class="hero hero-compact">
+    <div class="hero-inner hero-inner-single">
+      <div>
+        <div class="kicker">Council Updates</div>
+        <h1>Implementation, publication,<br>and <em>progress.</em></h1>
+        <p class="hero-lead">Official updates on HAAP, Beacon Cycle, proof-of-concept implementation, and public technical materials.</p>
+        <span class="ja" lang="ja">HAAP、Beacon Cycle、PoC、公開技術資料の進展を記録します。</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="section alt" aria-labelledby="latest-updates">
+    <div class="wrap">
+      <div class="label">Latest</div>
+      <h2 id="latest-updates">Council activity,<br><em>recorded as it advances.</em></h2>
+
+      <div class="updates-list">
+        <article class="update-item">
+          <time class="update-date" datetime="2026-07">July 2026</time>
+          <div class="update-category">Protocol</div>
+          <div class="update-content">
+            <h2>Beacon Cycle Operational Model Published</h2>
+            <p>The Council has published Beacon Cycle Draft v0.1, an operational model linking responsibility design, pre-execution assurance, authorized action, verifiable records, independent verification, and evidence-based redesign.</p>
+            <a class="update-link" href="beacon-cycle.html" aria-label="View the Beacon Cycle operational model">View Beacon Cycle&nbsp;&rarr;</a>
+          </div>
+        </article>
+
+        <article class="update-item">
+          <time class="update-date" datetime="2026-07">July 2026</time>
+          <div class="update-category">Protocol</div>
+          <div class="update-content">
+            <h2>HAAP Technical Overview Published</h2>
+            <p>The non-normative technical overview describes the proposed records and state separation used to connect requirements, evidence, verification outcomes, adoption states, and transition authorization.</p>
+            <a class="update-link" href="protocol.html" aria-label="View the HAAP technical overview">View Technical Overview&nbsp;&rarr;</a>
+          </div>
+        </article>
+
+        <article class="update-item">
+          <time class="update-date" datetime="2026-07">July 2026</time>
+          <div class="update-category">Implementation</div>
+          <div class="update-content">
+            <h2>Pharmaceutical Cold-Chain PoC Completed</h2>
+            <p>GhostDrift Mathematical Institute and ONZALINKS completed the first proof-of-concept implementation for pharmaceutical cold-chain handoff assurance and published the source code for independent inspection.</p>
+            <a class="update-link" href="https://github.com/GhostDriftTheory/coldchain-handoff-assurance" target="_blank" rel="noopener noreferrer" aria-label="View the pharmaceutical cold-chain proof-of-concept implementation on GitHub">View Implementation&nbsp;&rarr;</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section dark">
+    <div class="wrap grid-2">
+      <div>
+        <div class="label">Contribute</div>
+        <h2>Review, validate,<br><em>or propose a new PoC.</em></h2>
+      </div>
+      <div>
+        <p class="lead">The Council welcomes specification review, field validation, joint research, and technical contribution.</p>
+        <div class="actions">
+          <a class="btn primary" href="contact.html">Contact the Council</a>
+          <a class="btn secondary" href="about.html">About the Council</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap footer-grid">
+    <div>
+      <div class="footer-brand">Hiroshima AI Assurance Council</div>
+      <div class="footer-sub">Independent, industry-led, and Hiroshima-based.</div>
+    </div>
+    <div class="footer-links">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="protocol.html">Protocol</a>
+      <a href="beacon-cycle.html">Beacon Cycle</a>
+      <a href="updates.html" aria-current="page">Updates</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </div>
+</footer>
+</body>
+</html>
