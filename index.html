@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Hiroshima AI Assurance Council</title>
-<meta name="description" content="The Hiroshima AI Assurance Council develops practical protocols for verifying AI-assisted decisions before adoption and preserving evidence after.">
+<meta name="description" content="The Hiroshima AI Assurance Council develops HAAP as a practical framework for verifying AI-assisted decisions before adoption and preserving evidence after.">
 <meta property="og:title" content="Hiroshima AI Assurance Council">
 <meta property="og:description" content="From Hiroshima, making AI decisions verifiable.">
 <meta property="og:type" content="website">
@@ -22,7 +22,7 @@
     <a href="about.html">About</a>
     <a href="protocol.html">Protocol</a>
     <a href="projects.html">Projects</a>
-    <a href="index.html#technical-evidence">Technical Basis</a>
+    <a href="index.html#technical-evidence">Technical Evidence</a>
     <a class="nav-contact" href="contact.html">Contact</a>
   </div>
 </nav>
@@ -32,11 +32,11 @@
       <div>
         <div class="kicker">Hiroshima / Independent / Implementation</div>
         <h1>From Hiroshima,<br>making AI decisions <em>verifiable.</em></h1>
-        <p class="hero-lead">The Hiroshima AI Assurance Council develops practical protocol specifications for AI-assisted decisions: verify the required conditions before adoption, then preserve the evidence chain after.</p>
+        <p class="hero-lead">The Hiroshima AI Assurance Council develops HAAP as a practical framework for AI-assisted decisions: verify the required conditions before adoption, then preserve the evidence chain after.</p>
         <span class="ja" lang="ja">広島から、AI判断の採用条件・証拠・責任の流れを後から確認できる形に残すための協議会です。</span>
         <div class="hero-note">Inspired by the Hiroshima AI Process (G7, 2023). Independently operated; not affiliated with or representative of any government body.</div>
         <div class="actions">
-          <a class="btn primary" href="protocol.html">View the Protocol</a>
+          <a class="btn primary" href="protocol.html">View the Technical Overview</a>
           <a class="btn secondary" href="contact.html">Contact the Council</a>
         </div>
       </div>
@@ -60,7 +60,7 @@
         <div class="row-list">
           <div class="row"><span class="row-num">01</span><span class="row-name">Council representative</span><p>ONZALINKS, Inc., a Hiroshima-based logistics DX company, represents the Council and coordinates field implementation.</p></div>
           <div class="row"><span class="row-num">02</span><span class="row-name">Founding technical partner</span><p>GhostDrift Mathematical Institute, Inc. initiated the project and provides Responsibility OS, ADIC, and reference technical materials.</p></div>
-          <div class="row"><span class="row-num">03</span><span class="row-name">Cross-sector contribution</span><p>Companies, universities, public organizations, and engineers are invited to contribute through review, validation, and joint research while formal membership terms are being developed.</p></div>
+          <div class="row"><span class="row-num">03</span><span class="row-name">Cross-sector contribution</span><p>Companies, universities, public organizations, and engineers are invited to contribute through review, PoC testing, and joint research while formal membership terms are being developed.</p></div>
         </div>
       </div>
     </div>
@@ -70,14 +70,14 @@
     <div class="wrap">
       <div class="label">Hiroshima AI Assurance Protocol</div>
       <h2>Assured before action.<br><em>Verifiable afterward.</em></h2>
-      <p class="lead">HAAP is a proposed assurance and interoperability layer connecting business rules with agent, tool, and transport protocols. It does not replace HTTP, gRPC, Agent2Agent (A2A), or Model Context Protocol (MCP). It defines how requirements, responsibility information, evidence, verification results, adoption states, and transition authorizations are linked and exchanged.</p>
+      <p class="lead">HAAP is a proposed assurance and interoperability layer connecting Business Profiles with agent, tool, and transport protocols. It does not replace HTTP, gRPC, Agent2Agent (A2A), or Model Context Protocol (MCP). It defines how requirements, accountability-relevant information, evidence, verification results, adoption states, and transition authorization records are linked and exchanged.</p>
       <div class="grid-3">
         <div class="card brand"><div class="card-meta">Pre-Execution Assurance</div><div class="card-title">Before state change</div><p>Required conditions and evidence are evaluated before an AI-assisted decision is adopted as an organizational decision.</p></div>
         <div class="card accent"><div class="card-meta">Claim–Evidence Separation</div><div class="card-title">Claims are not verification</div><p>Inspection claims are evaluated against evidence independent of the claim, under trust requirements defined by the applicable profile.</p></div>
-        <div class="card amber"><div class="card-meta">Verifiable Record</div><div class="card-title">Requirements, evidence references, verification results, adoption states, transition authorizations, and responsibility information are integrity-bound and preserved for later review, independent verification, and replay.</p></div>
+        <div class="card amber"><div class="card-meta">Verifiable Record</div><div class="card-title">Requirements, accountability-relevant information, evidence references, verification results, adoption states, and transition authorization records are integrity-bound and preserved for later review, independent verification, and replay.</p></div>
       </div>
       <div class="actions" style="margin-top:2rem">
-        <a class="btn primary" href="protocol.html">Full protocol details</a>
+        <a class="btn primary" href="protocol.html">View the Technical Overview</a>
         <a class="btn secondary" href="projects.html">PoC projects</a>
       </div>
     </div>
@@ -90,11 +90,11 @@
 
       <h2>
         From protocol to field implementation.<br>
-        <em>Domain profiles in practice.</em>
+        <em>Business Profiles in practice.</em>
       </h2>
 
       <p class="lead">
-        The Council develops domain profiles and reference implementations
+        The Council develops Business Profiles and reference implementations
         that apply HAAP to real-world workflows. The first public implementation
         focuses on pharmaceutical cold-chain handoff.
       </p>
@@ -103,14 +103,14 @@
     <div class="dark-card">
       <p>
         <strong>Project implementations</strong><br>
-        Current PoCs, validation results, implementation scope, and future work
+        Current PoCs, PoC results, implementation scope, and future work
         are maintained on the Projects page.
       </p>
 
       <p>
         <strong>Protocol coverage</strong><br>
         The Protocol page shows how each implementation maps to HAAP requirements,
-        assurance functions, and transition-authorization logic.
+        assurance functions, and transition authorization logic.
       </p>
 
       <div class="actions" style="margin-top:1.4rem">
@@ -131,18 +131,18 @@
     </h2>
 
     <p class="lead">
-      The Council publishes protocol specifications, formal foundations,
+      The Council publishes non-normative technical overviews, formal foundations,
       and reference implementation materials so that its technical claims
-      can be examined independently. Validation results, implementation scope,
+      can be examined independently. PoC results, implementation scope,
       and known limitations are documented alongside the relevant projects.
     </p>
 
     <div class="evidence-links">
       <div class="evidence-link">
-        <a href="protocol.html">HAAP Protocol Specification</a>
+        <a href="protocol.html">HAAP Technical Overview</a>
         <p>
-          How requirements, responsibility information, evidence,
-          verification results, adoption states, and transition authorizations
+          How requirements, accountability-relevant information, evidence,
+          verification results, adoption states, and transition authorization records
           are linked and exchanged.
         </p>
       </div>
@@ -173,9 +173,9 @@
       </div>
 
       <div class="evidence-link">
-        <a href="projects.html">Reference Implementations &amp; Validation</a>
+        <a href="projects.html">Reference Implementations &amp; PoC Testing</a>
         <p>
-          Working PoCs, replay materials, validation results,
+          Working PoCs, replay materials, PoC results,
           implementation scope, and known limitations.
         </p>
       </div>
@@ -193,7 +193,7 @@
     <div class="wrap grid-2">
       <div>
         <div class="label">Contact</div>
-        <h2>Contribute review,<br><em>validation, or domain expertise.</em></h2>
+        <h2>Contribute review,<br><em>PoC testing, or domain expertise.</em></h2>
         <p class="lead">Council contact is currently routed through a temporary GhostDrift technical contact form and coordinated with ONZALINKS, the Council representative.</p>
       </div>
       <div class="actions">
