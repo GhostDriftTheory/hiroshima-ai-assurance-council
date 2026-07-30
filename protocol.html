@@ -19,7 +19,7 @@
   <a class="site-brand" href="index.html">Hiroshima AI Assurance Council</a>
   <div class="nav-links">
     <a href="about.html">About</a>
-    <a class="active" href="protocol.html">Protocol</a>
+    <a class="active" href="protocol.html" aria-current="page">Protocol</a>
     <a href="beacon-cycle.html">Beacon Cycle</a>
     <a href="updates.html">Updates</a>
     <a class="nav-contact" href="contact.html">Contact</a>
@@ -33,7 +33,7 @@
         <h1>Hiroshima AI Assurance Protocol<br><em>in one sentence.</em></h1>
         <p class="hero-lead">HAAP is a proposed assurance and interoperability layer that enables organizations to formally adopt an AI-assisted decision only after predefined conditions have been verified against the required evidence, while preserving the requirements, accountability-relevant information, evidence, verification results, adoption state, and transition authorization as a verifiable record.</p>
         <span class="ja" lang="ja">AI判断を採用する前に、事前に定めた条件を必要な証拠に照らして検証し、要求・責任情報・証拠・検証結果・採用状態・状態遷移許可を再検証可能な記録として残すための、アシュアランスと相互運用の共通レイヤーです。</span>
-        <div class="hero-note">This page provides a non-normative technical overview of HAAP. The protocol continues to evolve by incorporating requirements, verification methods, and assurance records tested through practical proof-of-concept projects.</div>
+        <div class="hero-note">This page presents the current non-normative HAAP model. A future normative specification will define the wire format, mandatory fields, signing policy, trust anchors, error handling, and interoperability requirements.</div>
       </div>
       <div class="signal-panel">
         <div class="signal-row"><span class="sig-num">A</span><span class="sig-title">Business Profile</span><span class="sig-state">Business Rules</span></div>
@@ -82,21 +82,21 @@
       <div class="label">Protocol Records and Messages</div>
       <h2>Proposed protocol records<br><em>and their distinct functions.</em></h2>
       <p class="lead">Each record category serves a distinct function in the assurance lifecycle. The PoC column shows which functions have been exercised through completed proof-of-concept projects.</p>
-      <p class="note">"PoC-tested" means that the function was implemented and exercised against documented PoC test scenarios. It does not mean independent certification, production validation, regulatory approval, or multi-implementation interoperability.</p>
+      <p class="note">"Functional precursor exercised" means that a comparable function was implemented in the Phase 1 reference PoC. It does not mean that the current HAAP record category, serialization, signature model, or domain-independent state separation was implemented.</p>
       <div class="table-wrap" role="region" aria-label="Protocol record categories table" tabindex="0">
         <table>
           <caption class="visually-hidden">Proposed HAAP protocol record and message categories</caption>
-          <thead><tr><th scope="col">Category</th><th scope="col">PoC</th><th scope="col">Purpose</th></tr></thead>
+          <thead><tr><th scope="col">Category</th><th scope="col">Phase 1 Evidence</th><th scope="col">Purpose</th></tr></thead>
           <tbody>
-            <tr><td>Capability Declaration</td><td>Not yet PoC-tested</td><td>Exchange supported profiles, evidence formats, and signing methods.</td></tr>
-            <tr><td>Task Requirements Packet</td><td>Hiroshima cold-chain logistics PoC</td><td>Bind the target operation, applicable profile and ruleset versions, adoption conditions, evidence requirements, evaluation criteria, and validity window.</td></tr>
-            <tr><td>Accountability-Relevant Information Packet</td><td>Not yet PoC-tested</td><td>Submit responsibility scope, execution capability, claims, and evidence references for the relevant actor or system.</td></tr>
-            <tr><td>Evidence Package</td><td>Hiroshima cold-chain logistics PoC</td><td>Provide evidence fields for verification, under trust requirements defined by the applicable profile.</td></tr>
-            <tr><td>Verification Result</td><td>Hiroshima cold-chain logistics PoC</td><td>Record recalculated values, missing evidence, satisfied conditions, and result digest.</td></tr>
-            <tr><td>Adoption State Record</td><td>Hiroshima cold-chain logistics PoC</td><td>Assign a domain-independent adoption state from the verification result and applicable profile rules.</td></tr>
-            <tr><td>Transition Authorization</td><td>Hiroshima cold-chain logistics PoC</td><td>Record whether the specified state transition is AUTHORIZED, REQUIRES_REVIEW, or NOT_AUTHORIZED.</td></tr>
-            <tr><td>Transition Receipt</td><td>Not yet PoC-tested</td><td>Record the actual state change after execution.</td></tr>
-            <tr><td>Status Update</td><td>Not yet PoC-tested</td><td>Record expiry, revocation, supersession, or evidence updates as append-only entries.</td></tr>
+            <tr><td>Capability Declaration</td><td>Not exercised</td><td>Exchange supported profiles, evidence formats, and signing methods.</td></tr>
+            <tr><td>Task Requirements Packet</td><td>Functional precursor exercised: profile and charter binding</td><td>Bind the target operation, applicable profile and ruleset versions, adoption conditions, evidence requirements, evaluation criteria, and validity window.</td></tr>
+            <tr><td>Accountability-Relevant Information Packet</td><td>Not exercised</td><td>Submit responsibility scope, execution capability, claims, and evidence references for the relevant actor or system.</td></tr>
+            <tr><td>Evidence Package</td><td>Functional precursor exercised: input and evidence fields</td><td>Provide evidence fields for verification, under trust requirements defined by the applicable profile.</td></tr>
+            <tr><td>Verification Result</td><td>Functional precursor exercised: recalculated metrics and disposition</td><td>Record recalculated values, missing evidence, satisfied conditions, and result digest.</td></tr>
+            <tr><td>Adoption State Record</td><td>Not implemented as a HAAP record</td><td>Assign a domain-independent adoption state from the verification result and applicable profile rules.</td></tr>
+            <tr><td>Transition Authorization</td><td>Functional precursor only: RELEASE continues; non-RELEASE halts</td><td>Record whether the specified state transition is AUTHORIZED, REQUIRES_REVIEW, or NOT_AUTHORIZED.</td></tr>
+            <tr><td>Transition Receipt</td><td>Not exercised</td><td>Record the actual state change after execution.</td></tr>
+            <tr><td>Status Update</td><td>Not exercised</td><td>Record expiry, revocation, supersession, or evidence updates as append-only entries.</td></tr>
           </tbody>
         </table>
       </div>
@@ -121,24 +121,18 @@
   <div class="wrap grid-2">
 
     <div>
-      <div class="label">PoC-01 | Hiroshima Cold-Chain Logistics</div>
+      <div class="label">Reference PoC-01 | Pharmaceutical Cold-Chain Handoff — Phase 1</div>
 
       <h2>
-        Logistics Profile:<br>
-        <em>Scope implemented and tested.</em>
+        Functional precursors:<br>
+        <em>implemented and tested.</em>
       </h2>
 
       <p class="lead">
-        This PoC implemented and tested core HAAP verification and
-        transition-authorization functions for pharmaceutical cold-chain
-        logistics in Hiroshima, using documented test scenarios.
+        This Phase 1 reference PoC exercised functional precursors that inform HAAP in a pharmaceutical cold-chain handoff scenario. It did not implement the current HAAP record schema or domain-independent state separation.
       </p>
 
-      <p>
-        This PoC does not demonstrate the full HAAP protocol, production
-        deployment, regulatory compliance, or interoperability across
-        multiple implementations.
-      </p>
+      
     </div>
 
     <div>
@@ -147,22 +141,23 @@
         <div>
           <p><strong>Functions Implemented and Tested</strong></p>
           <ul>
-            <li>Ruleset binding at evaluation time.</li>
-            <li>Evidence-field inspection and missing-evidence detection.</li>
-            <li>Independent recalculation of temperature metrics.</li>
-            <li>
-              Generation of Logistics Profile dispositions:
-              RELEASE, HOLD, QA_REVIEW, or REJECT.
-            </li>
+            <li>Profile and ruleset binding through cryptographic digests.</li>
+            <li>Inspection of custody, seal, logger-calibration, and temperature-record evidence.</li>
+            <li>Independent recalculation of temperature-excursion metrics.</li>
+            <li>Generation of Logistics Profile dispositions: RELEASE, HOLD, QA_REVIEW, or REJECT.</li>
+            <li>Chain-stop control and last-good / first-fail investigation anchors.</li>
+            <li>Deterministic replay and certificate verification.</li>
           </ul>
         </div>
 
         <div>
           <p><strong>Not Covered by This PoC</strong></p>
           <ul>
-            <li>Sensor authenticity verification.</li>
-            <li>Production-system integration.</li>
-            <li>Cross-company API exchange.</li>
+            <li>The normative HAAP record schema and serialization format.</li>
+            <li>Domain-independent Adoption State Records.</li>
+            <li>Separate HAAP Transition Authorization records.</li>
+            <li>Sensor and evidence-source authenticity.</li>
+            <li>Production-system or cross-company API integration.</li>
             <li>Multi-implementation interoperability.</li>
           </ul>
         </div>
@@ -218,7 +213,7 @@
           ADIC AI Assurance / Lean
         </a>
         <p>
-          Formal assurance foundations and verification instructions.
+          Lean 4 formalization of evidence preservation, responsibility traces, and inspectability under composed operations.
         </p>
       </div>
 
@@ -231,8 +226,7 @@
           Responsibility OS Kernel
         </a>
         <p>
-          Lean formalizations supporting the preservation of audit
-          and responsibility structures.
+          Lean 4 formalization of policy-relevant responsibility preservation and faithful inspectability.
         </p>
       </div>
 
