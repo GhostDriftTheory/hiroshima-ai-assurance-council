@@ -20,7 +20,7 @@
   <div class="nav-links">
     <a href="about.html">About</a>
     <a href="protocol.html">Protocol</a>
-    <a class="active" href="beacon-cycle.html">Beacon Cycle</a>
+    <a class="active" href="beacon-cycle.html" aria-current="page">Beacon Cycle</a>
     <a href="updates.html">Updates</a>
     <a class="nav-contact" href="contact.html">Contact</a>
   </div>
@@ -42,11 +42,11 @@
       <div class="label">Cycle</div>
       <h2>Six steps around<br><em>a stable Beacon.</em></h2>
       <figure class="diagram-card" style="margin-bottom:2rem">
-        <img src="Beaconサイクル.png" width="1448" height="1086" loading="lazy" decoding="async" alt="Beacon Cycle diagram showing Responsibility Design, Pre-Execution Assurance, Transition-Authorized Action, Verifiable Record, Independent Verification, and Review and Redesign around a stable Beacon." style="max-width:min(720px,100%);height:auto;margin:0 auto">
+        <img src="beacon-cycle-ja.png" width="1448" height="1086" loading="lazy" decoding="async" alt="Beacon Cycle diagram showing Responsibility Design, Pre-Execution Assurance, Transition-Authorized Action, Verifiable Record, Independent Verification, and Review and Redesign around a stable Beacon." style="max-width:min(720px,100%);height:auto;margin:0 auto">
         <figcaption class="note" style="margin-top:1rem">The Beacon remains stable during ordinary operational improvement. Changes to the Beacon itself require a separate foundational review.</figcaption>
       </figure>
       <div class="actions" style="margin-top:-1rem;margin-bottom:2rem">
-        <a class="btn secondary" href="Beaconサイクル.png" target="_blank" rel="noopener noreferrer">Open full-size diagram</a>
+        <a class="btn secondary" href="beacon-cycle-ja.png" target="_blank" rel="noopener noreferrer">Open full-size diagram</a>
       </div>
       <div class="grid-3">
         <div class="card brand"><div class="card-meta">Step 01</div><div class="card-title">Responsibility Design</div><p>Translate the Beacon into conditions, evidence requirements, responsibility boundaries, approval rules, and exception handling.</p></div>
@@ -54,7 +54,7 @@
         <div class="card amber"><div class="card-meta">Step 03</div><div class="card-title">Transition-Authorized Action</div><p>Execute only the specified operation when its transition authorization is AUTHORIZED. A review-required or unauthorized result does not establish execution authority.</p></div>
         <div class="card"><div class="card-meta">Step 04</div><div class="card-title">Verifiable Record</div><p>Bind decision, conditions, evidence, approvals, unverified conditions, pre-state, and result.</p></div>
         <div class="card"><div class="card-meta">Step 05</div><div class="card-title">Independent Verification</div><p>Confirm from outside the executor whether design, assurance, execution, and records stayed consistent.</p></div>
-        <div class="card"><div class="card-meta">Step 06</div><div class="card-title">Review & Redesign</div><p>Use verification results to revise conditions, boundaries, evidence requirements, approvals, and verification methods.</p></div>
+        <div class="card"><div class="card-meta">Step 06</div><div class="card-title">Review &amp; Redesign</div><p>Use verification results to revise conditions, boundaries, evidence requirements, approvals, and verification methods.</p></div>
       </div>
     </div>
   </section>
@@ -103,7 +103,7 @@
       <div class="row-list">
         <div class="row"><span class="row-num">ROS</span><span class="row-name">Responsibility OS</span><p>Conceptual and formal foundation for binding decisions, responsibility, evidence, unverified conditions, and state transitions.</p></div>
         <div class="row"><span class="row-num">HAAP</span><span class="row-name">Hiroshima AI Assurance Protocol</span><p>Interoperability layer for requirements, evidence, verification outcomes, adoption states, and authorized transitions.</p></div>
-        <div class="row"><span class="row-num">ADIC</span><span class="row-name">Advanced Data Integrity by Ledger of Computation</span><p>Provides reference implementations for replayable records, independent recalculation, integrity verification, and post-execution comparison.</p></div>
+        <div class="row"><span class="row-num">ADIC</span><span class="row-name">Advanced Data Integrity by Ledger of Computation</span><p>Provides reference implementation patterns for replayable records, independent recalculation, integrity verification, and post-execution comparison.</p></div>
       </div>
     </div>
   </section>
