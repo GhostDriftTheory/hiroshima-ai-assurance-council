@@ -32,15 +32,15 @@
       <div>
         <div class="kicker">Hiroshima / Independent / Implementation</div>
         <h1>From Hiroshima,<br>making AI decisions <em>verifiable.</em></h1>
-        <p class="hero-lead">The Hiroshima AI Assurance Council develops HAAP as a practical framework for AI-assisted decisions: verify the required conditions before adoption, then preserve the evidence chain after.</p>
-        <span class="ja" lang="ja">広島から、AI判断の採用条件・証拠・責任の流れを後から確認できる形に残すための協議会です。</span>
+        <p class="hero-lead">The Hiroshima AI Assurance Council is an independent, industry-led initiative currently being established in Hiroshima, Japan. It develops HAAP as a proposed practical framework for AI-assisted decisions: verify the required conditions before adoption, then preserve the evidence chain after.</p>
+        <span class="ja" lang="ja">広島から、AI判断の採用条件・証拠・責任の流れを後から確認できる形に残すための、設立準備中の民間・独立の協議会です。</span>
         <div class="hero-note">Inspired by the Hiroshima AI Process (G7, 2023). Independently operated; not affiliated with or representative of any government body.</div>
         <div class="actions">
           <a class="btn primary" href="protocol.html">View the Technical Overview</a>
           <a class="btn secondary" href="contact.html">Contact the Council</a>
         </div>
       </div>
-      <div class="signal-panel" aria-label="Assurance flow">
+      <div class="signal-panel" role="group" aria-label="Assurance flow">
         <div class="signal-row"><span class="sig-num">01</span><span class="sig-title">Responsibility Design</span><span class="sig-state">Requirements fixed</span></div>
         <div class="signal-row"><span class="sig-num">02</span><span class="sig-title">Pre-Execution Assurance</span><span class="sig-state">Evidence evaluated</span></div>
         <div class="signal-row"><span class="sig-num">03</span><span class="sig-title">Transition Authorization</span><span class="sig-state">Before action</span></div>
@@ -58,8 +58,8 @@
       <div>
         <p class="lead">The Council focuses on the implementation gap: how organizations can prove that an AI-assisted decision met defined conditions before changing real-world state.</p>
         <div class="row-list">
-          <div class="row"><span class="row-num">01</span><span class="row-name">Council representative</span><p>ONZALINKS, Inc., a Hiroshima-based logistics DX company, represents the Council and coordinates field implementation.</p></div>
-          <div class="row"><span class="row-num">02</span><span class="row-name">Founding technical partner</span><p>GhostDrift Mathematical Institute, Inc. initiated the project and provides Responsibility OS, ADIC, and reference technical materials.</p></div>
+          <div class="row"><span class="row-num">01</span><span class="row-name">Representative Organization</span><p>ONZALINX, Inc., a Hiroshima-based logistics DX company, leads Council coordination and field implementation.</p></div>
+          <div class="row"><span class="row-num">02</span><span class="row-name">Initiator / Technical Partner</span><p>GhostDrift Mathematical Institute, Inc. initiated the project and contributes Responsibility OS, ADIC, HAAP materials, and formal verification work.</p></div>
           <div class="row"><span class="row-num">03</span><span class="row-name">Cross-sector contribution</span><p>Companies, universities, public organizations, and engineers are invited to contribute through review, PoC testing, and joint research while formal membership terms are being developed.</p></div>
         </div>
       </div>
@@ -74,7 +74,7 @@
       <div class="grid-3">
         <div class="card brand"><div class="card-meta">Pre-Execution Assurance</div><div class="card-title">Before state change</div><p>Required conditions and evidence are evaluated before an AI-assisted decision is adopted as an organizational decision.</p></div>
         <div class="card accent"><div class="card-meta">Claim–Evidence Separation</div><div class="card-title">Claims are not verification</div><p>Inspection claims are evaluated against evidence independent of the claim, under trust requirements defined by the applicable profile.</p></div>
-        <div class="card amber"><div class="card-meta">Verifiable Record</div><div class="card-title">Requirements, accountability-relevant information, evidence references, verification results, adoption states, and transition authorization records are integrity-bound and preserved for later review, independent verification, and replay.</p></div>
+        <div class="card amber"><div class="card-meta">Verifiable Record</div><div class="card-title">Inspectable afterward</div><p>Requirements, accountability-relevant information, evidence references, verification results, adoption states, and transition authorization records are integrity-bound and preserved for later review, independent verification, and replay.</p></div>
       </div>
       <div class="actions" style="margin-top:2rem">
         <a class="btn primary" href="protocol.html">View the Technical Overview</a>
@@ -86,36 +86,32 @@
 <section id="projects" class="section dark">
   <div class="wrap grid-2">
     <div>
-      <div class="label">Projects</div>
+      <div class="label">Implementation Evidence</div>
 
       <h2>
-        From protocol to field implementation.<br>
-        <em>Business Profiles in practice.</em>
+        From a tested logistics PoC<br>
+        <em>toward a common assurance protocol.</em>
       </h2>
 
       <p class="lead">
-        The Council develops Business Profiles and reference implementations
-        that apply HAAP to real-world workflows. The first public implementation
-        focuses on pharmaceutical cold-chain handoff.
+        The first public reference PoC, completed as Phase 1, tested fixed ruleset binding, evidence inspection, independent recalculation, disposition generation, chain-stop control, digest binding, and replay verification for a pharmaceutical cold-chain handoff scenario.
       </p>
     </div>
 
     <div class="dark-card">
       <p>
-        <strong>Project implementations</strong><br>
-        Current PoCs, PoC results, implementation scope, and future work
-        are recorded on the Updates page.
+        <strong>Phase 1 implementation</strong><br>
+        The public repository documents the implemented functions, test scenarios, replay procedure, scope, and known limitations.
       </p>
 
       <p>
-        <strong>Protocol coverage</strong><br>
-        The Protocol page shows how each implementation maps to HAAP requirements,
-        assurance functions, and transition authorization logic.
+        <strong>Relationship to HAAP</strong><br>
+        The PoC provides functional precursors that inform HAAP. It does not implement the complete HAAP record schema, domain-independent state separation, or multi-system interoperability.
       </p>
 
-      <div class="actions" style="margin-top:1.4rem">
-        <a class="btn primary" href="updates.html">View updates</a>
-        <a class="btn" href="protocol.html">View protocol coverage</a>
+      <div class="actions section-actions">
+        <a class="btn primary" href="https://github.com/GhostDriftTheory/coldchain-handoff-assurance" target="_blank" rel="noopener noreferrer">View Phase 1 Implementation</a>
+        <a class="btn secondary" href="protocol.html">View HAAP Mapping</a>
       </div>
     </div>
   </div>
@@ -150,8 +146,7 @@
       <div class="evidence-link">
         <p><strong>Formal Foundations</strong></p>
         <p>
-          Lean 4 formalizations supporting pre-execution assurance,
-          responsibility records, and verifiable state transitions.
+          Lean 4 formalizations of evidence and responsibility preservation under composition, and policy-relevant inspectability.
         </p>
         <p>
           <a
@@ -194,7 +189,7 @@
       <div>
         <div class="label">Contact</div>
         <h2>Contribute review,<br><em>PoC testing, or domain expertise.</em></h2>
-        <p class="lead">Council contact is currently routed through a temporary GhostDrift technical contact form and coordinated with ONZALINKS, the Council representative.</p>
+        <p class="lead">Council inquiries are currently routed through a temporary GhostDrift technical contact form and coordinated with ONZALINX, the representative organization.</p>
       </div>
       <div class="actions">
         <a class="btn primary" href="contact.html">Contact the Council</a>
